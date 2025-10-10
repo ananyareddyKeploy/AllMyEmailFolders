@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test Suite Shared with You | Keploy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #f97316;
+      --primary-light: #fed7aa;
+      --primary-dark: #ea580c;
+      --dark: #1e293b;
+      --gray: #64748b;
+      --light-gray: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fef7ed;
+      margin: 0;
+      padding: 20px;
+      color: var(--dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .email-container {
+      max-width: 520px;
+      margin: 0 auto;
+      background-color: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(249, 115, 22, 0.1);
+    }
+    
+    .header {
+      background: var(--white);
+      padding: 40px 40px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .logo {
+      height: 40px;
+      margin-bottom: 6px;
+      margin-top: -6px;
+
+    }
+    
+    .headline {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0 0 16px;
+      color: var(--dark);
+      text-align: left;
+      margin-top: -10px;
+      margin-bottom: -4px;
+    }
+    
+    .subheadline {
+      font-size: 15px;
+      margin: 0;
+      color: var(--gray);
+      font-weight: 400;
+      text-align: left;
+      line-height: 1.5;
+      margin-bottom: -10px;
+    }
+    
+    .content {
+      padding: 32px 40px;
+      margin-top: -10px;
+      margin-bottom: -10px;
+    }
+    
+    .share-notice {
+      background: var(--primary-light);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 32px;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .share-title {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--dark);
+      margin-bottom: 8px;
+      text-align: left;
+    }
+    
+    .share-details {
+      font-size: 14px;
+      color: var(--gray);
+      margin: 0;
+      text-align: left;
+      line-height: 1.5;
+    }
+    
+    .sender-info {
+      display: flex;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .sender-avatar {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+      color: white;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    
+    .sender-details {
+      flex: 1;
+    }
+    
+    .sender-name {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--dark);
+      margin-bottom: 4px;
+      text-align: left;
+    }
+    
+    .sender-role {
+      font-size: 14px;
+      color: var(--gray);
+      text-align: left;
+    }
+    
+    .test-suite-info {
+      margin: 32px 0;
+    }
+    
+    .info-item {
+      margin-bottom: 16px;
+      text-align: left;
+    }
+    
+    .info-label {
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: -4px;
+      text-align: left;
+    }
+    .info-value {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--dark);
+      text-align: left;
+    }
+    
+    .benefits {
+      margin: 32px 0;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    
+    .benefit-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--primary-light);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+      color: var(--primary);
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .benefit-content {
+      flex: 1;
+    }
+    
+    .benefit-title {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--dark);
+      font-size: 15px;
+      text-align: left;
+    }
+    
+    .benefit-desc {
+      font-size: 14px;
+      color: var(--gray);
+      margin: 0;
+      text-align: left;
+      line-height: 1.5;
+    }
+    
+    .cta-section {
+      margin: 40px 0 8px;
+      text-align: left;
+      margin-top: -10px;
+      margin-bottom: -10px;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 16px 36px;
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+      margin-top: -10px;
+      margin-bottom: 6px;
+    }
+
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(249, 115, 22, 0.4);
+    }
+    
+    .footer {
+      padding: 32px 40px;
+      background: var(--light-gray);
+      border-top: 1px solid var(--border);
+      margin-top: -10px;
+      margin-bottom: -20px;
+    }
+    
+    .social-section {
+      margin-bottom: 12px;
+    }
+    
+    .social-title {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 16px;
+      font-weight: 500;
+      text-align: left;
+      margin-top: -10px;
+      margin-bottom: 6px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--white);
+      border-radius: 8px;
+      color: var(--gray);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    .social-icon:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+    
+    .copyright {
+      font-size: 13px;
+      color: var(--gray);
+      opacity: 0.8;
+      line-height: 1.5;
+      text-align: left;
+    }
+    
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+      
+      .header, .content {
+        padding: 28px 24px;
+      }
+      
+      .headline {
+        font-size: 22px;
+      }
+      
+      .sender-info {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .sender-avatar {
+        margin-bottom: 12px;
+        margin-right: 0;
+      }
+      
+      .footer {
+        padding: 28px 24px;
+      }
+      
+      .cta-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="https://keploy.io/images/logo.svg" alt="Keploy Logo" class="logo" />
+      <h1 class="headline">Test Suite Shared with You</h1>
+      <p class="subheadline">You've been given access to review test results and collaborate with the team.</p>
+    </div>
+    
+    <div class="content">
+      <div class="share-notice">
+        <div class="share-title">Test Suite Successfully Completed</div>
+      </div>
+      
+      <div class="test-suite-info">
+        <div class="info-item">
+        </div>
+        <div class="info-item">
+          <div class="info-label">Status</div>
+          <div class="info-value">✅ All Tests Passed</div>
+        </div>
+        <div class="info-item">
+        </div>
+      </div>
+      
+      <div class="benefits">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-eye"></i>
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-title">Review Test Results</div>
+            <p class="benefit-desc">Examine detailed test outcomes and identify any potential issues</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-title">Provide Feedback</div>
+            <p class="benefit-desc">Share your insights and suggestions with the team</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-sync-alt"></i>
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-title">Stay Updated</div>
+            <p class="benefit-desc">Receive notifications about test updates and changes</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-section">
+        <a href="https://app.keploy.io/view-shared-results" class="cta-button">
+          <i class="fas fa-external-link-alt" style="margin-right: 8px;"></i>
+          View Test Results
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="social-section">
+        <div class="social-title">Connect with Keploy</div>
+        <div class="social-links">
+          <a href="https://keploy.io" class="social-icon" title="Website">
+            <i class="fas fa-globe"></i>
+          </a>
+          <a href="https://twitter.com/keployio" class="social-icon" title="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://github.com/keploy/keploy" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/company/keploy" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        Keploy - AI-powered testing for modern teams<br>
+        This email was sent to you because a team member shared test results with you.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

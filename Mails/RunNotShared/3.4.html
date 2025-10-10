@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Share Your Test Results | Keploy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #f97316;
+      --primary-light: #fed7aa;
+      --primary-dark: #ea580c;
+      --dark: #1e293b;
+      --gray: #64748b;
+      --light-gray: #f8fafc;
+      --white: #ffffff;
+      --border: #e2e8f0;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fef7ed;
+      margin: 0;
+      padding: 20px;
+      color: var(--dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .email-container {
+      max-width: 520px;
+      margin: 0 auto;
+      background-color: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(249, 115, 22, 0.1);
+    }
+    
+    .header {
+      background: var(--white);
+      padding: 40px 40px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .logo {
+      height: 50px;
+      margin-bottom: 12px;
+    }
+    
+    .headline {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 16px;
+      line-height: 1.3;
+      color: var(--dark);
+      text-align: left;
+      margin-top: -10px;
+      margin-bottom: 8px;
+    }
+    
+    .subheadline {
+      font-size: 16px;
+      margin: 0;
+      color: var(--gray);
+      font-weight: 400;
+      text-align: left;
+      line-height: 1.5;
+      margin-top: 10px;
+      margin-bottom: -10px;
+    }
+    
+    .content {
+      padding: 32px 40px;
+      margin-top: -10px;
+    }
+    
+    .success-banner {
+      background: var(--primary-light);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .success-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+    
+    .success-icon i {
+      font-size: 12px;
+      color: white;
+    }
+    
+    .success-text {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--dark);
+    }
+    
+    .message {
+      font-size: 16px;
+      margin: 0 0 36px;
+      color: var(--gray);
+      text-align: left;
+      line-height: 1.6;
+    }
+    
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 36px 0 40px;
+    }
+    
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      padding: 0;
+    }
+    
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      color: var(--primary);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .benefit-content {
+      flex: 1;
+    }
+    
+    .benefit-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--dark);
+      font-size: 16px;
+      text-align: left;
+    }
+    
+    .benefit-desc {
+      font-size: 14px;
+      color: var(--gray);
+      margin: 0;
+      text-align: left;
+      line-height: 1.5;
+    }
+    
+    .cta-section {
+      margin: 40px 0 8px;
+      text-align: left;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 16px 36px;
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+    }
+
+    .cta-button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(249, 115, 22, 0.4);
+    }
+    
+    .footer {
+      padding: 32px 40px;
+      background: var(--light-gray);
+      font-size: 14px;
+      color: var(--gray);
+      border-top: 1px solid var(--border);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin: 0 0 24px;
+    }
+    
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: var(--white);
+      border-radius: 8px;
+      color: var(--gray);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 16px;
+    }
+    
+    .social-icon:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+    
+    .copyright {
+      font-size: 13px;
+      opacity: 0.8;
+      text-align: left;
+      line-height: 1.5;
+    }
+    
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+      
+      .header, .content {
+        padding: 28px 24px;
+      }
+      
+      .headline {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+      
+      .benefits {
+        gap: 20px;
+        margin: 32px 0 36px;
+      }
+      
+      .benefit-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
+      }
+      
+      .cta-button {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      
+      .footer {
+        padding: 28px 24px;
+      }
+      
+      .social-links {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <img src="https://keploy.io/images/logo.svg" alt="Keploy Logo" class="logo" />
+      <h1 class="headline">Tests Complete! Ready to Share?</h1>
+      <p class="subheadline">Your test suite ran successfully. Share results with your team to accelerate development and ensure everyone stays aligned.</p>
+    </div>
+    
+    <div class="content">
+      <div class="success-banner">
+        <div class="success-icon">
+          <i class="fas fa-check"></i>
+        </div>
+        <div class="success-text">All tests passed successfully</div>
+      </div>
+      
+      <p class="message">
+        Great work! Your tests are passing. Sharing results helps your team stay aligned and move faster together while maintaining code quality and preventing regressions.
+      </p>
+      
+      <div class="benefits">
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-title">Ship with Confidence</div>
+            <p class="benefit-desc">Catch bugs early and prevent production issues before they impact your users.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-title">Save Time Debugging</div>
+            <p class="benefit-desc">Reduce debugging time and accelerate code reviews with comprehensive test results.</p>
+          </div>
+        </div>
+        
+        <div class="benefit-item">
+          <div class="benefit-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="benefit-content">
+            <div class="benefit-title">Better Team Alignment</div>
+            <p class="benefit-desc">Share results and align team understanding across developers, QA, and product teams.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="cta-section">
+        <a href="https://app.keploy.io/share-results" class="cta-button">
+          <i class="fas fa-share-alt" style="margin-right: 8px;"></i>
+          Share Test Results
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="social-links">
+        <a href="https://keploy.io" class="social-icon" title="Website">
+          <i class="fas fa-globe"></i>
+        </a>
+        <a href="https://twitter.com/keployio" class="social-icon" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/keploy/keploy" class="social-icon" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/company/keploy" class="social-icon" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+      <div class="copyright">
+        Keploy - AI-powered testing for modern teams<br>
+        Accelerate development with confidence
+      </div>
+    </div>
+  </div>
+</body>
+</html>
