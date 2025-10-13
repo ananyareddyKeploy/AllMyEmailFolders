@@ -33,12 +33,12 @@
     .header {
       background: white;
       padding: 40px 40px 24px;
-      text-align: center;
+      text-align: left; /* Changed from center to left */
       border-bottom: 1px solid #f3f4f6;
     }
     .logo {
       width: 120px;
-      margin: 0 auto 20px;
+      margin: 0 0 20px 0; /* Removed auto margin for left alignment */
       margin-bottom: 10px;
     }
     .logo img {
@@ -50,12 +50,14 @@
       font-weight: 600;
       margin: 0 0 8px 0;
       color: #1f2937;
+      text-align: left; /* Ensure left alignment */
     }
     .subheadline {
       font-size: 16px;
       font-weight: 400;
       color: #6b7280;
       margin: 0;
+      text-align: left; /* Ensure left alignment */
     }
     .content {
       padding: 12px 40px;
@@ -317,15 +319,16 @@
       </div>
     </div>
     
-    <div class="footer">
-      <p class="footer-text">Keploy - AI-Powered Testing Platform</p>
-      <div class="social-links">
-        <a href="https://keploy.io">Website</a>•
-        <a href="https://twitter.com/keployio">Twitter</a> •
-        <a href="https://linkedin.com/company/keploy">LinkedIn</a> •
-        <a href="https://youtube.com/@keploy">YouTube</a>
-      </div>
-    </div>
+    <footer class="footer" role="contentinfo">
+      <div class="social-links" aria-label="Keploy social media links">
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website">📄 keploy.io</a>|
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
+      </div><p>San Franciso, California 19006, US</p> <div class="footer-copyright">
+        © 2025 Keploy, Inc. All rights reserved.
+      </div>                   
+    </footer>
   </div>
 </body>
 </html>

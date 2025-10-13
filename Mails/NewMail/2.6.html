@@ -22,7 +22,7 @@
     }
     .logo {
       width: 120px;
-      margin-bottom: 24px;
+      margin-bottom: 4px;
     }
     .divider {
       height: 1px;
@@ -67,6 +67,17 @@
       text-align: center;
       margin: 12px 0; /* Reduced from 24px */
     }
+    .social-links {
+      margin: 16px 0;
+    }
+    .social-links a {
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .social-links a:hover {
+      color: #f07d09;
+    }
   </style>
 </head>
 <body>
@@ -102,15 +113,16 @@
     
     <div class="divider"></div>
     
-    <div class="footer">
-      <p>
-        <a href="https://keploy.io" class="social-link">Website</a> |
-        <a href="https://docs.keploy.io" class="social-link">Docs</a> |
-        <a href="https://twitter.com/keployio" class="social-link">Twitter</a> |
-        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">Linkedin</a> |
-        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">Youtube</a>
-      </p>
-    </div>
+    <footer class="footer" role="contentinfo">
+      <div class="social-links" aria-label="Keploy social media links">
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website">📄 keploy.io</a>|
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
+      </div>
+      <p>San Franciso, California 19006, US</p> 
+      <p>© 2025 Keploy, Inc. All rights reserved.</p>                          
+    </footer>
   </div>
 </body>
 </html>

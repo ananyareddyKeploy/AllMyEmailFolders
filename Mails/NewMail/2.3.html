@@ -43,7 +43,7 @@
     .header {
       background: linear-gradient(135deg, #ffffff 0%, #fef7ed 100%);
       padding: 50px 50px 35px;
-      text-align: center;
+      text-align: left; /* Changed from center to left */
       border-bottom: 1px solid #f3f4f6;
       position: relative;
     }
@@ -61,23 +61,31 @@
     }
     .logo {
       width: 140px;
-      margin: 0 auto 25px;
+      margin: 0 0 25px 0; 
+      margin-top: -20px;
+      margin-bottom: -20px;
     }
     .logo img {
       width: 100%;
       height: auto;
+       margin-top: 20px;
+      margin-bottom: 20px;
     }
     .headline {
       font-size: 28px;
       font-weight: 600;
       margin: 0 0 12px 0;
       color: #1f2937;
+      text-align: left; 
+      margin-bottom: -8px
+      ;
     }
     .subheadline {
       font-size: 17px;
       font-weight: 400;
       color: #6b7280;
       margin: 0;
+      text-align: left; /* Added left alignment */
     }
     .content {
       padding: 40px 50px;
@@ -380,15 +388,16 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-      <p class="footer-text">Keploy - API testing Platform</p>
-      <div class="social-links">
-        <a href="https://keploy.io">Website</a>
-        <a href="https://twitter.com/keployio">Twitter</a>
-        <a href="https://linkedin.com/company/keploy">LinkedIn</a>
-        <a href="https://youtube.com/@keploy">YouTube</a>
+    <footer class="footer" role="contentinfo">
+      <div class="social-links" aria-label="Keploy social media links">
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website">📄 keploy.io</a>|
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
       </div>
-    </div>
+      <p>San Franciso, California 19006, US</p> 
+      <p>© 2025 Keploy, Inc. All rights reserved.</p>                          
+    </footer>
   </div>
 </body>
 </html>

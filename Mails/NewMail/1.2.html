@@ -44,7 +44,7 @@
       background: white;
       padding: 50px 50px 35px; /* Increased padding */
       color: #1e293b;
-      text-align: center;
+      text-align: left; /* Changed to left alignment */
       position: relative;
     }
     .header::after {
@@ -56,7 +56,7 @@
     }
     .logo {
       width: 160px; /* Larger logo */
-      margin: 0 auto 25px;
+      margin: 0 0 25px 0; /* Removed auto margin for left alignment */
     }
     .logo img {
       width: 100%;
@@ -114,10 +114,6 @@
       padding: 20px; /* More padding */
       background: #fef7ed;
       border-radius: 12px;
-      transition: transform 0.2s ease;
-    }
-    .step:hover {
-      transform: translateX(5px);
     }
     .step-number {
       width: 35px; /* Larger step numbers */
@@ -161,14 +157,9 @@
       align-items: center;
       gap: 10px;
       box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
-      transition: all 0.3s ease;
-    }
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 25px rgba(249, 115, 22, 0.4);
     }
 
-    /* Support section - Updated to match previous design */
+    /* Support section*/
     .support-section {
       display: flex;
       justify-content: flex-start;
@@ -207,12 +198,6 @@
     .support-option a {
       color: #f97316;
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .support-option a:hover {
-      text-decoration: underline;
-      color: #d65a08;
     }
 
     .footer {
@@ -239,10 +224,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      transition: color 0.3s ease;
-    }
-    .social-links a:hover {
-      color: #f97316;
     }
     .copyright {
       font-size: 13px;
@@ -395,15 +376,18 @@
       </div>
     </div>
 
-    <div class="footer">
-      <p class="footer-text">Keploy AI-Powered Testing for Modern Developers</p>
-      <div class="social-links">
-        <a href="https://keploy.io">Website</a> |
-        <a href="https://twitter.com/keployio">Twitter</a> |
-        <a href="https://linkedin.com/company/keploy">LinkedIn</a> |
-        <a href="https://youtube.com/@keploy">YouTube</a> 
+    <footer class="footer" role="contentinfo">
+      <div class="social-links" aria-label="Keploy social media links">
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website">📄 keploy.io</a>|
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
       </div>
-    </div>
+      <p>San Franciso, California 19006, US</p> 
+      <div class="footer-copyright">
+        © 2025 Keploy, Inc. All rights reserved.
+      </div>
+    </footer>
   </div>
 </body>
 </html>

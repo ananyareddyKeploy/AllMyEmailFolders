@@ -56,12 +56,12 @@
     .header {
       background: #ffffff;
       padding: 30px 40px 20px;
-      text-align: center;
+      text-align: left; /* Changed from center to left */
       border-bottom: 3px solid #f97316;
     }
     .header img {
       width: 140px;
-      margin: 0 auto 15px;
+      margin: 0 0 15px 0; /* Changed from auto to left alignment */
     }
     .headline {
       font-weight: 700;
@@ -69,6 +69,7 @@
       line-height: 1.2;
       margin: 0;
       color: #1a202c;
+      text-align: left; /* Added left alignment */
     }
 
     /* Content */
@@ -251,13 +252,14 @@
     </div>
 
     <footer class="footer" role="contentinfo">
-      <p>Keploy - AI-powered testing for developers</p>                            
       <div class="social-links" aria-label="Keploy social media links">
-        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer">Website</a>
-        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://docs.keploy.io" target="_blank" rel="noopener noreferrer">Docs</a>
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website">📄 keploy.io</a>|
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
       </div>
+      <p>San Franciso, California 19006, US</p> 
+      <p>© 2025 Keploy, Inc. All rights reserved.</p>                        
     </footer> 
   </div>
 </body>

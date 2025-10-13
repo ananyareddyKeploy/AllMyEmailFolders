@@ -33,27 +33,31 @@
     .header {
       background: white;
       padding: 32px 32px 24px;
-      text-align: center;
+      text-align: left;
       border-bottom: 1px solid #f1f5f9;
     }
     .logo {
       width: 130px;
-      margin: 0 auto 16px;
+      margin: 0 0 16px 0;
+      margin-bottom: 2px;
     }
     .logo img {
       width: 100%;
       height: auto;
+      margin-top: -10px;
     }
     .headline {
       font-size: 20px;
       font-weight: 600;
       margin: 0 0 8px 0;
       color: #111827;
+      text-align: left; /* Added left alignment */
     }
     .subheadline {
       font-size: 14px;
       color: #6b7280;
       margin: 0;
+      text-align: left; /* Added left alignment */
     }
     .content {
       padding: 24px 32px;
@@ -264,15 +268,16 @@
       <a href="https://keploy.io" class="ready-button" target="_blank" rel="noopener noreferrer">Ready to Try</a>
     </div>
 
-    <div class="footer">
-      <p class="footer-text">Keploy - API testing Platform</p>
-      <div class="social-links">
-        <a href="https://keploy.io">Website</a>
-        <a href="https://twitter.com/keployio">Twitter</a>
-        <a href="https://linkedin.com/company/keploy">LinkedIn</a>
-        <a href="https://youtube.com/@keploy">YouTube</a>
+    <footer class="footer" role="contentinfo">
+      <div class="social-links" aria-label="Keploy social media links">
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website">📄 keploy.io</a>|
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
       </div>
-    </div>
+      <p>San Franciso, California 19006, US</p> 
+      <p>© 2025 Keploy, Inc. All rights reserved.</p>                          
+    </footer>
   </div>
 </body>
 </html>
