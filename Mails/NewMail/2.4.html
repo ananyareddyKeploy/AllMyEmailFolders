@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ready When You Are</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      color: #374151;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 520px;
+      width: 100%;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .header {
+      background: white;
+      padding: 32px 32px 24px;
+      text-align: left;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .logo {
+      width: 130px;
+      margin: 0 0 16px 0;
+      margin-bottom: 2px;
+    }
+    .logo img {
+      width: 100%;
+      height: auto;
+      margin-top: -10px;
+    }
+    .headline {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      color: #111827;
+      text-align: left; /* Added left alignment */
+    }
+    .subheadline {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0;
+      text-align: left; /* Added left alignment */
+    }
+    .content {
+      padding: 24px 32px;
+    }
+    .message {
+      background: #f8fafc;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      border-left: 3px solid #f97316;
+    }
+    .message p {
+      margin: 0;
+      color: #4b5563;
+      font-size: 14px;
+    }
+    .support-options {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .support-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+    .support-card:hover {
+      border-color: #f97316;
+    }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      background: #fef7ed;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: #f97316;
+      flex-shrink: 0;
+    }
+    .card-content {
+      flex: 1;
+    }
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+      color: #111827;
+      font-size: 14px;
+    }
+    .card-description {
+      color: #6b7280;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .card-link {
+      color: #f97316;
+      font-weight: 500;
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .card-link:hover {
+      text-decoration: underline;
+    }
+    .quick-tips {
+      background: #f0fdf4;
+      border: 1px solid #dcfce7;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 24px 0;
+    }
+    .tips-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #166534;
+      font-size: 14px;
+    }
+    .tips-list {
+      list-style: none;
+      padding: 0;
+    }
+    .tips-list li {
+      padding: 4px 0;
+      color: #166534;
+      font-size: 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .tips-list li::before {
+      content: "•";
+      color: #22c55e;
+      font-weight: bold;
+    }
+    .ready-button {
+      display: block;
+      width: 30%;
+      padding: 12px 16px;
+      background: #f97316;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 8px;
+      margin: 16px 0;
+      transition: background 0.2s ease;
+    }
+    .ready-button:hover {
+      background: #ea580c;
+    }
+    .footer {
+      background: #f9fafb;
+      padding: 24px 32px;
+      text-align: center;
+      border-top: 1px solid #f3f4f6;
+    }
+    .footer-text {
+      font-size: 14px;
+      margin-bottom: 16px;
+      color: #6b7280;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    .social-links a:hover {
+      color: #f97316;
+    }
+    .copyright {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 16px;
+    }
+    @media (max-width: 480px) {
+      .container {
+        max-width: 100%;
+      }
+      .header {
+        padding: 24px 24px 20px;
+      }
+      .content {
+        padding: 20px 24px;
+      }
+      .footer {
+        padding: 20px 24px;
+      }
+      .ready-button {
+        width: 100%; /* Make button full width on mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy" />
+      </div>
+      <h1 class="headline">Need Help Getting Started?</h1>
+    </div>
+
+    <div class="content">
+      <div class="message">
+        <p>If you're running into any setup challenges, we're here to help you get unstuck and start testing.</p>
+      </div>
+
+      <div class="support-options">
+        <div class="support-card">
+          <div class="card-icon">💬</div>
+          <div class="card-content">
+            <div class="card-title">Chat with us</div>
+            <a href="https://join.slack.com/t/keploy/shared_invite/zt-357qqm9b5-PbZRVu3Yt2rJIa6ofrwWNg" class="card-link">Join our Slack →</a>
+          </div>
+        </div>
+        <div class="support-card">
+          <div class="card-icon">📅</div>
+          <div class="card-content">
+            <div class="card-title">Quick call</div>
+            <a href="https://calendar.app.google/cXVaj6hbMUjvmrnt9" class="card-link">Book a call →</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="quick-tips">
+        <div class="tips-title">Quick setup tips</div>
+        <ul class="tips-list">
+          <li>Make sure your API server is running locally</li>
+          <li>Use your API base URL (not homepage)</li>
+          <li>Test your cURL command separately first</li>
+          <li>Start with a simple endpoint</li>
+        </ul>
+      </div>
+      
+      <!-- Updated Ready to Try button with keploy.io link -->
+      <a href="https://keploy.io" class="ready-button" target="_blank" rel="noopener noreferrer">Ready to Try</a>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+      <div class="social-links" aria-label="Keploy social media links">
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website">📄 keploy.io</a>|
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
+      </div>
+      <p>San Franciso, California 19006, US</p> 
+      <p>© 2025 Keploy, Inc. All rights reserved.</p>                          
+    </footer>
+  </div>
+</body>
+</html>
