@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Start Testing with Keploy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 600px; 
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+    .header {
+      background: #faf8f7;
+      padding: 8px 40px;
+      color: rgb(7, 7, 7);
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 16px;
+    }
+    .headline {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .content {
+      padding: 16px 40px 32px; 
+    }
+    .greeting {
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    .cta-button {
+      background: #f97316;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 16px 0;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .cta-button:hover {
+      background: #ea580c;
+      transform: translateY(-1px);
+    }
+    .footer {
+      background: #f9fafb;
+      padding: 24px 40px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .social-links {
+      margin: 16px 0;
+    }
+    .social-links a {
+      color: #6b7280;
+      margin: 0 8px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .social-links a:hover {
+      color: #f97316;
+    }
+    .tips-section {
+      margin: 20px 0;
+    }
+    .tips-section ul {
+      padding-left: 20px;
+      margin: 12px 0;
+    }
+    .tips-section li {
+      margin-bottom: 8px;
+      padding-left: 8px;
+    }
+    .button-container {
+      text-align: left;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy" class="logo" />
+      <h1 class="headline">Ready to create your first test?</h1>
+      <!-- Orange divider removed -->
+    </div>
+
+    <div class="content">
+      <p class="greeting">Hi there,</p>
+      
+      <p>We noticed you've signed up for Keploy but haven't created your first test yet. Getting started is easy and only takes a few minutes!</p>
+
+      <p>With Keploy, you can automatically generate tests from your API calls and start catching bugs before they reach production.</p>
+
+      <div class="tips-section">
+        <p><strong>Quick start tips:</strong></p>
+        <ul>
+          <li>Make sure your API is running locally</li>
+          <li>Use a simple endpoint to start</li>
+          <li>Have a working cURL command ready</li>
+        </ul>
+      </div>
+
+      <div class="button-container">
+        <a href="https://app.keploy.io" class="cta-button">Create Your First Test</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Keploy is open-source AI-powered testing for developers</p>
+      <div class="social-links">
+        <a href="https://keploy.io">Website</a> •
+        <a href="https://twitter.com/keployio">Twitter</a> •
+        <a href="https://linkedin.com/company/keploy">LinkedIn</a> •
+        <a href="https://youtube.com/@keploy">YouTube</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
