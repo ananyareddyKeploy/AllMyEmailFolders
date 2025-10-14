@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Complete Your Keploy Setup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      color: #374151;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px; 
+      width: 100%;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+    .header {
+      background: white;
+      padding: 32px 32px 20px;
+      text-align: left; /* Changed from center to left */
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .logo {
+      width: 120px;
+      margin: 0 0 16px 0; /* Changed from auto to left alignment */
+    }
+    .logo img {
+      width: 100%;
+      height: auto;
+    }
+    .headline {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0 0 8px 0;
+      color: #1f2937;
+      text-align: left; /* Added left alignment */
+    }
+    .subheadline {
+      font-size: 15px;
+      font-weight: 400;
+      color: #6b7280;
+      margin: 0;
+      text-align: left; /* Added left alignment */
+    }
+    .content {
+      padding: 24px 32px;
+    }
+    .greeting {
+      font-size: 16px;
+      font-weight: 500;
+      color: #1f2937;
+      margin: 0 0 20px 0;
+    }
+    .setup-guide {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      border: 1px solid #f3f4f6;
+    }
+    .guide-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    
+    /* Compact Checklist */
+    .checklist {
+      display: grid;
+      gap: 12px;
+    }
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+    }
+    .checklist-number {
+      width: 24px;
+      height: 24px;
+      background: #f97316;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      flex-shrink: 0;
+    }
+    .checklist-content {
+      flex: 1;
+    }
+    .checklist-content h3 {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #1f2937;
+      font-size: 14px;
+    }
+    .checklist-content p {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.4;
+      margin-bottom: 6px;
+    }
+    .checklist-tip {
+      background: #f0f9ff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #0369a1;
+      border-left: 2px solid #0ea5e9;
+      margin-top: 6px;
+    }
+    code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: 'Courier New', monospace;
+      color: #374151;
+    }
+
+    .verification-section {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 16px;
+      margin: 20px 0;
+    }
+    .verification-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #166534;
+      margin-bottom: 8px;
+    }
+    .verification-text {
+      font-size: 13px;
+      color: #166534;
+      line-height: 1.4;
+      margin: 0;
+    }
+    .cta-section {
+      text-align: center;
+      margin: 24px 0 20px;
+    }
+    .cta-button {
+      background: #f97316;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      display: inline-block;
+      transition: all 0.2s ease;
+      margin-bottom: 12px;
+    }
+    .cta-button:hover {
+      background: #ea580c;
+    }
+
+    /* Support section - Always side by side */
+    .support-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 16px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .support-option {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+      min-width: 140px;
+      justify-content: center;
+    }
+    .support-icon {
+      font-size: 16px;
+    }
+    .support-option p {
+      margin: 0;
+      font-size: 13px;
+    }
+    .support-option a {
+      color: #f97316;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .support-option a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      background: #f9fafb;
+      padding: 20px 32px;
+      text-align: center;
+      border-top: 1px solid #f3f4f6;
+    }
+    .footer-text {
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: #6b7280;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+    .social-links a:hover {
+      color: #f97316;
+    }
+    .copyright {
+      font-size: 12px;
+      color: #9ca3af;
+      margin-top: 16px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 640px) {
+      .header {
+        padding: 24px 20px 16px;
+      }
+      .content {
+        padding: 20px;
+      }
+      .footer {
+        padding: 16px 20px;
+      }
+      .headline {
+        font-size: 22px;
+      }
+      .setup-guide {
+        padding: 16px;
+      }
+      .checklist-item {
+        padding: 12px;
+        gap: 10px;
+      }
+      
+      /* Ensure support section stays side by side on mobile */
+      .support-section {
+        gap: 16px;
+        flex-wrap: nowrap;
+      }
+      .support-option {
+        min-width: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .support-section {
+        gap: 12px;
+      }
+      .support-option {
+        min-width: 110px;
+      }
+      .support-option p {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .support-section {
+        gap: 8px;
+      }
+      .support-option {
+        min-width: 100px;
+      }
+      .support-option p {
+        font-size: 11px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy" />
+      </div>
+      <h1 class="headline">Complete Your Testing Setup</h1>
+      <p class="subheadline">Follow this checklist for successful test generation</p>
+    </div>
+
+    <div class="content">
+      <p class="greeting">To ensure optimal performance with Keploy, please verify your environment meets these requirements:</p>
+      
+      <div class="setup-guide">
+        <div class="guide-title">Setup Checklist</div>
+        <div class="checklist">
+          <div class="checklist-item">
+            <div class="checklist-number">1</div>
+            <div class="checklist-content">
+              <h3>🌐 Configure API Endpoint</h3>
+              <p>Use your dedicated API base URL <code>https://api.yourdomain.com</code> rather than the application homepage</p>
+              <div class="checklist-tip">Ensure the endpoint is accessible and returns expected responses</div>
+            </div>
+          </div>
+          
+          <div class="checklist-item">
+            <div class="checklist-number">2</div>
+            <div class="checklist-content">
+              <h3>🚀 Verify Server Status</h3>
+              <p>Ensure your local API server is actively running</p>
+              <div class="checklist-tip">Test with a simple cURL command to confirm server responsiveness</div>
+            </div>
+          </div>
+          
+          <div class="checklist-item">
+            <div class="checklist-number">3</div>
+            <div class="checklist-content">
+              <h3>🔑 Setup Authentication</h3>
+              <p>Verify your cURL commands include valid authentication tokens and headers</p>
+              <div class="checklist-tip">Check token expiration and required headers for your API</div>
+            </div>
+          </div>
+          
+          <div class="checklist-item">
+            <div class="checklist-number">4</div>
+            <div class="checklist-content">
+              <h3>⚡ Start with Simple Endpoints</h3>
+              <p>Begin with basic endpoints</p>
+              <div class="checklist-tip">Simple endpoints help verify the setup before complex scenarios</div>
+            </div>
+          </div>
+          
+          <div class="checklist-item">
+            <div class="checklist-number">5</div>
+            <div class="checklist-content">
+              <h3>📝 Validate cURL Commands</h3>
+              <p>Test your cURL commands independently to ensure they return expected responses</p>
+              <div class="checklist-tip">Run commands manually first to identify any issues</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="verification-section">
+        <div class="verification-title">Ready to Proceed?</div>
+        <p class="verification-text">Once all checklist items are confirmed, you can proceed with test generation.</p>
+      </div>
+
+      <div class="cta-section">
+        <a href="https://app.keploy.io" class="cta-button">
+          🚀 Begin Test Generation
+        </a>
+        <p style="color: #6b7280; font-size: 14px;">Secure and automated testing workflow</p>
+      </div>
+
+      <!-- Support Section - Always side by side -->
+      <div class="support-section">
+        <div class="support-option">
+          <span class="support-icon">💬</span>
+          <p><a href="https://join.slack.com/t/keploy/shared_invite/zt-357qqm9b5-PbZRVu3Yt2rJIa6ofrwWNg" target="_blank" rel="noopener noreferrer">Join our Slack</a></p>
+        </div>
+        <div class="support-option">
+          <span class="support-icon">📅</span>
+          <p><a href="https://calendar.app.google/cXVaj6hbMUjvmrnt9" target="_blank" rel="noopener noreferrer">Book 10 minutes</a></p>
+        </div> 
+      </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+      <div class="social-links" aria-label="Keploy social media links">
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website">📄 keploy.io</a>|
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
+      </div>
+      <p>San Franciso, California 19006, US</p>   
+      <p>© 2025 Keploy, Inc. All rights reserved.</p>                   
+    </footer>
+  </div>
+</body>
+</html>
