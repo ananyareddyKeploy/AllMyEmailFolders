@@ -34,11 +34,6 @@
     a {
       color: #f97316;
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    a:hover {
-      text-decoration: underline;
-      color: #d65a08;
     }
     
     /* Container */
@@ -55,7 +50,7 @@
     /* Header - Significantly reduced space between logo and heading */
     .header {
       background: linear-gradient(135deg, #fcfbf9 0%, #faf9f9 100%);
-      padding: 25px 40px 20px; /* Reduced padding from top and bottom */
+      padding: 25px 40px 20px;
       color: rgb(9, 9, 9);
       position: relative;
     }
@@ -70,7 +65,7 @@
     }
     .header img {
       width: 150px;
-      margin-bottom: 8px; /* Significantly reduced from 15px to 8px */
+      margin-bottom: 8px;
     }
     .header-text {
       display: flex;
@@ -120,13 +115,7 @@
       background: white;
       border-radius: 16px;
       border: 1px solid #e2e8f0;
-      transition: all 0.3s ease;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    }
-    .checklist li:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-      border-color: #cbd5e0;
     }
     .checklist li::before { 
       counter-increment: checklist-counter;
@@ -173,20 +162,14 @@
       border-radius: 8px;
       display: inline-block;
       box-shadow: 0 6px 12px rgba(249, 115, 22, 0.3);
-      transition: all 0.3s ease;
       text-decoration: none;
       margin-bottom: 0;
     }
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
-      text-decoration: none;
-    }
 
-    /* Support section */
+    /* Support section - CENTERED */
     .support-section {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       margin-top: 16px;
       gap: 32px;
@@ -207,27 +190,14 @@
       margin: 0;
     }
 
-    .support-title {
-      font-weight: 600;
-      color: #1a202c;
-      font-size: 14px;
-      margin: 0;
-    }
-
     .support-option p {
       margin: 0;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .support-option a {
       color: #f97316;
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .support-option a:hover {
-      text-decoration: underline;
-      color: #d65a08;
     }
 
     /* Footer */
@@ -256,10 +226,6 @@
       font-weight: 500;
       font-size: 14px;
     }
-    .footer .social-links a:hover {
-      color: #f97316;
-      text-decoration: none;
-    }
     .copyright {
       font-size: 12px;
       color: #a0aec0;
@@ -273,11 +239,11 @@
         border-radius: 12px;
       }
       .header {
-        padding: 20px 20px 15px; /* Reduced mobile padding */
+        padding: 20px 20px 15px;
       }
       .header img {
         width: 130px;
-        margin-bottom: 6px; /* Reduced from 12px to 6px */
+        margin-bottom: 6px;
       }
       .headline {
         font-size: 22px;
@@ -308,22 +274,23 @@
         display: block;
         margin: 0 auto;
       }
-      /* Support section responsive - Keep side by side on mobile */
       .support-section {
         flex-direction: row;
-        justify-content: space-between;
-        gap: 16px;
+        justify-content: center;
+        gap: 24px;
         flex-wrap: nowrap;
+        margin-bottom: -10px;
       }
       .support-option {
-        flex: 1;
+        flex: 0 1 auto;
         justify-content: center;
       }
       .support-option p {
-        font-size: 12px;
+        font-size: 13px;
       }
       .footer {
         padding: 24px 20px;
+        margin-top: -10px;
       }
       .footer .social-links {
         gap: 16px;
@@ -332,12 +299,8 @@
 
     @media screen and (max-width: 480px) {
       .support-section {
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-      }
-      .support-option {
-        justify-content: flex-start;
+        flex-direction: row;
+        gap: 20px;
       }
       .support-option p {
         font-size: 13px;
@@ -353,10 +316,10 @@
 
     @media screen and (max-width: 360px) {
       .support-section {
-        gap: 12px;
+        gap: 16px;
       }
       .support-option p {
-        font-size: 11px;
+        font-size: 12px;
       }
     }
   </style>
@@ -388,7 +351,7 @@
         <a href="https://app.keploy.io" class="cta-button" target="_blank" rel="noopener noreferrer">Ready to Test</a>
       </div>
 
-      <!-- Support Section -->
+      <!-- Support Section - CENTERED -->
       <div class="support-section">
         <div class="support-option">
           <span class="support-icon">💬</span>

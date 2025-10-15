@@ -33,12 +33,12 @@
     .header {
       background: white;
       padding: 40px 40px 24px;
-      text-align: left; /* Changed from center to left */
+      text-align: left;
       border-bottom: 1px solid #f3f4f6;
     }
     .logo {
       width: 120px;
-      margin: 0 0 20px 0; /* Removed auto margin for left alignment */
+      margin: 0 0 20px 0;
       margin-bottom: 10px;
     }
     .logo img {
@@ -50,14 +50,14 @@
       font-weight: 600;
       margin: 0 0 8px 0;
       color: #1f2937;
-      text-align: left; /* Ensure left alignment */
+      text-align: left;
     }
     .subheadline {
       font-size: 16px;
       font-weight: 400;
       color: #6b7280;
       margin: 0;
-      text-align: left; /* Ensure left alignment */
+      text-align: left;
     }
     .content {
       padding: 12px 40px;
@@ -80,7 +80,7 @@
       color: #4b5563;
     }
     .benefits {
-      margin: 18px 0 10px 0; /* Reduced bottom margin */
+      margin: 18px 0 10px 0;
     }
     .benefit {
       display: flex;
@@ -131,18 +131,19 @@
       display: inline-block;
       transition: all 0.2s ease;
     }
+    /* Removed hover effect */
     .cta-button:hover {
-      background: #ea580c;
-      transform: translateY(-1px);
+      background: #f97316;
+      transform: none;
     }
 
-    /* Support section - Updated to match previous design */
+    /* Support section - CENTERED */
     .support-section {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       align-items: center;
       margin-top: 8px;
-      gap: 12px;
+      gap: 24px;
       flex-wrap: wrap;
     }
 
@@ -169,7 +170,7 @@
 
     .support-option p {
       margin: 0;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .support-option a {
@@ -184,7 +185,7 @@
     }
 
     .footer {
-      background: #f9fafb;
+      background: #080a0d;
       padding: 18px 20px;
       text-align: center;
       border-top: 1px solid #f3f4f6;
@@ -192,7 +193,7 @@
     .footer-text {
       font-size: 14px;
       margin-bottom: 16px;
-      color: #6b7280;
+      color: #e3e5e9;
     }
     .social-links {
       display: flex;
@@ -200,9 +201,10 @@
       gap: 10px;
       margin: 20px 0;
       flex-wrap: wrap;
+      margin-top: -10px;
     }
     .social-links a {
-      color: #6b7280;
+      color: #c3c4c6;
       text-decoration: none;
       font-size: 13px;
       display: flex;
@@ -210,12 +212,16 @@
       gap: 6px;
       transition: color 0.2s ease;
     }
-    .social-links a:hover {
-      color: #f97316;
+    .address {
+      font-size: 14px;
+      color: #b8bdc5;
+      margin: 10px 0;
+      margin-top: -10px;
+      margin-bottom: -10px;
     }
     .copyright {
       font-size: 12px;
-      color: #9ca3af;
+      color: #b3b8c0;
       margin-top: 20px;
     }
 
@@ -233,28 +239,28 @@
       .headline {
         font-size: 22px;
       }
-      /* Support section responsive - Keep side by side on mobile */
+      /* Support section responsive - Keep centered on mobile */
       .support-section {
         flex-direction: row;
-        justify-content: space-between;
-        gap: 16px;
+        justify-content: center;
+        gap: 20px;
         flex-wrap: nowrap;
       }
       .support-option {
-        flex: 1;
+        flex: 0 1 auto;
         justify-content: center;
       }
       .support-option p {
-        font-size: 12px;
+        font-size: 13px;
       }
     }
 
     @media (max-width: 360px) {
       .support-section {
-        gap: 12px;
+        gap: 16px;
       }
       .support-option p {
-        font-size: 11px;
+        font-size: 12px;
       }
     }
   </style>
@@ -306,7 +312,7 @@
         </a>
       </div>
 
-      <!-- Updated Support Section -->
+      <!-- Centered Support Section -->
       <div class="support-section">
         <div class="support-option">
           <span class="support-icon">💬</span>
@@ -325,10 +331,12 @@
         <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter">🐦 @keployio</a>|
         <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn">💼 Linkedin</a>|
         <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube">▶️ Youtube</a> 
-      </div><p>San Franciso, California 19006, US</p> <div class="footer-copyright">
+      </div>
+      <p class="address">San Franciso, California 19006, US</p>
+      <div class="copyright">
         © 2025 Keploy, Inc. All rights reserved.
       </div>                   
-    </footer>
+    </footer>  
   </div>
 </body>
 </html>

@@ -2,214 +2,196 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Troubleshooting Your Keploy Test Generation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to Keploy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset & base */
-    body, table, td, a {
-      -webkit-text-size-adjust: 100%; 
-      -ms-text-size-adjust: 100%; 
-      margin: 0;
-      padding: 0;
-    } 
-    body { 
-      background: linear-gradient(135deg, #fef7ed 0%, #ffffff 100%); 
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-      color: #1a202c;               
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      line-height: 1.5;             
-    } 
-    img {
-      border: 0; 
-      height: auto; 
-      line-height: 100%; 
-      outline: none; 
-      text-decoration: none;
-      max-width: 100%;
-      display: block; 
-    }
-    a {
-      color: #f97316;
-      text-decoration: none;
+    :root {
+      --primary: #f97316;
+      --primary-light: #fed7aa;
+      --primary-dark: #ea580c;
+      --secondary: #0f172a;
+      --accent: #1e293b;
+      --light: #f8fafc;
+      --gray: #64748b;
+      --gray-light: #cbd5e1;
+      --white: #ffffff;
+      --radius: 12px;
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
     
-    /* Container */
-    .container {
-      max-width: 600px; 
-      margin: 40px auto;
-      background: #ffffff;
-      padding: 0;
-      border-radius: 20px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-      overflow: hidden;    
-      width: 100%; 
-    }  
-
-    /* Header */
-    .header {
-      background: linear-gradient(135deg, #fcfbf9 0%, #faf9f9 100%);
-      padding: 32px 40px 24px;
-      color: rgb(9, 9, 9);
-      position: relative;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      margin: 0;
+      padding: 40px 20px;
+      color: var(--secondary);
+      line-height: 1.6;
     }
-    .header::after {
+    
+    .email-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: var(--white);
+      padding: 60px 50px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .email-wrapper::before {
       content: '';
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #f97316, #fbbf24, #f97316);
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
     }
+    
+    .header {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    
     .header img {
-      width: 140px;
-      margin-bottom: 4px;
-    }
-    .header-text {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .headline {
-      font-weight: 700;
-      font-size: 28px;
-      line-height: 1.2;
-      margin: 0;
-      max-width: 70%;
-    }
-    .icon {
-      font-size: 48px;
-      margin-bottom: 8px;
-    }
-    /* Content */
-    .content {
-    padding: 30px;
-    }
-    /* Greeting & Body */
-    .body-text {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #030303;
+      max-width: 140px;
       margin-bottom: 24px;
     }
-
-    /* Checklist */
-    .checklist {
-      margin: 32px 0;
-      padding-left: 0;
-      list-style: none;
-      counter-reset: checklist-counter;
+    
+    .greeting {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--gray);
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
     }
-    .checklist li { 
-      position: relative; 
-      padding: 20px 20px 20px 70px;
-      margin-bottom: 16px;
-      font-size: 15px;
-      color: #2d3748;
-      line-height: 1.5;
-      background: #f8fafc;
-      border-radius: 12px;
-      border-left: 4px solid #f97316;
-    }
-    .checklist li::before { 
-      counter-increment: checklist-counter;
-      content: counter(checklist-counter);
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #f97316;
+    
+    .headline {
+      font-size: 32px;
       font-weight: 700;
-      font-size: 20px;
-      width: 32px;
-      height: 32px;
-      background: white;
+      color: var(--secondary);
+      margin: 0 0 16px 0;
+      line-height: 1.2;
+    }
+    
+    .subheadline {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 500;
+      line-height: 1.5;
+      max-width: 480px;
+      margin-bottom: -30px;
+    }
+    
+    .content {
+      margin: 40px 0;
+    }
+    
+    .message {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--gray);
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 32px 0;
+      margin-top: -20px;
+    }
+    
+    .feature {
+      flex: 1 1 calc(50% - 10px);
+      min-width: 200px;
+      padding: 20px;
+      background-color: var(--light);
+      border-radius: var(--radius);
+      text-align: left;
+      margin-bottom: -10px;
+      margin-top: -10px;
+    }
+    
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: white;
+      font-weight: 600;
     }
-    code {
-      background: #e2e8f0;
-      padding: 2px 6px;
-      font-size: 13px;
-      border-radius: 4px;
-      font-family: 'Courier New', Courier, monospace;
-      color: #1a202c;
+    
+    .feature-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 8px;
     }
-
-/* CTA section */
-.cta-section {
-  border-radius: 8px;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-.cta-button {
-  background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
-  color: #fff;
-  font-weight: 700;
-  font-size: 16px;
-  padding: 14px 30px;
-  border-radius: 8px;
-  display: inline-block;
-  box-shadow: 0 6px 12px rgba(249, 115, 22, 0.3);
-  text-decoration: none;
-  margin-bottom: 0;
-}
-
-/* Support section - Fixed alignment */
-.support-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 24px;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.support-option {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  padding: 0;
-  margin: 0;
-}
-
-.support-icon {
-  font-size: 18px;
-  margin: 0;
-}
-
-.support-title {
-  font-weight: 600;
-  color: #1a202c;
-  font-size: 14px;
-  margin: 0;
-}
-
-.support-option p {
-  margin: 0;
-  font-size: 14px;
-}
-
-.support-option a {
-  color: #f97316;
-  text-decoration: none;
-}
-
-    /* Footer - Original dark style */
+    
+    .feature-desc {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+    
+    .visual {
+      margin: 40px 0;
+      position: relative;
+    }
+    
+    .visual::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, rgba(234, 88, 12, 0.05) 100%);
+      border-radius: var(--radius);
+      z-index: -1;
+    }
+    
+    .visual img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .cta-container {
+      margin: 40px 0;
+      margin-bottom: -20px;
+      text-align: center;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 16px 36px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+      letter-spacing: 0.5px;
+    }
+    
+    /* Footer styles from the second code */
     .footer {
       background: #1a202c;
       color: #cbd5e0;
       padding: 24px 40px;
       text-align: center;
+      margin-top: 40px;
     }
+    
     .footer-address {
       margin: 8px 0;
       color: #cbd5e0;
@@ -218,19 +200,25 @@
       justify-content: center;
       gap: 8px;
       font-size: 14px;
+      margin-top: 20px;
     }
+    
     .footer-copyright {
       margin: 8px 0;
       color: #cbd5e0;
       font-size: 14px;
+      margin-top: -8px;
     }
+    
     .footer .social-links {
       display: flex; 
       justify-content: center;
       gap: 20px;
       margin: 16px 0;
       flex-wrap: wrap;
+      margin-top: -10px;
     }
+    
     .footer .social-links a {
       color: #cbd5e0;
       font-size: 12px;
@@ -247,116 +235,93 @@
       fill: currentColor;
     }
 
-    /* Social media colors */
-    .social-website { color: #cbd5e0; }
-    .social-x { color: #cbd5e0; }
-    .social-linkedin { color: #cbd5e0; }
-    .social-youtube { color: #cbd5e0; }
-
     /* Address icon */
     .address-icon {
       width: 16px;
       height: 16px;
       fill: #cbd5e0;
     }
-
-    /* Responsive */
-    @media screen and (max-width: 480px) {
-      .container {
-        margin: 20px auto;
-        border-radius: 12px;
+    
+    @media (max-width: 640px) {
+      body {
+        padding: 20px 10px;
       }
-      .header {
-        padding: 24px 20px 20px;
+      
+      .email-wrapper {
+        padding: 40px 25px;
       }
+      
       .headline {
-        font-size: 22px;
-        max-width: 100%;
+        font-size: 26px;
       }
-      .icon {
-        display: none;
-      }
-      .content {
-        padding: 24px 20px;
-      }
-      .body-text {
-        font-size: 14px; 
-      }
-      .checklist li {
-        font-size: 14px;
-        padding: 16px 16px 16px 60px;
-      }
-      .checklist li::before {
-        left: 16px;
-        width: 28px;
-        height: 28px;
+      
+      .subheadline {
         font-size: 16px;
       }
-      .cta-button {
-        font-size: 15px;
-        padding: 12px 24px;
+      
+      .features {
+        flex-direction: column;
       }
-      .support-section {
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 16px;
+      
+      .feature {
+        flex: 1 1 100%;
       }
-      .support-option {
-        flex: 0 1 auto;
-        justify-content: center;
-      }
+      
       .footer {
         padding: 20px;
       }
+      
       .footer .social-links {
         gap: 16px;
+        margin-bottom: -8px;
+        margin-top: -10px;
       }
+      
       .footer-address {
         flex-direction: row;
         text-align: center;
+        font-size: 13px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container" role="main" aria-label="Troubleshooting your Keploy Test Generation">
-    <header class="header">
+  <div class="email-wrapper">
+    <div class="header">
       <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy Logo" />
-      <div class="header-text">
-        <h1 class="headline">Let's get your tests running smoothly</h1>
-        <div class="icon"></div>
-      </div>
-    </header>
+      <div class="greeting">Welcome to the future of testing</div>
+      <h1 class="headline">Generate Tests in Minutes, Not Hours</h1>
+      <div class="subheadline">Thanks for signing up. Let's generate your first test.</div>
+    </div>
     <div class="content">
-      <p class="body-text">Hi Dev,</p>
-      <p class="body-text">
-        Thanks for signing in to Keploy! We noticed your test wasn't generated successfully. Don't worry, it's usually an easy fix.
-      </p>
-      <p class="body-text"><strong>Here's a quick checklist to get you back on track:</strong></p>
+      <div class="message">
+We're thrilled to welcome you to the Keploy community! You've just taken the first step toward eliminating manual testing.
 
-      <ul class="checklist" role="list">
-        <li>Use the correct <strong>API base URL</strong> – not just your homepage <code>(e.g., https://api.domain.com)</code>.</li>
-        <li>Submit a <strong>working cURL command with response</strong> – check for valid tokens and reachable endpoints.</li>
-        <li>Make sure your <strong>API server</strong> is running and accessible.</li>
-        <li>Try a <strong>simple</strong> endpoint first.</li>
-      </ul>
-
-      <div class="cta-section">
-        <a href="https://app.keploy.io" class="cta-button" target="_blank" rel="noopener noreferrer">Ready to Try</a>
+Keploy makes testing effortless by automatically creating tests and data mocks from your API calls.
       </div>
-
-      <div class="support-section">
-        <div class="support-option">
-          <div class="support-icon">💬</div>
-          <p><a href="https://join.slack.com/t/keploy/shared_invite/zt-357qqm9b5-PbZRVu3Yt2rJIa6ofrwWNg" target="_blank" rel="noopener noreferrer">Join our Slack</a></p>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">1</div>
+          <div class="feature-title">No-Code Testing</div>
+          <div class="feature-desc">Generate tests automatically from API traffic without writing a single line of code.</div>
         </div>
-        <div class="support-option">
-          <div class="support-icon">📅</div>
-          <p><a href="https://calendar.app.google/cXVaj6hbMUjvmrnt9" target="_blank" rel="noopener noreferrer">Book 10 minutes</a></p>
-        </div> 
+        <div class="feature">
+          <div class="feature-icon">2</div>
+          <div class="feature-title">Minimal set up</div>
+          <div class="feature-desc">No complex set up, easy to use.</div>
+        </div>
+      </div>
+      
+      <div class="visual">
+        <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/welcome_keploy_signup.png" alt="Keploy Dashboard Preview" />
       </div>
     </div>
 
+    <div class="cta-container">
+      <a href="https://app.keploy.io/" class="cta-button">Generate My First Test</a>
+    </div>
+
+    <!-- Footer from the second code -->
     <footer class="footer" role="contentinfo">
       <div class="social-links" aria-label="Keploy social media links">
         <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website" class="social-website">
@@ -391,11 +356,10 @@
         </svg>
         San Franciso, California 19006, US
       </div>
-      
       <div class="footer-copyright">
         © 2025 Keploy, Inc. All rights reserved.
       </div>
-    </footer> 
+    </footer>
   </div>
 </body>
 </html>

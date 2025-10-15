@@ -51,13 +51,14 @@
       font-weight: 600;
       margin: 0 0 8px 0;
       color: #111827;
-      text-align: left; /* Added left alignment */
+      text-align: left;
+      margin-bottom: -20px;
     }
     .subheadline {
       font-size: 14px;
       color: #6b7280;
       margin: 0;
-      text-align: left; /* Added left alignment */
+      text-align: left;
     }
     .content {
       padding: 24px 32px;
@@ -68,6 +69,7 @@
       border-radius: 8px;
       margin-bottom: 24px;
       border-left: 3px solid #f97316;
+      margin-top: -10px;
     }
     .message p {
       margin: 0;
@@ -87,10 +89,6 @@
       background: white;
       border: 1px solid #e5e7eb;
       border-radius: 8px;
-      transition: all 0.2s ease;
-    }
-    .support-card:hover {
-      border-color: #f97316;
     }
     .card-icon {
       width: 40px;
@@ -124,9 +122,6 @@
       font-size: 13px;
       text-decoration: none;
     }
-    .card-link:hover {
-      text-decoration: underline;
-    }
     .quick-tips {
       background: #f0fdf4;
       border: 1px solid #dcfce7;
@@ -157,21 +152,21 @@
       color: #22c55e;
       font-weight: bold;
     }
+    .button-container {
+      text-align: center;
+      margin: 16px 0;
+      margin-bottom: -10px;
+    }
     .ready-button {
-      display: block;
-      width: 30%;
-      padding: 12px 16px;
+      display: inline-block;
+      padding: 12px 24px;
       background: #f97316;
       color: white;
       text-align: center;
       text-decoration: none;
       font-weight: 500;
       border-radius: 8px;
-      margin: 16px 0;
-      transition: background 0.2s ease;
-    }
-    .ready-button:hover {
-      background: #ea580c;
+      font-size: 14px;
     }
     .footer {
       background: #f9fafb;
@@ -190,14 +185,12 @@
       gap: 16px;
       margin: 16px 0;
       flex-wrap: wrap;
+      margin-top: -18px;
     }
     .social-links a {
       color: #6b7280;
       text-decoration: none;
       font-size: 13px;
-    }
-    .social-links a:hover {
-      color: #f97316;
     }
     .copyright {
       font-size: 12px;
@@ -218,7 +211,7 @@
         padding: 20px 24px;
       }
       .ready-button {
-        width: 100%; /* Make button full width on mobile */
+        width: 100%;
       }
     }
   </style>
@@ -264,8 +257,10 @@
         </ul>
       </div>
       
-      <!-- Updated Ready to Try button with keploy.io link -->
-      <a href="https://keploy.io" class="ready-button" target="_blank" rel="noopener noreferrer">Ready to Try</a>
+      <!-- Centered Ready to Try button -->
+      <div class="button-container">
+        <a href="https://keploy.io" class="ready-button" target="_blank" rel="noopener noreferrer">Ready to Try</a>
+      </div>
     </div>
 
     <footer class="footer" role="contentinfo">

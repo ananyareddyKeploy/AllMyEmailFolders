@@ -36,16 +36,18 @@
       height: 4px;
       background: linear-gradient(90deg, #f97316, #ea580c);
     }
+    
     .header {
       padding: 48px 48px 32px 48px;
       text-align: left;
       border-bottom: 1px solid #f1f5f9;
     }
+    
     .logo {
-      height: 28px;
-      margin-bottom: 24px;
-      margin-bottom: -10px;
+      height: 40px;
+      margin-bottom: 16px;
     }
+    
     .status {
       display: inline-flex;
       align-items: center;
@@ -71,17 +73,17 @@
       margin: 0;
       font-weight: 400;
       text-align: left;
-      margin-top: -16px;
-      margin-bottom: -20px;
+      margin-top: -10px;
+      margin-bottom: -36px;
     }
     
     .content {
       padding: 40px 48px;
+      margin-top: -40px;
     }
     
     .features {
       margin-bottom: 40px;
-      margin-top: -50px;
     }
     
     .feature {
@@ -109,7 +111,7 @@
     }
     
     .cta-container {
-      text-align: left;
+      text-align: center;
     }
     
     .cta-button {
@@ -121,47 +123,63 @@
       font-weight: 600;
       text-decoration: none;
       border-radius: 8px;
-      transition: all 0.2s ease;
-      margin-top: -20px;
-      margin-bottom: -20px;
-
+      margin-top: -50px;
+      margin-bottom: -40px;
     }
     
-    .cta-button:hover {
-      background: #ea580c;
-      transform: translateY(-1px);
-    }
-    
-    .footer {
+    /* New Footer Styles */
+    .new-footer {
+      background: #1a202c;
+      color: #cbd5e0;
       padding: 32px 48px;
-      background: #f8fafc;
-      text-align: left;
-      border-top: 1px solid #f1f5f9;
-      margin-top: -20px;
-      margin-bottom: -20px;
+      text-align: center;
+      margin-top: -10px;
     }
     
-    .social-links {
+    .footer-address {
+      margin: 8px 0;
+      color: #cbd5e0;
       display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+    
+    .footer-copyright {
+      margin: 8px 0;
+      color: #cbd5e0;
+      font-size: 14px;
+    }
+    
+    .footer-social-links {
+      display: flex; 
+      justify-content: center;
       gap: 20px;
+      margin: 16px 0;
+      flex-wrap: wrap;
       margin-top: -20px;
-      margin-bottom: 16px;
     }
     
-    .social-link {
-      color: #64748b;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    
-    .social-link:hover {
-      color: #f97316;
-    }
-    
-    .copyright {
+    .footer-social-links a {
+      color: #cbd5e0;
       font-size: 12px;
-      color: #94a3b8;
-      margin: 0;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .social-icon {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .address-icon {
+      width: 16px;
+      height: 16px;
+      fill: #cbd5e0;
     }
     
     @media (max-width: 480px) {
@@ -175,12 +193,22 @@
       
       .header,
       .content,
-      .footer {
+      .new-footer {
         padding: 32px 24px;
       }
       
       .title {
         font-size: 24px;
+      }
+      
+      .footer-social-links {
+        gap: 16px;
+      }
+      
+      .footer-address {
+        flex-direction: row;
+        text-align: center;
+        font-size: 13px;
       }
     }
   </style>
@@ -189,9 +217,7 @@
   <div class="email-card">
     <div class="header">
       <img class="logo" src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy" />
-      <div class="status">
-      </div>
-      <h1 class="title">Ready to Run test</h1>
+      <h1 class="title">Ready to Run Test</h1>
       <p class="subtitle">Your automated tests are prepared and waiting</p>
     </div>
     
@@ -216,14 +242,46 @@
         </a>
       </div>
     </div> 
-    <div class="footer">
-      <div class="social-links">
-        <a href="https://keploy.io" class="social-link">Website</a>
-        <a href="https://docs.keploy.io" class="social-link">Docs</a>
-        <a href="https://github.com/keploy" class="social-link">GitHub</a>
+    
+    <!-- New Footer -->
+    <footer class="new-footer" role="contentinfo">
+      <div class="footer-social-links" aria-label="Keploy social media links">
+        <a href="https://keploy.io" target="_blank" rel="noopener noreferrer" aria-label="Keploy website" class="social-website">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+          Website
+        </a>
+        <a href="https://twitter.com/keployio" target="_blank" rel="noopener noreferrer" aria-label="Keploy Twitter" class="social-x">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Twitter
+        </a>
+        <a href="https://linkedin.com/company/keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy LinkedIn" class="social-linkedin">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M19.7 3H4.3C3.582 3 3 3.582 3 4.3v15.4c0 .718.582 1.3 1.3 1.3h15.4c.718 0 1.3-.582 1.3-1.3V4.3c0-.718-.582-1.3-1.3-1.3zM8.339 18.338H5.667v-8.59h2.672v8.59zM7.004 8.574a1.548 1.548 0 11-.002-3.096 1.548 1.548 0 01.002 3.096zm11.335 9.764H15.67v-4.177c0-.996-.017-2.278-1.387-2.278-1.389 0-1.601 1.086-1.601 2.206v4.25h-2.667v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.779 3.203 4.092v4.71z"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="https://www.youtube.com/@keploy/" target="_blank" rel="noopener noreferrer" aria-label="Keploy YouTube" class="social-youtube">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+          </svg>
+          YouTube
+        </a>
       </div>
-      <p class="copyright">Keploy — Automated Testing Platform</p>
-    </div>
+      
+      <div class="footer-address">
+        <svg class="address-icon" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        San Franciso, California 19006, US
+      </div>
+      <div class="footer-copyright">
+        © 2025 Keploy, Inc. All rights reserved.
+      </div>
+    </footer>
   </div>
 </body>
 </html>

@@ -101,7 +101,7 @@
       border: 1px solid #bae6fd;
       border-radius: 12px;
       padding: 25px;
-      margin-bottom: 30px;
+      margin-bottom: 10px;
       position: relative;
     }
     .support-message::before {
@@ -164,23 +164,19 @@
       font-weight: 600;
       font-size: 16px;
       display: inline-block;
-      transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
-    }
-    .ready-button:hover {
-      background: #ea580c;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+      margin-bottom: -40px;
     }
 
-    /* Support section - Updated to match previous design */
+    /* Support section - CENTERED */
     .support-section {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center; /* Changed from flex-start to center */
       align-items: center;
       margin-top: 8px; /* Reduced from 16px to 8px */
       gap: 32px;
       flex-wrap: wrap;
+      margin-top: -20px;
     }
 
     .support-option {
@@ -212,19 +208,12 @@
     .support-option a {
       color: #f97316;
       text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .support-option a:hover {
-      text-decoration: underline;
-      color: #d65a08;
     }
 
     .priority-support {
       text-align: center;
       margin: 20px 0 30px; /* Reduced top margin from 40px to 20px */
       padding-top: 20px; /* Reduced from 30px to 20px */
-      border-top: 1px solid #f3f4f6;
     }
     .priority-title {
       font-size: 18px;
@@ -238,6 +227,7 @@
       padding: 35px 50px;
       text-align: center;
       border-top: 1px solid #f3f4f6;
+      margin-top: -20px;
     }
     .footer-text {
       font-size: 15px;
@@ -250,6 +240,7 @@
       gap: 24px;
       margin: 20px 0;
       flex-wrap: wrap;
+      margin-top: -20px;
     }
     .social-links a {
       color: #6b7280;
@@ -258,10 +249,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      transition: color 0.2s ease;
-    }
-    .social-links a:hover {
-      color: #f97316;
     }
     .copyright {
       font-size: 13px;
@@ -303,16 +290,16 @@
         font-size: 15px;
         width: 100%;
       }
-      /* Support section responsive - Keep side by side on mobile */
+      /* Support section responsive - Keep centered on mobile */
       .support-section {
         flex-direction: row;
-        justify-content: space-between;
-        gap: 16px;
-        flex-wrap: nowrap;
+        justify-content: center; /* Keep centered on mobile */
+        gap: 24px; /* Increased gap for better spacing */
+        flex-wrap: wrap;
         margin-top: 6px; /* Reduced for mobile */
       }
       .support-option {
-        flex: 1;
+        flex: 0 1 auto; /* Don't stretch, just use natural width */
         justify-content: center;
       }
       .support-option p {
@@ -329,7 +316,7 @@
 
     @media (max-width: 360px) {
       .support-section {
-        gap: 12px;
+        gap: 20px; /* Adjusted gap for very small screens */
         margin-top: 4px; 
       }
       .support-option p {
@@ -375,7 +362,7 @@
       </div>
 
       <div class="priority-support">
-        <!-- Updated Support Section -->
+        <!-- Updated Support Section - NOW CENTERED -->
         <div class="support-section">
           <div class="support-option">
             <span class="support-icon">💬</span>
