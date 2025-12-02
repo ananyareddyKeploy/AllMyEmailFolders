@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Testing Tribune | Keploy Newsletter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Source+Serif+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --newsprint: #F8F5F0;
+            --ink: #1A1A1A;
+            --accent: #D35400; /* Changed to orange */
+            --accent-dark: #A04000;
+            --accent-light: #E67E22;
+            --highlight: #F39C12;
+            --border: #8B4513;
+            --column-gap: 35px;
+            --section-gap: 40px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Serif Pro', serif;
+            background-color: #2C2C2C;
+            color: var(--ink);
+            line-height: 1.6;
+            padding: 30px;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(211, 84, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(243, 156, 18, 0.1) 0%, transparent 50%);
+        }
+        
+        .newspaper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 60px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--border);
+            position: relative;
+            background-image: 
+                linear-gradient(rgba(211, 84, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(211, 84, 0, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+        
+        .newspaper:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--accent), var(--highlight), var(--accent), transparent);
+        }
+        
+        .newspaper:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--accent),
+                var(--accent) 20px,
+                transparent 20px,
+                transparent 40px
+            );
+        }
+        
+        /* Masthead */
+        .masthead {
+            text-align: center;
+            padding: 25px 0 35px;
+            border-bottom: 4px double var(--border);
+            margin-bottom: var(--section-gap);
+            position: relative;
+            background: linear-gradient(to bottom, white, rgba(243, 156, 18, 0.05));
+        }
+        
+        .masthead h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--ink);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .masthead h1:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 15%;
+            right: 15%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+        
+        .masthead h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--accent);
+            font-style: italic;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .date-line {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 14px;
+            color: #666;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            margin-top: 15px;
+            background: linear-gradient(90deg, rgba(211, 84, 0, 0.05), rgba(243, 156, 18, 0.05));
+        }
+        
+        /* Newspaper Layout */
+        .newspaper-content {
+            display: grid;
+            grid-template-columns: 2.5fr 1.5fr;
+            gap: var(--column-gap);
+            align-items: start;
+        }
+        
+        .main-article {
+            border-right: 1px solid var(--border);
+            padding-right: var(--column-gap);
+            min-height: 800px;
+        }
+        
+        /* Headline */
+        .headline {
+            margin-bottom: 45px;
+            position: relative;
+        }
+        
+        .headline h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+        
+        .headline h1 span {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .headline h1 span:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--highlight));
+        }
+        
+        .lead {
+            font-size: 21px;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.6;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-left: 5px solid var(--accent);
+            background: linear-gradient(to right, rgba(211, 84, 0, 0.05), transparent);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .byline {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--accent);
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, rgba(211, 84, 0, 0.1), transparent);
+            border-left: 3px solid var(--accent);
+            display: inline-block;
+        }
+        
+        /* Article Content */
+        .article-content {
+            column-count: 2;
+            column-gap: var(--column-gap);
+            column-rule: 1px solid rgba(211, 84, 0, 0.2);
+        }
+        
+        .article-content p {
+            margin-bottom: 25px;
+            text-align: justify;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+        
+        .article-content p:first-of-type:first-letter {
+            float: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 75px;
+            line-height: 0.8;
+            padding: 15px 15px 5px 0;
+            color: var(--accent);
+            font-weight: 800;
+        }
+        
+        /* Pull Quote */
+        .pull-quote {
+            float: right;
+            width: 45%;
+            margin: 25px 0 25px 35px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(211, 84, 0, 0.1));
+            border-left: 5px solid var(--accent);
+            border-right: 1px solid rgba(211, 84, 0, 0.3);
+            border-top: 1px solid rgba(243, 156, 18, 0.3);
+            border-bottom: 1px solid rgba(243, 156, 18, 0.3);
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--ink);
+            position: relative;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pull-quote:before {
+            content: '"';
+            font-size: 80px;
+            color: var(--accent);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--section-gap);
+            padding-top: 10px;
+        }
+        
+        .sidebar-section {
+            padding-bottom: var(--section-gap);
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .sidebar-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .sidebar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+        }
+        
+        .sidebar-title:after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--highlight);
+        }
+        
+        /* Workflow Box */
+        .workflow-box {
+            background: white;
+            padding: 30px;
+            border: 2px solid var(--accent);
+            position: relative;
+            box-shadow: 8px 8px 0 rgba(211, 84, 0, 0.15);
+            border-radius: 3px;
+        }
+        
+        .workflow-box:before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: -8px;
+            bottom: -8px;
+            border: 2px solid var(--highlight);
+            z-index: -1;
+            border-radius: 3px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px dashed rgba(211, 84, 0, 0.3);
+            position: relative;
+        }
+        
+        .step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 800;
+            color: white;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent), var(--highlight));
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(211, 84, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-content {
+            flex: 1;
+            padding-top: 5px;
+        }
+        
+        .step-content h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--ink);
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .step-content h4:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+        
+        .step-content p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+            padding-left: 15px;
+        }
+        
+        /* Stats Box */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(211, 84, 0, 0.1));
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(211, 84, 0, 0.15);
+            background: linear-gradient(135deg, var(--accent), var(--highlight));
+        }
+        
+        .stat-item:hover .stat-value,
+        .stat-item:hover .stat-label {
+            color: white;
+        }
+        
+        .stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--ink);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        
+        /* Testimonial */
+        .testimonial-box {
+            background: linear-gradient(135deg, white, rgba(243, 156, 18, 0.05));
+            padding: 30px;
+            border: 2px solid var(--accent);
+            position: relative;
+            border-radius: 8px;
+        }
+        
+        .testimonial-box:after {
+            content: '❝';
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            font-size: 60px;
+            color: rgba(211, 84, 0, 0.2);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 25px;
+            border-left: 4px solid var(--accent);
+            color: var(--ink);
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--accent);
+            text-align: right;
+            font-size: 16px;
+            font-family: 'Playfair Display', serif;
+            padding-top: 10px;
+            border-top: 2px solid rgba(211, 84, 0, 0.2);
+        }
+        
+        /* Organizations */
+        .org-box {
+            background: white;
+            padding: 30px;
+            border: 2px solid var(--accent);
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .org-title {
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(211, 84, 0, 0.3);
+        }
+        
+        .org-list {
+            color: var(--accent);
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            line-height: 2.2;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .newspaper-footer {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 4px double var(--border);
+            text-align: center;
+            background: linear-gradient(to bottom, white, rgba(243, 156, 18, 0.05));
+            padding: 35px;
+        }
+        
+        /* Social Icons - Centered */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 25px 0 30px;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            color: var(--accent);
+            font-size: 22px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(211, 84, 0, 0.2);
+        }
+        
+        .social-icon:hover {
+            background: linear-gradient(135deg, var(--accent), var(--highlight));
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(211, 84, 0, 0.3);
+        }
+        
+        .social-label {
+            font-size: 14px;
+            color: var(--ink);
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+        }
+        
+        .footer-info {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-highlight {
+            color: var(--accent);
+            font-weight: 600;
+            margin: 20px 0;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+        
+        /* Decorative Elements */
+        .ornament {
+            text-align: center;
+            margin: 30px 0;
+            color: var(--accent);
+            letter-spacing: 8px;
+            font-size: 24px;
+            opacity: 0.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .newspaper {
+                padding: 40px;
+            }
+            
+            .newspaper-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .main-article {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 2px solid var(--border);
+                padding-bottom: 40px;
+                margin-bottom: 40px;
+                min-height: auto;
+            }
+            
+            .article-content {
+                column-count: 1;
+            }
+            
+            .headline h1 {
+                font-size: 36px;
+            }
+            
+            .pull-quote {
+                float: none;
+                width: 100%;
+                margin: 30px 0;
+            }
+            
+            .masthead h1 {
+                font-size: 42px;
+            }
+            
+            .social-icons {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            
+            .newspaper {
+                padding: 30px;
+            }
+            
+            .masthead h1 {
+                font-size: 36px;
+            }
+            
+            .headline h1 {
+                font-size: 32px;
+            }
+            
+            .lead {
+                font-size: 18px;
+                padding: 20px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-icons {
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="newspaper">
+        <!-- Masthead -->
+        <div class="masthead">
+            <h1>Testing Times</h1>
+            <h2>The Voice of Modern Software Development</h2>
+        </div>
+        
+        <!-- Newspaper Layout -->
+        <div class="newspaper-content">
+            <!-- Main Article Column -->
+            <div class="main-article">
+                <div class="headline">
+                    <h1>Development Teams Nationwide <span>Abandon Manual Testing</span></h1>
+                    <div class="lead">
+                        In a revolutionary shift, engineering teams are adopting AI-powered testing platforms,
+                        reporting 70% reductions in testing time and deploy confidently.
+                    </div>
+                </div>
+                
+                <div class="article-content">
+                    <p>SAN FRANCISCO — A seismic shift is underway in software development circles nationwide. Engineering teams across startups and enterprises alike are abandoning traditional manual testing methods in favor of AI-powered platforms that automatically generate comprehensive test suites from running applications.</p>
+                                
+                    <p>The movement, spearheaded by platforms like Keploy, uses eBPF technology to record real API traffic and automatically convert it into test cases, mocks, and stubs. Early adopters report remarkable efficiency gains: typical teams save 15-20 hours weekly previously dedicated to writing and maintaining test code.</p>
+                    
+                    <p>"It's not just about saving time," explains Maria Chen, Senior Engineering Manager at a prominent fintech company. "It's about quality. We're catching edge cases we never even considered testing for. Our bug rate in production has dropped by 85% since implementing automated test generation."</p>
+                    
+                    <p>The technology works by instrumenting applications to record all API interactions, database calls, and external service communications. These recordings become the foundation for comprehensive test suites that can be replayed during development and CI/CD pipelines.</p>
+                    
+                    <p>Industry analysts note the trend reflects a broader movement toward AI-assisted development. "We're witnessing the beginning of a new era in software quality," says Dr. James Wilson of the Software Engineering Institute. "Tools that understand code context and generate appropriate tests are becoming essential in the modern development toolkit."</p>
+                    
+                    <p>Resistance remains among some traditionalists who argue for the value of handcrafted tests. However, proponents counter that AI-generated tests complement rather than replace developer insight, freeing engineers to focus on complex business logic while handling routine test generation automatically.</p>
+                    
+                    <p>The economic implications are significant. Companies report faster release cycles, reduced technical debt, and improved developer morale. "Our team went from dreading test maintenance to enjoying feature development again," notes startup CTO Alex Rodriguez. "That cultural shift is priceless."</p>
+                </div>
+            </div>
+            
+            <!-- Sidebar Column -->
+            <div class="sidebar">
+                <!-- Workflow Section -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">The Modern Testing Workflow</h3>
+                    <div class="workflow-box">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Generate Tests</h4>
+                                <p>AI analyzes patterns and automatically creates comprehensive test suites with edge case coverage.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Run Tests</h4>
+                                <p>Seamlessly integrate and execute test suites in your CI/CD pipeline to catch regressions, validate changes, and deploy with confidence.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Validate Quality</h4>
+                                <p>Check results and ensure release readiness with comprehensive coverage reports.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Statistics Section -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">By The Numbers</h3>
+                    <div class="stats-grid">
+                        
+                        <div class="stat-item">
+                            <div class="stat-value">13.4K</div>
+                            <div class="stat-label">GitHub Stars</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">997K+</div>
+                            <div class="stat-label">Installs</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">230K+</div>
+                            <div class="stat-label">Developers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">400+</div>
+                            <div class="stat-label">Contributers</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Developer Testimony</h3>
+                    <div class="testimonial-box">
+                        <p class="testimonial-text">
+                            "As a solo developer, I was spending more time writing tests than features. 
+                            Keploy changed everything. I now ship with confidence and focus on what matters."
+                        </p>
+                        <div class="testimonial-author"></div>
+                    </div>
+                </div>
+                
+                <!-- Organizations -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Trusted By</h3>
+                    <div class="org-box">
+                        <div class="org-title">Leading Organizations</div>
+                        <div class="org-list">
+                            Amazon • Maruti Suzuki<br>
+                            Nutanix • Whatfix<br>
+                            LambdaTest • Edureka
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="newspaper-footer">
+            
+            <!-- Social Icons -->
+            <div class="social-label">Follow Keploy</div>
+            <div class="social-icons">
+                <a href="https://github.com/keploy" class="social-icon" title="GitHub" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://twitter.com/keployio" class="social-icon" title="Twitter" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/keploy" class="social-icon" title="LinkedIn" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.youtube.com/@keploy" class="social-icon" title="YouTube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://keploy.io" class="social-icon" title="Website" target="_blank">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 Keploy Inc. All rights reserved. | Built on Open-Source | Trusted by Global Networks</p>
+                <p>San Francisco, California 19006, US</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
