@@ -4,382 +4,236 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keploy Monthly Updates</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            color: #1a1a1a;
-            background-color: #fafafa;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .container {
-            max-width: 640px;
-            margin: 0 auto;
-            background-color: white;
-        }
-        
-        .header-bar {
-            background-color: #000000;
-            color: white;
-            padding: 12px 24px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-        
-        .header-bar a {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .content {
-            padding: 32px;
-        }
-        
-        .email-header {
-            margin-bottom: 32px;
-        }
-        
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 16px;
-        }
-        
-        .date {
-            color: #666666;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-        
-        .title-section {
-            margin-bottom: 24px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e6e6e6;
-        }
-        
-        .main-title {
-            font-size: 28px;
-            font-weight: 700;
-            color: #000000;
-            line-height: 1.3;
-            margin-bottom: 8px;
-        }
-        
-        .subtitle {
-            color: #666666;
-            font-size: 15px;
-            font-weight: 400;
-        }
-        
-        .read-in-app {
-            text-align: center;
-            color: #999999;
-            font-size: 13px;
-            margin: 24px 0;
-            padding: 16px 0;
-            border-top: 1px solid #e6e6e6;
-            border-bottom: 1px solid #e6e6e6;
-            letter-spacing: 1px;
-        }
-        
-        .greeting {
-            font-size: 16px;
-            color: #333333;
-            margin-bottom: 24px;
-            line-height: 1.6;
-        }
-        
-        .section-title {
-            color: #666666;
-            font-size: 14px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-        }
-        
-        .feature-block {
-            margin-bottom: 40px;
-        }
-        
-        .feature-main-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #000000;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-        
-        .feature-subtitle {
-            color: #666666;
-            font-size: 16px;
-            margin-bottom: 24px;
-            font-weight: 400;
-        }
-        
-        .sponsor-section {
-            background-color: #f5f5f5;
-            padding: 20px;
-            margin: 24px 0 32px 0;
-            border-radius: 4px;
-        }
-        
-        .sponsor-label {
-            color: #666666;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
-        
-        .sponsor-list {
-            color: #333333;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        .description {
-            color: #333333;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 32px;
-        }
-        
-        .takeaways {
-            margin: 32px 0;
-        }
-        
-        .takeaways-title {
-            font-size: 18px;
-            color: #000000;
-            margin-bottom: 24px;
-            font-weight: 600;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #000000;
-        }
-        
-        .takeaway-item {
-            margin-bottom: 24px;
-        }
-        
-        .takeaway-heading {
-            font-weight: 600;
-            color: #000000;
-            margin-bottom: 8px;
-            font-size: 16px;
-            line-height: 1.4;
-        }
-        
-        .takeaway-desc {
-            color: #4a4a4a;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        
-        .cta-section {
-            margin: 32px 0;
-            text-align: center;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #f57b24;
-            color: white;
-            padding: 14px 32px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 15px;
-            border: 1px solid #000000;
-            transition: all 0.2s ease;
-        }
-        
-        .cta-button:hover {
-            background-color: white;
-            color: #000000;
-        }
-        
-        .links-section {
-            text-align: center;
-            margin: 24px 0;
-            color: #666666;
-            font-size: 14px;
-        }
-        
-        .links-section a {
-            color: #000000;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .coming-soon {
-            background-color: #f8f8f8;
-            padding: 20px;
-            border-radius: 4px;
-            margin: 32px 0;
-            color: #4a4a4a;
-            font-size: 15px;
-            border-left: 3px solid #666666;
-        }
-        
-        .closing {
-            color: #333333;
-            margin: 32px 0;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-        
-        .ps {
-            color: #666666;
-            font-size: 14px;
-            margin: 24px 0;
-            font-style: italic;
-            border-top: 1px solid #e6e6e6;
-            padding-top: 20px;
-        }
-        
-        .subscription-note {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 4px;
-            margin: 32px 0 24px 0;
-            text-align: center;
-            color: #666666;
-            font-size: 13px;
-            border: 1px solid #e6e6e6;
-        }
-        
-        .social-links {
-            text-align: center;
-            margin: 24px 0;
-            padding-top: 20px;
-            border-top: 1px solid #e6e6e6;
-        }
-        
-        .social-links a {
-            margin: 0 12px;
-            color: #666666;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-        }
-        
-        @media (max-width: 640px) {
-            .content {
-                padding: 24px;
-            }
-            
-            .header-top {
-                flex-direction: column;
-                gap: 12px;
-            }
-            
-            .date {
-                align-self: flex-start;
-            }
-        }
-    </style>
 </head>
-<body>
-    <div class="container">
-        
-        <!-- Main Content -->
-        <div class="content">
-            <!-- Email Header -->
-            <div class="email-header">
-                <div class="header-top">
-                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy Logo" style="display:block; max-width:100px; height:auto;" />
-                    <div class="date">NOVEMBER 2025</div>
-                </div>
-                <div class="title-section">
-                    <h1 class="main-title">This Month on Keploy: Four Features That Turn Days of Test Management Into Minutes</h1>
-                </div>
-            </div>
-            
-            <!-- Greeting -->
-            <div class="greeting">
-                Hey friends 👋<br><br>
-                Here's your monthly recap of new features and updates across Keploy:
-            </div>
-            
-            <!-- Section Title -->
-            <div class="section-title">
-                Monthly Update • November 2025
-            </div>
-            
-           
-            
-            <!-- Takeaways -->
-            <div class="takeaways">
-                <h3 class="takeaways-title">BIGGEST TAKEAWAYS</h3>
-                
-                <div class="takeaway-item">
-                    <div class="takeaway-heading">Select All Test Suites for bulk operations</div>
-                    <div class="takeaway-desc">Instead of manually managing test suites one by one, use the new Select All feature to apply changes across multiple tests simultaneously. This reduces test management time by up to 70% and is perfect for teams handling large test suites who need efficient bulk operations.</div>
-                </div>
-                
-                <div class="takeaway-item">
-                    <div class="takeaway-heading">Test Generation History creates perfect audit trails</div>
-                    <div class="takeaway-desc">Gain complete visibility into your test creation process with detailed logs of when and how tests were generated. This feature is essential for debugging test failures and maintaining compliance with audit requirements, showing exactly how each test was created.</div>
-                </div>
-                
-                <div class="takeaway-item">
-                    <div class="takeaway-heading">Custom JavaScript = Unlimited testing flexibility</div>
-                    <div class="takeaway-desc">Extend Keploy's capabilities with your own JavaScript logic for custom validations, integration with internal tools, or specialized test scenarios. This unlocks unlimited flexibility for complex testing needs that go beyond built-in features.</div>
-                </div>
-                
-                <div class="takeaway-item">
-                    <div class="takeaway-heading">Paginated Format for better navigation</div>
-                    <div class="takeaway-desc">Navigate through test suites and generation history with improved performance using our new paginated interface. Say goodbye to endless scrolling through large datasets now enjoy faster load times and better organization for teams with extensive test suites.</div>
-                </div>
-            </div>
-            
-            <!-- CTA Section -->
-            <div class="cta-section">
-                <a href="https://keploy.io/" class="cta-button">Explore New Features →</a>
-            </div>
-        </div>
-        
-        <!-- Footer -->
-        <div style="background: #000000; color: #ffffff; padding: 32px 24px 24px; text-align: center; font-size: 13px;">
-            <!-- Social Icons -->
-            <div style="margin-bottom: 20px;">
-                <a href="https://x.com/keployio" style="display:inline-block;margin:0 8px;color:#ffffff;text-decoration:none;">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx.png" width="18" height="18" alt="Twitter" style="display:block; border:0;">
-                </a>
-                <a href="https://linkedin.com/company/keploy/" style="display:inline-block;margin:0 8px;color:#ffffff;text-decoration:none;">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" width="18" height="18" alt="LinkedIn" style="display:block; border:0;">
-                </a>
-                <a href="https://github.com/keploy" style="display:inline-block;margin:0 8px;color:#ffffff;text-decoration:none;">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" width="18" height="18" alt="GitHub" style="display:block; border:0;">
-                </a>
-                <a href="https://www.youtube.com/@keploy" style="display:inline-block;margin:0 8px;color:#ffffff;text-decoration:none;">
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" width="18" height="18" alt="YouTube" style="display:block; border:0;">
-                </a>
-            </div>
-            
-            <!-- Address -->
-            <div style="margin-bottom: 16px; color: #cccccc;">
-                San Francisco, California 19006, US
-            </div>
-            
-            <!-- Copyright -->
-            <div style="color: #cccccc;">
-                © 2025 Keploy, Inc. All rights reserved.<br>
-                <a href="#" style="color: #cccccc; text-decoration: underline; font-size: 12px;">Unsubscribe</a>
-            </div>
-        </div>
-    </div>
+<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.5; color: #1a1a1a;">
+    
+    <!--[if mso]>
+    <style type="text/css">
+        table {border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;}
+        td {font-family: Arial, sans-serif; font-size: 14px;}
+        .feature-item {border-bottom: 1px solid #e5e7eb !important;}
+    </style>
+    <![endif]-->
+    
+    <center>
+        <!-- Main Container -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f8fafc">
+            <tr>
+                <td align="center">
+                    <table width="640" cellpadding="0" cellspacing="0" border="0" style="max-width: 640px; width: 100%; background-color: #ffffff;">
+                        
+                        <!-- Top Bar -->
+                        <tr>
+                            <td align="center" style="background: linear-gradient(135deg, #f57b24 0%, #ea580c 100%); color: white; padding: 16px 32px; font-size: 13px; font-weight: 500;">
+                                KEPLOY MONTHLY UPDATE • NOVEMBER 2025
+                            </td>
+                        </tr>
+                        
+                        <!-- Content -->
+                        <tr>
+                            <td align="left" style="padding: 32px;">
+                                
+                                <!-- Header -->
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 32px;">
+                                    <tr>
+                                        <td>
+                                            <!-- Logo and Date -->
+                                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 24px;">
+                                                <tr>
+                                                    <td width="50%" align="left" valign="top">
+                                                        <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                                                             alt="Keploy Logo" 
+                                                             width="120" 
+                                                             height="auto" 
+                                                             style="display: block; max-width: 120px;">
+                                                    </td>
+                                                    <td width="50%" align="right" valign="top">
+                                                        <div style="background: #f0f9ff; color: #1e40af; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 2px solid #93c5fd; display: inline-block;">
+                                                             NOV 2025
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <!-- Title -->
+                                            <h1 style="font-size: 32px; font-weight: 700; color: #0f172a; line-height: 1.2; margin: 0 0 16px 0; text-align: center;">
+                                                Test <span style="color: #ea580c;">Smarter</span>, 
+                                                Not Harder
+                                            </h1>
+                                            
+                                            <!-- Hero Image -->
+                                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                                                 alt="Code editor with test automation"
+                                                 width="100%" 
+                                                 height="200" 
+                                                 style="display: block; width: 100%; height: 200px; object-fit: cover; margin: 32px 0; border-radius: 4px;">
+                                            
+                                            <!-- Greeting -->
+                                            <p style="font-size: 18px; color: #475569; margin: 0 0 32px 0; line-height: 1.6; text-align: center; font-weight: 500;">
+                                                Hey Keploy Community! 👋<br><br>
+                                                This month we're excited to introduce powerful features designed to transform how you manage tests. 
+                                                Say goodbye to manual work and hello to smarter testing workflows.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- Section Title -->
+                                <h2 style="color: #ea580c; font-size: 16px; margin: 40px 0 24px 0; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">
+                                    New This Month
+                                </h2>
+                                
+                                <!-- Features List -->
+                                <!-- Feature 1 -->
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #e5e7eb;">
+                                    <tr>
+                                        <td>
+                                            <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin: 0 0 12px 0; line-height: 1.4;">
+                                                🎯 Select All Test Suites
+                                            </h3>
+                                            <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 16px 0;">
+                                                Bulk manage test suites with our new Select All functionality. Apply changes across multiple tests simultaneously for maximum efficiency.
+                                            </p>
+                                            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 6px 12px; border-radius: 6px; font-size: 14px; color: #92400e; font-weight: 600; display: inline-block;">
+                                                Save up to 70% on test management time
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- Feature 2 -->
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #e5e7eb;">
+                                    <tr>
+                                        <td>
+                                            <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin: 0 0 12px 0; line-height: 1.4;">
+                                                📊 Test Generation History
+                                            </h3>
+                                            <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 16px 0;">
+                                                Track complete history of test creation with detailed audit trails. Perfect for debugging and compliance requirements.
+                                            </p>
+                                            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 6px 12px; border-radius: 6px; font-size: 14px; color: #92400e; font-weight: 600; display: inline-block;">
+                                                Complete visibility into test evolution
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- Feature 3 -->
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #e5e7eb;">
+                                    <tr>
+                                        <td>
+                                            <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin: 0 0 12px 0; line-height: 1.4;">
+                                                ⚡ Custom JavaScript Support
+                                            </h3>
+                                            <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 16px 0;">
+                                                Extend Keploy with your own JavaScript logic for custom validations, complex scenarios, and specialized testing needs.
+                                            </p>
+                                            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 6px 12px; border-radius: 6px; font-size: 14px; color: #92400e; font-weight: 600; display: inline-block;">
+                                                Unlimited flexibility for specialized testing
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- Feature 4 -->
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 40px;">
+                                    <tr>
+                                        <td>
+                                            <h3 style="font-size: 20px; font-weight: 700; color: #0f172a; margin: 0 0 12px 0; line-height: 1.4;">
+                                                📄 Paginated Format
+                                            </h3>
+                                            <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 16px 0;">
+                                                Navigate test suites and history with improved paginated views. Faster load times and better organization for large datasets.
+                                            </p>
+                                            <div style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); padding: 6px 12px; border-radius: 6px; font-size: 14px; color: #92400e; font-weight: 600; display: inline-block;">
+                                                No more endless scrolling
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- CTA Button -->
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin: 40px 0 32px;">
+                                    <tr>
+                                        <td align="center">
+                                            <a href="https://keploy.io/" 
+                                               style="display: inline-block; background: linear-gradient(135deg, #f57b24 0%, #ea580c 100%); color: white; padding: 18px 40px; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 16px; border: none;">
+                                                🚀 Explore All Features
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        
+                        <!-- Footer -->
+                        <tr>
+                            <td align="center" style="background: #0f172a; color: #ffffff; padding: 40px 32px 32px;">
+                                
+                                <!-- Social Links -->
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 32px;">
+                                    <tr>
+                                        <td align="center">
+                                            <table cellpadding="0" cellspacing="0" border="0" style="display: inline-table;">
+                                                <tr>
+                                                    <td style="padding: 0 8px;">
+                                                        <a href="https://x.com/keployio" style="display: inline-block;">
+                                                            <img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx.png" 
+                                                                 width="32" 
+                                                                 height="32" 
+                                                                 alt="Twitter" 
+                                                                 style="display: block; background: rgba(255,255,255,0.1); border-radius: 50%; padding: 12px;">
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding: 0 8px;">
+                                                        <a href="https://linkedin.com/company/keploy/" style="display: inline-block;">
+                                                            <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" 
+                                                                 width="32" 
+                                                                 height="32" 
+                                                                 alt="LinkedIn" 
+                                                                 style="display: block; background: rgba(255,255,255,0.1); border-radius: 50%; padding: 12px;">
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding: 0 8px;">
+                                                        <a href="https://github.com/keploy" style="display: inline-block;">
+                                                            <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" 
+                                                                 width="32" 
+                                                                 height="32" 
+                                                                 alt="GitHub" 
+                                                                 style="display: block; background: rgba(255,255,255,0.1); border-radius: 50%; padding: 12px;">
+                                                        </a>
+                                                    </td>
+                                                    <td style="padding: 0 8px;">
+                                                        <a href="https://www.youtube.com/@keploy" style="display: inline-block;">
+                                                            <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" 
+                                                                 width="32" 
+                                                                 height="32" 
+                                                                 alt="YouTube" 
+                                                                 style="display: block; background: rgba(255,255,255,0.1); border-radius: 50%; padding: 12px;">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                                <!-- Address -->
+                                <div style="font-size: 14px; color: #cbd5e1; margin-bottom: 16px; line-height: 1.5;">
+                                    San Francisco, California 19006, US
+                                </div>
+                                
+                                <!-- Copyright -->
+                                <div style="font-size: 13px; color: #94a3b8; margin-bottom: 24px;">
+                                    © 2025 Keploy, Inc. All rights reserved.
+                                </div>
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </center>
 </body>
 </html>
