@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Suite Shared - Keploy</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, Arial, sans-serif; background-color: #f8fafc; color: #1f2937; line-height: 1.6;">
+  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
+    
+    <!-- Header Section -->
+    <div style="padding: 48px 48px 32px 48px; text-align: left;">
+      <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy Logo" style="max-width: 140px; margin-bottom: 24px;" />
+      
+      <div style="font-size: 13px; font-weight: 600; color: #f97316; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px;">
+        TEST SUITE SHARED
+      </div>
+      
+      <h1 style="font-size: 28px; font-weight: 700; color: #1f2937; margin: 0 0 16px 0; line-height: 1.3; letter-spacing: -0.25px;">
+        New Test Suite Has Been Shared With You
+      </h1>
+      
+      <p style="font-size: 17px; color: #6b7280; margin: 0;">
+        {{event.senderName}} just shared a comprehensive test suite ready for your review and integration.
+      </p>
+    </div>
+
+    <!-- Test Suite Info Card -->
+    <div style="padding: 0 48px 32px 48px;">
+      <div style="background: #f8fafc; border-radius: 12px; padding: 24px; border: 1px solid #e5e7eb;">
+        <div style="display: flex; align-items: center; margin-bottom: 16px;">
+          <div style="font-weight: 600; color: #059669; font-size: 16px;">Test Suite Shared</div>
+        </div>
+        
+        <div style="margin-bottom: 16px;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 8px;">
+            <tr>
+              <td style="font-size: 15px; font-weight: 600; color: #374151;">Total Tests</td>
+              <td align="right" style="font-size: 15px; color: #059669; font-weight: 600;">{{event.testCaseCount}} tests</td>
+            </tr>
+          </table>
+          
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 8px;">
+            <tr>
+              <td style="font-size: 15px; font-weight: 600; color: #374151;">Project</td>
+              <td align="right" style="font-size: 15px; color: #6b7280; font-weight: 600;">{{event.appName}}</td>
+            </tr>
+          </table>
+          
+          <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td style="font-size: 15px; font-weight: 600; color: #374151;">Shared by</td>
+              <td align="right" style="font-size: 15px; color: #6b7280; font-weight: 600;">{{event.senderName}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Steps -->
+    <div style="padding: 0 48px 32px 48px;">
+      <h3 style="color: #1f2937; margin: 0 0 20px 0; font-size: 20px; font-weight: 700; text-align: left;">
+        What You Can Do Next
+      </h3>
+      
+      <!-- Benefit 1 -->
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+        <tr>
+          <td width="40" valign="top" style="padding-right: 16px;">
+            <div style="width: 32px; height: 32px; background: #f97316; border-radius: 50%; text-align: center; line-height: 32px;">
+              <span style="color: white; font-size: 16px; font-weight: bold;">✓</span>
+            </div>
+          </td>
+          <td valign="top">
+            <div style="color: #1f2937; font-weight: 600; margin-bottom: 4px; font-size: 16px;">Review Test Cases</div>
+            <div style="color: #6b7280; font-size: 15px; line-height: 1.5;">Examine the {{event.testCaseCount}} generated test cases and their coverage</div>
+          </td>
+        </tr>
+      </table>
+      
+      <!-- Benefit 2 -->
+      <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+        <tr>
+          <td width="40" valign="top" style="padding-right: 16px;">
+            <div style="width: 32px; height: 32px; background: #f97316; border-radius: 50%; text-align: center; line-height: 32px;">
+              <span style="color: white; font-size: 16px; font-weight: bold;">✓</span>
+            </div>
+          </td>
+          <td valign="top">
+            <div style="color: #1f2937; font-weight: 600; margin-bottom: 4px; font-size: 16px;">Integrate Into Workflow</div>
+            <div style="color: #6b7280; font-size: 15px; line-height: 1.5;">Add these tests to your existing testing pipeline</div>
+          </td>
+        </tr>
+      </table>
+      
+      <!-- Benefit 3 -->
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td width="40" valign="top" style="padding-right: 16px;">
+            <div style="width: 32px; height: 32px; background: #f97316; border-radius: 50%; text-align: center; line-height: 32px;">
+              <span style="color: white; font-size: 16px; font-weight: bold;">✓</span>
+            </div>
+          </td>
+          <td valign="top">
+            <div style="color: #1f2937; font-weight: 600; margin-bottom: 4px; font-size: 16px;">Customize As Needed</div>
+            <div style="color: #6b7280; font-size: 15px; line-height: 1.5;">Modify test parameters to match your specific {{event.appName}} requirements</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- CTA Section -->
+    <div style="padding: 0 48px 40px 48px; text-align: center;">
+      <a href="https://app.keploy.io/api-testing/test-suites?appId=f31dc99c-1784-402e-971f-231695830669" 
+         style="display: inline-block; padding: 16px 40px; background: #f97316; color: #ffffff; font-weight: 700; text-decoration: none; border-radius: 10px; font-size: 16px; letter-spacing: 0.25px;">
+        View {{event.appName}} Test Suite
+      </a>
+      <p style="color: #6b7280; font-size: 14px; margin: 16px 0 0 0;">
+        Access and review the shared test suite
+      </p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer style="background: #1a202c; color: #cbd5e0; padding: 32px 40px; text-align: center; border-radius: 0 0 12px 12px;">
+      <!-- Social Links - Now with orange icons -->
+      <div style="margin-bottom: 20px;">
+        <a href="https://x.com/keployio" style="display: inline-block; margin: 0 12px; text-decoration: none;">
+          <img src="https://img.icons8.com/ios-filled/50/f97316/twitterx.png" width="28" height="28" alt="Twitter" style="display: block; border: 0;">
+        </a>
+        <a href="https://linkedin.com/company/keploy/" style="display: inline-block; margin: 0 12px; text-decoration: none;">
+          <img src="https://img.icons8.com/ios-filled/50/f97316/linkedin.png" width="28" height="28" alt="LinkedIn" style="display: block; border: 0;">
+        </a>
+        <a href="https://github.com/keploy" style="display: inline-block; margin: 0 12px; text-decoration: none;">
+          <img src="https://img.icons8.com/ios-filled/50/f97316/github.png" width="28" height="28" alt="GitHub" style="display: block; border: 0;">
+        </a>
+        <a href="https://www.youtube.com/@keploy" style="display: inline-block; margin: 0 12px; text-decoration: none;">
+          <img src="https://img.icons8.com/ios-filled/50/f97316/youtube-play.png" width="28" height="28" alt="YouTube" style="display: block; border: 0;">
+        </a>
+      </div>
+      
+      <!-- Address -->
+      <div style="margin-bottom: 8px;">
+        <p style="font-size: 14px; color: #cbd5e0; margin: 0;">
+          New Burton Rd Central, Delaware, US 19904
+        </p>
+      </div>
+      
+      <!-- Copyright -->
+      <div>
+        <p style="font-size: 14px; color: #cbd5e0; margin: 0;">
+          © 2025 Keploy, Inc. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
