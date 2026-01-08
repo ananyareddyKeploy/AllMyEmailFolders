@@ -220,17 +220,15 @@
                             <td class="metric-value">{{event.testCaseCount}}</td>
                           </tr>
                           
-                          <!-- Total Test Suites -->
-                          <tr>
-                            <td class="metric-label">Total Test Suites</td>
-                            <td class="metric-value">{{event.total_suites}}</td>
-                          </tr>
-                          
-                          <!-- Passed Suites -->
-                          <tr>
-                            <td class="metric-label">Passed Suites</td>
-                            <td class="metric-value">{{event.passed_suites}}</td>
-                          </tr>
+                         <tr>
+                                    <td class="metric-label">Total Test suites Passed</td>
+                                    <td class="metric-value">{{event.passed_suites}}</td>
+                                  </tr> 
+
+                                  <tr>
+                                    <td class="metric-label">Total Test suites failed</td>
+                                    <td class="metric-value">{{event.failed_suites}}</td>
+                                  </tr> 
                           
                           <!-- Shared By -->
                           <tr>
