@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Suite Shared - Keploy</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      mso-line-height-rule: exactly;
+      line-height: 1.6;
+      color: #1f2937;
+    }
+    
+    .container {
+      width: 100%;
+      table-layout: fixed;
+      background-color: #f8fafc;
+      padding: 40px 0;
+    }
+    
+    .main-table {
+      max-width: 600px;
+      width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Enhanced Info Table */
+    .info-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    
+    .info-table tr {
+      transition: background-color 0.2s ease;
+    }
+    
+    .info-table tr:hover {
+      background-color: #f9fafb;
+    }
+    
+    .info-table td {
+      padding: 16px 0;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: middle;
+    }
+    
+    .info-table tr:first-child td {
+      padding-top: 8px;
+    }
+    
+    .info-table tr:last-child td {
+      border-bottom: none;
+      padding-bottom: 8px;
+    }
+    
+    /* Enhanced Summary Table */
+    .summary-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 14px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .summary-table thead tr {
+      background-color: #f8fafc;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    
+    .summary-table th {
+      padding: 18px 24px;
+      text-align: left;
+      font-weight: 700;
+      color: #4b5563;
+      background-color: #f9fafb;
+      font-size: 15px;
+    }
+    
+    .summary-table th:first-child {
+      border-radius: 12px 0 0 0;
+    }
+    
+    .summary-table th:last-child {
+      border-radius: 0 12px 0 0;
+    }
+    
+    .summary-table td {
+      padding: 20px 24px;
+      border-bottom: 1px solid #e5e7eb;
+      background-color: #ffffff;
+    }
+    
+    .summary-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .summary-table tr:last-child td:first-child {
+      border-radius: 0 0 0 12px;
+    }
+    
+    .summary-table tr:last-child td:last-child {
+      border-radius: 0 0 12px 0;
+    }
+    
+    /* Enhanced Styling for Data */
+    .metric-label {
+      font-weight: 600;
+      color: #374151;
+      font-size: 15px;
+    }
+    
+    .metric-value {
+      font-weight: 700;
+      color: #111827;
+      font-size: 16px;
+    }
+    
+    .highlight-value {
+      color: #f97316;
+      font-weight: 800;
+    }
+    
+    .email-value {
+      color: #2563eb;
+      font-weight: 600;
+      word-break: break-all;
+    }
+    
+    .app-value {
+      color: #059669;
+      font-weight: 700;
+    }
+    
+    /* Enhanced Step Container */
+    .step-container {
+      background: linear-gradient(135deg, #fffbf0 0%, #fef3c7 100%);
+      border-radius: 16px;
+      border-left: 5px solid #f97316;
+      margin-bottom: 20px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.08);
+    }
+    
+    .step-number {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2);
+    }
+    
+    /* Enhanced CTA Button */
+    .cta-button {
+      display: inline-block;
+      padding: 18px 48px;
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.2);
+      border: none;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+      background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+    }
+    
+    /* Enhanced Footer */
+    .social-icon {
+      transition: all 0.3s ease;
+      opacity: 0.9;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-3px);
+      opacity: 1;
+    }
+    
+    /* Animation Classes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .animate-in {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    /* Enhanced Mobile Responsiveness */
+    @media only screen and (max-width: 620px) {
+      .container {
+        padding: 20px 0;
+      }
+      
+      .main-table {
+        width: 100% !important;
+      }
+      
+      .mobile-padding {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+      }
+      
+      .summary-table th,
+      .summary-table td {
+        padding: 16px 20px !important;
+        font-size: 14px !important;
+      }
+      
+      .info-table td {
+        padding: 14px 0 !important;
+      }
+      
+      .cta-button {
+        padding: 16px 32px;
+        width: 100%;
+        text-align: center;
+        display: block;
+      }
+      
+      .step-container {
+        padding: 20px !important;
+      }
+    }
+    
+    @media only screen and (max-width: 480px) {
+      .mobile-padding {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      
+      .summary-table th,
+      .summary-table td {
+        padding: 14px 16px !important;
+        display: block;
+        width: 100%;
+        text-align: left !important;
+      }
+      
+      .summary-table thead {
+        display: none;
+      }
+      
+      .summary-table tr {
+        display: block;
+        margin-bottom: 16px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      
+      .summary-table td {
+        border-bottom: 1px solid #e5e7eb;
+        position: relative;
+        padding-left: 50% !important;
+      }
+      
+      .summary-table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 24px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: 700;
+        color: #4b5563;
+      }
+    }
+  </style>
+</head>
+<body>
+  <center class="container">
+    <!--[if mso]>
+    <table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0" style="width: 600px;">
+    <tr><td>
+    <![endif]-->
+    
+    <table class="main-table" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+        <td class="mobile-padding" style="padding: 0;">
+          
+          <!-- Main Container -->
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); overflow: hidden;">
+            
+            <!-- Header Section -->
+            <tr>
+              <td class="mobile-padding" style="padding: 48px 48px 32px 48px; text-align: left; background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%); border-bottom: 1px solid #fed7aa;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 24px;">
+                      <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy Logo" width="160" border="0" style="display: block; max-width: 160px; width: 160px; height: auto;" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 20px;">
+                      <div style="font-size: 14px; font-weight: 800; color: #f97316; text-transform: uppercase; letter-spacing: 1.2px; background-color: rgba(249,115,22,0.1); padding: 10px 20px; border-radius: 24px; display: inline-block; border: 1px solid rgba(249,115,22,0.2);">
+                        📋 TEST SUITE SHARED
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 20px;">
+                      <h1 style="font-size: 32px; font-weight: 900; color: #1e1b4b; margin: 0; line-height: 1.2; letter-spacing: -0.8px; text-align: left;">
+                        AI-Generated Tests Shared With You!
+                      </h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="font-size: 18px; color: #475569; margin: 0; font-weight: 500; line-height: 1.5; text-align: left;">
+                        <strong style="color: #f97316;">{{event.receiverName}}</strong>, you've received <strong style="color: #059669;">{{event.testCaseCount}} AI-generated tests</strong> for immediate review and integration.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Test Suite Info Section -->
+            <tr class="animate-in">
+              <td class="mobile-padding" style="padding: 40px 48px 32px 48px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 24px;">
+                      <h2 style="color: #1e1b4b; margin: 0; font-size: 24px; font-weight: 800; text-align: left;">
+                        Test Suite Details
+                      </h2>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table class="info-table" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td style="font-size: 16px; color: #6b7280; font-weight: 600; width: 140px; vertical-align: top; text-align: left;">Shared by</td>
+                          <td style="font-size: 17px; color: #1f2937; font-weight: 700; text-align: right;">{{event.senderName}}</td>
+                        </tr>
+                        <tr>
+                          <td style="font-size: 16px; color: #6b7280; font-weight: 600; width: 140px; vertical-align: top; text-align: left;">Project</td>
+                          <td style="font-size: 17px; color: #1f2937; font-weight: 700; text-align: right;">{{event.appName}}</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Test Results Summary Table -->
+            <tr class="animate-in" style="animation-delay: 0.1s;">
+              <td class="mobile-padding" style="padding: 0 48px 40px 48px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 28px; text-align: left;">
+                      <h3 style="color: #1e1b4b; margin: 0; font-size: 24px; font-weight: 800; display: flex; align-items: center; gap: 12px;">
+                        <span style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">📊</span>
+                        Test Suite Performance Summary
+                      </h3>
+                    </td>
+                  </tr>
+                  
+                  <!-- Summary Table Container -->
+                  <tr>
+                    <td>
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #ffffff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.04); border: 1px solid #e5e7eb;">
+                        <tr>
+                          <td style="padding: 8px;">
+                            <table class="summary-table" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                              <!-- Table Header -->
+                              <thead>
+                                <tr>
+                                  <th style="width: 40%;">Metric</th>
+                                  <th style="width: 60%;">Value</th>
+                                </tr>
+                              </thead>
+                              
+                              <!-- Table Body -->
+                              <tbody>
+                                <!-- Total Test Cases -->
+                                <tr>
+                                  <td data-label="Metric" class="metric-label">Total Test Cases</td>
+                                  <td data-label="Value" class="metric-value highlight-value">43</td>
+                                </tr>
+                                
+                                <!-- App Name -->
+                                <tr>
+                                  <td data-label="Metric" class="metric-label">App Name</td>
+                                  <td data-label="Value" class="metric-value app-value">{{event.appName}}</td>
+                                </tr> 
+                                
+                                <!-- Sender Email -->
+                                <tr>
+                                  <td data-label="Metric" class="metric-label">Sender Email</td>
+                                  <td data-label="Value" class="metric-value email-value">{{event.senderEmail}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Quick Steps Section -->
+            <tr class="animate-in" style="animation-delay: 0.2s;">
+              <td class="mobile-padding" style="padding: 0 48px 40px 48px;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 24px; text-align: left;">
+                      <h3 style="color: #1e1b4b; margin: 0; font-size: 24px; font-weight: 800;">
+                        🚀 Quick Start Guide
+                      </h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                          <td style="padding-bottom: 16px;">
+                            <div class="step-container">
+                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                  <td style="width: 50px; vertical-align: top;">
+                                    <div class="step-number">1</div>
+                                  </td>
+                                  <td style="padding-left: 20px;">
+                                    <div class="step-title" style="color: #92400e; font-weight: 700; margin-bottom: 8px; font-size: 17px;">
+                                      Review Test Cases
+                                    </div>
+                                    <div class="step-description" style="color: #a16207; font-size: 15px; line-height: 1.5;">
+                                      Examine the 43 AI-generated test cases for your Shoply application
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding-bottom: 16px;">
+                            <div class="step-container">
+                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                  <td style="width: 50px; vertical-align: top;">
+                                    <div class="step-number">2</div>
+                                  </td>
+                                  <td style="padding-left: 20px;">
+                                    <div class="step-title" style="color: #92400e; font-weight: 700; margin-bottom: 8px; font-size: 17px;">
+                                      Integrate into CI/CD
+                                    </div>
+                                    <div class="step-description" style="color: #a16207; font-size: 15px; line-height: 1.5;">
+                                      Add these tests to your existing pipeline for automated validation
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="step-container">
+                              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                  <td style="width: 50px; vertical-align: top;">
+                                    <div class="step-number">3</div>
+                                  </td>
+                                  <td style="padding-left: 20px;">
+                                    <div class="step-title" style="color: #92400e; font-weight: 700; margin-bottom: 8px; font-size: 17px;">
+                                      Run & Validate
+                                    </div>
+                                    <div class="step-description" style="color: #a16207; font-size: 15px; line-height: 1.5;">
+                                      Execute tests and monitor results in real-time dashboard
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA Section -->
+            <tr class="animate-in" style="animation-delay: 0.3s;">
+              <td class="mobile-padding" style="padding: 0 48px 48px 48px; text-align: center;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 20px;">
+                      <a href="https://app.keploy.io/api-testing/test-suites?appId=f31dc99c-1784-402e-971f-231695830669" 
+                         class="cta-button">
+                        View Shoply Test Suite Now
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="color: #6b7280; font-size: 15px; margin: 0; font-weight: 500; line-height: 1.6;">
+                        Access the shared test suite directly in your Keploy dashboard.<br>
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- FOOTER -->
+            <tr>
+              <td style="background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); padding: 32px 48px; text-align: center;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 24px;">
+                      
+                      <!-- Social Icons -->
+                      <table class="social-icons" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                        <tr>
+                          <td style="padding: 0 8px;">
+                            <a href="https://x.com/keployio" style="text-decoration: none; display: inline-block;">
+                              <img src="https://img.icons8.com/ios-filled/50/f97316/twitterx--v1.png" width="22" height="22" alt="Twitter" border="0" class="social-icon" style="display: block;" />
+                            </a>
+                          </td>
+                          <td style="padding: 0 8px;">
+                            <a href="https://linkedin.com/company/keploy/" style="text-decoration: none; display: inline-block;">
+                              <img src="https://img.icons8.com/ios-filled/50/f97316/linkedin.png" width="22" height="22" alt="LinkedIn" border="0" class="social-icon" style="display: block;" />
+                            </a>
+                          </td>
+                          <td style="padding: 0 8px;">
+                            <a href="https://github.com/keploy" style="text-decoration: none; display: inline-block;">
+                              <img src="https://img.icons8.com/ios-filled/50/f97316/github.png" width="22" height="22" alt="GitHub" border="0" class="social-icon" style="display: block;" />
+                            </a>
+                          </td>
+                          <td style="padding: 0 8px;">
+                            <a href="https://www.youtube.com/@keploy" style="text-decoration: none; display: inline-block;">
+                              <img src="https://img.icons8.com/ios-filled/50/f97316/youtube-play.png" width="22" height="22" alt="YouTube" border="0" class="social-icon" style="display: block;" />
+                            </a>
+                          </td>
+                        
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="color: #cbd5e0; font-size: 14px; line-height: 1.6; text-align: center;">
+                        <div style="margin-bottom: 8px; opacity: 0.9;">New Burton Rd Central, Delaware, US 19904</div>
+
+                        <div style="opacity: 0.6; font-size: 13px;">
+                          © 2025 Keploy, Inc. All rights reserved.<br>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+          </table>
+          
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+</html>
