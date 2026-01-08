@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Suite Report - Keploy</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f9fafb;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      mso-line-height-rule: exactly;
+      line-height: 1.5;
+      color: #374151;
+    }
+    
+    .container {
+      width: 100%;
+      table-layout: fixed;
+      background-color: #f9fafb;
+      padding: 20px 0;
+    }
+    
+    .main-table {
+      max-width: 560px;
+      width: 560px;
+      margin: 0 auto;
+    }
+    
+    .email-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+    }
+    
+    /* Neat Table Styles */
+    .neat-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: white;
+    }
+    
+    .neat-table th {
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+      color: #6b7280;
+      border-bottom: 2px solid #f3f4f6;
+      font-size: 13px;
+      background: #f9fafb;
+    }
+    
+    .neat-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    
+    .neat-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .metric-label {
+      font-weight: 500;
+      color: #4b5563;
+      font-size: 14px;
+    }
+    
+    .metric-value {
+      font-weight: 600;
+      font-size: 14px;
+      color: #111827;
+    }
+    
+    /* Clean CTA */
+    .clean-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ea580c;
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      border: none;
+    }
+    
+    /* Simple Footer */
+    .email-footer {
+      background: #1f2937;
+      padding: 20px 24px;
+      text-align: center;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .main-table {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      
+      .mobile-padding {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+      }
+      
+      .neat-table th,
+      .neat-table td {
+        padding: 10px 12px !important;
+      }
+      
+      .clean-button {
+        padding: 12px 20px !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <center class="container">
+    <table class="main-table" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tr>
+        <td class="mobile-padding" style="padding: 0;">
+          
+          <table class="email-card" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+            
+            <!-- Header -->
+            <tr>
+              <td class="mobile-padding" style="padding: 24px 24px 20px 24px; text-align: left;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 16px;">
+                      <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy Logo" width="120" border="0" style="display: block; max-width: 120px; width: 120px; height: auto;" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding-bottom: 16px;">
+                      <h1 style="font-size: 20px; font-weight: 600; color: #111827; margin: 0; text-align: left;">
+                        Test Results: {{event.appName}}
+                      </h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="font-size: 14px; color: #6b7280; margin: 0; font-weight: 400; line-height: 1.5; text-align: left;">
+                        {{event.receiverName}}, test execution results have been shared by {{event.senderName}}.
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- NEAT TABLE -->
+            <tr>
+              <td class="mobile-padding" style="padding: 0 24px 24px 24px;">
+                <table class="neat-table" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th style="width: 50%;">Metric</th>
+                      <th style="width: 50%;">Value</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                    <tr>
+                      <td class="metric-label">Application</td>
+                      <td class="metric-value" style="color: #ea580c;">{{event.appName}}</td>
+                    </tr>
+                    
+                    <tr>
+                      <td class="metric-label">Test Cases</td>
+                      <td class="metric-value">{{event.testCaseCount}}</td>
+                    </tr>
+                    <tr>
+                      <td class="metric-label">Shared By</td>
+                      <td class="metric-value">{{event.senderName}}</td>
+                    </tr>
+                    
+                    <tr>
+                      <td class="metric-label">Sender Email</td>
+                      <td class="metric-value" style="color: #6b7280;">{{event.senderEmail}}</td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+            <!-- CTA -->
+            <tr>
+              <td class="mobile-padding" style="padding: 0 24px 24px 24px; text-align: center;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 16px;">
+                      <a href="https://app.keploy.io/api-testing/tr/84c5bafb-458e-4188-baf5-0a2238beea94" class="clean-button">
+                        View Complete Report
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="color: #6b7280; font-size: 13px; margin: 0; font-weight: 400; line-height: 1.5;">
+                        Access detailed test logs and analytics
+                      </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+<!-- FOOTER -->
+            <tr>
+              <td style="background-color: #1a202c; padding: 16px 32px; text-align: center; border-radius: 0 0 20px 20px; align-items: center;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding-bottom: 16px;">
+                      <!-- Social Icons -->
+                      <table class="social-icons" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto;">
+                        <tr>
+                          <td style="padding-right: 6px;">
+                            <a href="https://x.com/keployio" style="text-decoration: none; display: inline-block;">
+                              <img src="https://img.icons8.com/ios-filled/50/f97316/twitterx--v1.png" width="28" height="28" alt="Twitter" border="0" style="display: block;" />
+                            </a>
+                          </td>
+                          <td style="padding-right: 6px;">
+                            <a href="https://linkedin.com/company/keploy/" style="text-decoration: none; display: inline-block;">
+                              <img src="https://img.icons8.com/ios-filled/50/f97316/linkedin.png" width="28" height="28" alt="LinkedIn" border="0" style="display: block;" />
+                            </a>
+                          </td>
+                          <td style="padding-right: 6px;">
+                            <a href="https://github.com/keploy" style="text-decoration: none; display: inline-block;">
+                              <img src="https://img.icons8.com/ios-filled/50/f97316/github.png" width="28" height="28" alt="GitHub" border="0" style="display: block;" />
+                            </a>
+                          </td>
+                          <td>
+                            <a href="https://www.youtube.com/@keploy" style="text-decoration: none; display: inline-block;">
+                              <img src="https://img.icons8.com/ios-filled/50/f97316/youtube-play.png" width="28" height="28" alt="YouTube" border="0" style="display: block;" />
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div style="color: #cbd5e0; font-size: 13px; margin-top: 8px; text-align: center; line-height: 1.5;">
+                        <div>New Burton Rd Central, Delaware, US 19904</div>
+                        <div>© 2025 Keploy, Inc. All rights reserved.</div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+          </table>
+          
+        </td>
+      </tr>
+    </table>    
+  </center>
+</body>
+</html>
