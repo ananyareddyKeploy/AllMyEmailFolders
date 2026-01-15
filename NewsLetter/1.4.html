@@ -1,764 +1,591 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keploy Newsletter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #F97316;
-            --primary-dark: #EA580C;
-            --primary-light: #FB923C;
-            --secondary: #FFF7ED;
-            --text: #1F2937;
-            --text-light: #6B7280;
-            --border: #FED7AA;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.5;
-            color: var(--text);
-            background: #F9FAFB;
-            padding: 0;
-        }
-
-        /* Single Page Newsletter */
-        .newsletter-page {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            min-height: 100vh;
-        }
-
-        /* Header */
-        .page-header {
-            padding: 30px 40px 20px;
-            border-bottom: 3px solid var(--primary);
-            background: white;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .logo {
-            width: 140px;
-            height: 40px;
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .header-info {
-            flex: 1;
-        }
-
-        .newsletter-name {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 5px;
-        }
-
-        .newsletter-tagline {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .issue-details {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid var(--border);
-        }
-
-        .issue-number {
-            font-size: 14px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .issue-date {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        /* Hero */
-        .hero-section {
-            padding: 40px;
-            background: var(--secondary);
-        }
-
-        .hero-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero-title .accent {
-            color: var(--primary);
-        }
-
-        .hero-description {
-            font-size: 18px;
-            color: var(--text-light);
-            max-width: 700px;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-
-        /* Main Content */
-        .content-section {
-            padding: 0 40px;
-        }
-
-        .section {
-            padding: 40px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .section:last-child {
-            border-bottom: none;
-        }
-
-        .section-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            color: var(--text);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .section-title i {
-            color: var(--primary);
-        }
-
-        /* Workflow */
-        .workflow-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .workflow-step {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .step-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--text);
-        }
-
-        .step-description {
-            font-size: 14px;
-            color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        /* Code Example */
-        .code-example {
-            background: #1F2937;
-            color: #E5E7EB;
-            padding: 25px;
-            border-radius: 8px;
-            font-family: 'Monaco', 'Menlo', monospace;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-top: 20px;
-            overflow-x: auto;
-        }
-
-        .code-comment {
-            color: #9CA3AF;
-        }
-
-        .code-command {
-            color: var(--primary-light);
-        }
-
-        .code-output {
-            color: #10B981;
-        }
-
-        /* Testing Cards */
-        .testing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .testing-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .card-header {
-            background: var(--primary);
-            color: white;
-            padding: 20px;
-        }
-
-        .card-header h3 {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .card-description {
-            font-size: 14px;
-            color: var(--text-light);
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .card-features {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .card-features li {
-            padding: 6px 0;
-            padding-left: 20px;
-            position: relative;
-            font-size: 13px;
-            color: var(--text);
-        }
-
-        .card-features li:before {
-            content: "▶";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-size: 10px;
-            top: 7px;
-        }
-
-        .card-link {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--primary);
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .card-link:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* Testimonials */
-        .testimonial-container {
-            background: var(--secondary);
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            font-size: 16px;
-            color: var(--text);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 5px;
-        }
-
-        .testimonial-role {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        /* Stats */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-        }
-
-        .stat-value {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 12px;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* CTA */
-        .cta-container {
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        .cta-title {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text);
-        }
-
-        .cta-description {
-            font-size: 16px;
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto 30px;
-            line-height: 1.5;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--primary);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .cta-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
-        }
-
-        /* Footer */
-        .page-footer {
-            background: #1F2937;
-            color: #D1D5DB;
-            padding: 40px;
-            margin-top: 40px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 30px;
-        }
-
-        .footer-logo {
-            width: 120px;
-            height: 35px;
-        }
-
-        .footer-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 40px;
-        }
-
-        .footer-column h4 {
-            color: white;
-            font-size: 14px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 8px;
-        }
-
-        .footer-column a {
-            color: #9CA3AF;
-            text-decoration: none;
-            font-size: 13px;
-            transition: color 0.2s;
-        }
-
-        .footer-column a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin: 30px 0;
-        }
-
-        .social-link {
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 13px;
-            color: #9CA3AF;
-            line-height: 1.5;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .page-header,
-            .hero-section,
-            .content-section {
-                padding: 30px 20px;
-            }
-            
-            .logo-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .workflow-container,
-            .testing-grid,
-            .stats-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 30px;
-                text-align: center;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .hero-title {
-                font-size: 28px;
-            }
-            
-            .cta-title {
-                font-size: 24px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 24px;
-            }
-            
-            .hero-description {
-                font-size: 16px;
-            }
-            
-            .section-title {
-                font-size: 20px;
-            }
-            
-            .cta-button {
-                padding: 14px 28px;
-                font-size: 15px;
-            }
-        }
-    </style>
+<meta charset="utf-8" />
+<meta content="width=device-width" name="viewport" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta name="x-apple-disable-message-reformatting" />
+<meta content="telephone=no,address=no,email=no,date=no,url=no" name="format-detection" />
+<title>Keploy Newsletter</title>
+<!--[if mso]>
+<noscript>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+</noscript>
+<![endif]-->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+<style>
+html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+td {
+    vertical-align: top;
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+a {
+    text-decoration: none;
+}
+img {
+    -ms-interpolation-mode: bicubic;
+    display: block;
+}
+.button:hover {
+    background-color: #e56a2a !important;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+@media only screen and (min-device-width: 414px) {
+    u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+</style>
+<style>
+@media only screen and (max-device-width: 562px), only screen and (max-width: 562px) {
+    .eh {
+        height: auto !important;
+    }
+    .desktop {
+        display: none !important;
+        height: 0 !important;
+        margin: 0 !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        visibility: hidden !important;
+        width: 0 !important;
+    }
+    .mobile {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        float: none !important;
+    }
+    .email-container {
+        width: 100% !important;
+        margin: auto !important;
+    }
+    .stack-column,
+    .stack-column-center {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        direction: ltr !important;
+    }
+    .mobile-padding {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    .feature-card {
+        margin-bottom: 16px !important;
+    }
+}
+</style>
 </head>
-<body>
-    <div class="newsletter-page">
-        <!-- Header -->
-        <header class="page-header">
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy Logo">
-                </div>
-                <div class="header-info">
-                    <div class="newsletter-name">Keploy Newsletter</div>
-                    <div class="newsletter-tagline">API Testing Insights for Engineering Teams</div>
-                </div>
-            </div>
-        </header>
+<body width="100%" style="background-color:#fff2e8;margin:0;padding:0!important;mso-line-height-rule:exactly;">
 
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <h1 class="hero-title">Automate Your API Testing, <span class="accent">Focus on Features</span></h1>
-            <p class="hero-description">
-                Discover how teams save 15+ hours weekly with automated test generation. 
-                Get comprehensive coverage without writing test code. This issue covers workflow optimization, 
-                integration strategies, and real-world success stories.
-            </p>
-        </section>
+<!-- Preview Text -->
+<div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;">
+    Your monthly dose of testing insights and product updates from Keploy! 🚀
+</div>
 
-        <!-- Main Content -->
-        <div class="content-section">
-            <!-- Workflow Section -->
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-bolt"></i> Simple 3-Step Workflow</h2>
-                
-                <div class="workflow-container">
-                    <div class="workflow-step">
-                        <div class="step-number">1</div>
-                        <div class="step-title">Generate Tests</div>
-                        <div class="step-description">Automatically create comprehensive test suites</div>
-                    </div>
-                    
-                    <div class="workflow-step">
-                        <div class="step-number">2</div>
-                        <div class="step-title">Integrate & Run</div>
-                        <div class="step-description">Seamlessly integrate with your CI/CD pipelines</div>
-                    </div>
-                    
-                    <div class="workflow-step">
-                        <div class="step-number">3</div>
-                        <div class="step-title">View result</div>
-                        <div class="step-description">Review test performance and coverage reports
+<div style="background-color:#fff2e8">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td valign="top" align="center" style="padding: 20px 10px;">
 
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="code-example">
-<span class="code-comment"># Record your API traffic once</span><br>
-<span class="code-command">$ keploy record --port 8080</span><br><br>
+<!-- Email Container -->
+<table bgcolor="#ffffff" style="margin:0 auto;" align="center" cellspacing="0" cellpadding="0" border="0" width="563" class="email-container">
+<tr>
+<td width="563">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
 
-<span class="code-comment"># Auto-generate comprehensive tests</span><br>
-<span class="code-command">$ keploy test --output "./test-suites"</span><br><br>
+<!-- HEADER IMAGE -->
+<tr>
+<td width="563" style="background-color:#ffffff; padding:0;">
+<img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Header1.png" 
+     width="563" 
+     border="0" 
+     alt="Keploy Newsletter Header"
+     style="max-width:563px; width:100%; height:auto; display:block;">
+</td>
+</tr>
+<!-- END HEADER  -->
 
-<span class="code-comment"># Run in CI/CD with detailed reporting</span><br>
-<span class="code-command">$ keploy test --ci --coverage --report</span><br>
-<span class="code-output"># 90% coverage achieved. All tests passed.</span>
-                </div>
-            </section>
+<!-- MAIN CONTENT AREA -->
+<tr>
+<td style="background-color:#ffffff; padding:32px 28px;" class="mobile-padding">
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
 
-            <!-- Testing Solutions -->
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-check-circle"></i> Comprehensive Testing Solutions</h2>
-                
-                <div class="testing-grid">
-                    <!-- Unit Testing -->
-                    <div class="testing-card">
-                        <div class="card-header">
-                            <h3>Unit Testing</h3>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-description">Generate comprehensive unit tests automatically—zero code, full coverage, CI/CD ready.</p>
-                            <ul class="card-features">
-                                <li>Function & method testing</li>
-                                <li>Mocking dependencies automation</li>
-                                <li>Performance benchmarking</li>
-                                <li>Test coverage optimization</li>
-                            </ul>
-                            <a href="https://github.com/marketplace/keploy" class="card-link">Unit testing</a>
-                        </div>
-                    </div>
+<!-- Newsletter Header -->
+<tr>
+<td style="padding-bottom: 16px;">
+<div style="line-height: normal; text-align: left;">
+<span style="color: #0f172a; font-weight: 500; font-size: 28px; text-transform: uppercase; letter-spacing: 2px; line-height: 1.2; font-family: 'Roboto'; display: block; margin-bottom: 8px;">
+Keploy January Release:
+</span>
+<h1 style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; color: #0f1013; line-height: 1.6;">
+Hey {{customer.name | default: "there"}}! 👋
+</h1>
+</div>
+</td>
+</tr>
 
-                    <!-- Integration Testing -->
-                    <div class="testing-card">
-                        <div class="card-header">
-                            <h3>Integration Testing</h3>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-description">Automate integration tests with mocks, record-and-replay, replicating complex system interactions effortlessly.</p>
-                            <ul class="card-features">
-                                <li>API & service integration</li>
-                                <li>Database interaction testing</li>
-                                <li>Third-party service mocking</li>
-                                <li>Workflow validation</li>
-                            </ul>
-                            <a href="https://github.com/keploy/keploy" class="card-link">Integration testing</a>
-                        </div>
-                    </div>
+<!-- Introduction -->
+<tr>
+<td style="padding-bottom: 24px;">
+<p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; color: #0f172a; line-height: 1.6;">
+Welcome to our first newsletter of the year! We're excited to share some amazing updates and new features that will transform your testing experience.
+</p>
+</td>
+</tr>
 
-                    <!-- API Testing -->
-                    <div class="testing-card">
-                        <div class="card-header">
-                            <h3>API Testing</h3>
-                        </div>
-                        <div class="card-content">
-                            <p class="card-description">Generate comprehensive API tests automatically—record once, test forever, CI/CD ready.</p>
-                            <ul class="card-features">
-                                <li>Request & response validation</li>
-                                <li>Schema validation automation</li>
-                                <li>Performance benchmarking</li>
-                                <li>Error scenario testing</li>
-                            </ul>
-                            <a href="https://app.keploy.io/api-testing/generate" class="card-link">API testing</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+<!-- FEATURED SECTION  -->
+<tr>
+<td style="padding-bottom:32px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#FFF7F3; border-radius:12px; border-left:4px solid #FE7E3C;">
+<tr>
+<td style="padding:24px;">
+<span style="display:inline-block; background-color:#FE7E3C; color:#ffffff; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:1px; padding:5px 12px; border-radius:20px; margin-bottom:12px;">
+✨ Featured
+</span>
+<h2 style="margin:16px 0 12px 0; font-family:'DM Sans',Arial,sans-serif; font-size:22px; font-weight:700; color:#0f172a; line-height:1.3;">
+Transform Your Testing Workflow with Keploy
+</h2>
+<p style="margin:0 0 20px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#0f172a; line-height:1.6;">
+Discover how teams are accelerating their development cycles... improving code quality before changes reach production.
+</p>
+<a href="https://keploy.io/" target="_blank" class="button" style="display:inline-block; background-color:#FE7E3C; color:#ffffff; font-family:'DM Sans',sans-serif; font-size:14px; font-weight:600; text-decoration:none; padding:12px 24px; border-radius:8px; box-shadow:0 2px 8px rgba(254,126,60,0.25);">
+View product →
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END FEATURED -->
 
-            <!-- Testimonials -->
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-quote-left"></i> Engineering Feedback</h2>
-                
-                <div class="testimonial-container">
-                    <p class="testimonial-text">
-                        “Our collaboration with Keploy was remarkable. Their proactive support and platform have added significant business value to code-quality.”
-                    </p>
-                    <div class="testimonial-author">Senior Executive Member - Maruti Suzuki</div>
-                </div>
-            </section>
+<!-- Section Title -->
+<tr>
+<td style="padding-bottom:20px;">
+<h3 style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:24px; font-weight:600; color:#0f172a; border-left:3px solid #FE7E3C; padding-left:12px;">
+What's New This Month
+</h3>
+</td>
+</tr>
 
-            <!-- Community Stats -->
-            <section class="section">
-                <h2 class="section-title"><i class="fas fa-chart-line"></i> Community Impact</h2>
-                
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <div class="stat-value">13.4K+</div>
-                        <div class="stat-label">GitHub Stars</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">997K+</div>
-                        <div class="stat-label">Extension Installs</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">230K+</div>
-                        <div class="stat-label">Developers</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-value">400+</div>
-                        <div class="stat-label">Contributors</div>
-                    </div>
-                </div>
-            </section>
+<!-- ARTICLE CARD 1 - SCHEMA COVERAGE DASHBOARD -->
+<tr>
+<td style="padding-bottom:16px;" class="feature-card">
+<!-- Header with Icon -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 10px;">
+<tr>
+<td>
+<span style="font-size:24px; line-height:1; color:#3b82f6;">📊</span>
+<h4 style="display:inline; margin:0 0 0 8px; font-family:'DM Sans',Arial,sans-serif; font-size:24px; font-weight:600; color:#0f172a; vertical-align:middle;">
+📊 1. Schema Coverage Dashboard
+</h4>
+</td>
+</tr>
+</table>
 
-            <!-- CTA Section -->
-            <section class="cta-container">
-                <h2 class="cta-title">Ready to Transform Your Testing Workflow?</h2>
-                <p class="cta-description">
-                    Join thousands of developers who save hours every week. Start with Keploy today—free tier available, 
-                    no credit card required.
+<!-- Problem Statement -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+<tr>
+<td>
+<p style="margin:0 0 12px 0; font-family:'DM Sans',Arial,sans-serif; font-size:20px; color:#000409; line-height:1.6;">
+<strong>Don't know which API endpoints are actually covered?</strong>
+</p>
+</td>
+</tr>
+</table>
+
+<!-- Dashboard Image -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px; margin-top: -16px;">
+<tr>
+<td align="center">
+<img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Schema1.png" 
+     width="100%" 
+     border="0" 
+     alt="Schema Coverage Dashboard Preview"
+     style="max-width:500px; width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+</td>
+</tr>
+</table>
+
+<!-- Benefits -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+<tr>
+<td>
+<p style="margin:0 0 20px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#0f172a; line-height:1.6; margin-bottom: -10px;">
+<strong>Get complete visibility into test coverage with color-coded indicators.</strong>
+<strong>See Coverage Gaps:</strong> Identify untested lines instantly. <strong>Cover Missing Lines</strong> Generate tests for uncovered sections with one click. <strong>Track Progress</strong> Monitor coverage improvements over time.
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END CARD 1  -->
+
+<!-- ARTICLE CARD 2 - GRAPHQL SUPPORT -->
+<tr>
+<td style="padding-bottom:24px;" class="feature-card">
+<!-- Header with Icon -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 12px;">
+<tr>
+<td>
+<span style="font-size:24px; line-height:1;">🚀</span>
+<h4 style="display:inline; margin:0 0 0 8px; font-family:'DM Sans',Arial,sans-serif; font-size:24px; font-weight:600; color:#0f172a; vertical-align:middle;">
+2. Now Supporting GraphQL 
+</h4>
+</td>
+</tr>
+</table>
+
+<!-- Announcement -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 8px;">
+<tr>
+<td>
+<p style="margin:0 0 12px 0; font-family:'DM Sans',Arial,sans-serif; font-size:20px; color:#000409; line-height:1.6;">
+<strong>Expanding Keploy's capabilities - Now use your GraphQL schemas too</strong>
+</p>
+</td>
+</tr>
+</table>
+
+<!-- GraphQL Image -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+<tr>
+<td align="center">
+<img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/GraphQL1.png" 
+     width="100%"   
+     border="0"    
+     alt="Keploy now supports GraphQL alongside existing tools"
+     style="max-width:500px; width:100%; height:auto; display:block; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+</td>
+</tr>
+</table>
+
+<!-- Capabilities -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr> 
+<td>
+<p style="margin:0 0 16px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#0f172a; line-height:1.6;">
+<strong>Use GraphQL with Keploy</strong> to enhance your testing workflow.<strong>Import GraphQL schema file:</strong> Upload your .gql, .graphql, or .graphqls files directly. <strong>Combine with existing tools:</strong> Use alongside Postman, cURL, and OpenAPI specs
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END CARD 2  -->
+
+<!-- ARTICLE CARD 3 - KUBERNETES TESTING -->
+<tr>
+<td style="padding-bottom:24px;" class="feature-card">
+<!-- Header with Icon -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 12px;">
+<tr>
+<td>
+<span style="font-size:24px; line-height:1; color:#0ea5e9;">⚓</span>
+<h4 style="display:inline; margin:0 0 0 8px; font-family:'DM Sans',Arial,sans-serif; font-size:24px; font-weight:600; color:#0f172a; vertical-align:middle;">
+3. Testing in Real Kubernetes Clusters
+</h4>
+</td>
+</tr>
+</table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 8px;">
+<tr>
+<td>
+<p style="margin:0 0 12px 0; font-family:'DM Sans',Arial,sans-serif; font-size:20px; color:#000409; line-height:1.6;">
+<strong>Testing locally, but your apps run in Kubernetes in production?</strong>
+</p>
+</td>
+</tr>
+</table>
+
+<!-- K8s Dashboard Image -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+<tr>
+<td align="center">
+<img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/k8s+image.png"
+     width="100%" 
+     border="0" 
+     alt="Testing applications directly in Kubernetes clusters"
+     style="max-width:500px; width:100%; height:auto; display:block; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+</td>
+</tr>
+</table>
+
+<!-- Solution -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<p style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#0f172a; line-height:1.6;">
+<strong>Test directly in Kubernetes clusters</strong> using Helm and production-like environments. Validate microservices with real network conditions. <strong>Deploy Keploy k8s-proxy locally via Kind cluster</strong> to automatically generate tests from API traffic—zero manual coding.
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END CARD 3 -->
+
+<!-- ARTICLE CARD 4 - AWS MARKETPLACE -->
+<tr>
+<td style="padding-bottom:28px;" class="feature-card">
+<!-- Header with Icon -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 16px;">
+<tr>
+<td>
+<span style="font-size:24px; line-height:1;">🛒</span>
+<h4 style="display:inline; margin:0 0 0 8px; font-family:'DM Sans',Arial,sans-serif; font-size:24px; font-weight:600; color:#0f172a; vertical-align:middle;">
+4. Now Available on AWS Marketplace 
+</h4>
+</td>
+</tr>
+</table>
+
+<!-- Problem Statement -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+<tr>
+<td>
+<p style="margin:0 0 12px 0; font-family:'DM Sans',Arial,sans-serif; font-size:20px; color:#000409; line-height:1.6;">
+<strong>Need enterprise-grade testing tools but dread the procurement process?</strong>
+</p>
+</td>
+</tr>
+</table>
+
+<!-- AWS Marketplace Image -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+<tr>
+<td align="center">
+<img src="#" 
+     width="100%" 
+     border="0" 
+     alt="Keploy product listing on AWS Marketplace"
+     style="max-width:500px; width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+</td>
+</tr>
+</table>
+
+<!-- Explanation --> 
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<p style="margin:0 0 16px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#0f172a; line-height:1.6;">
+<strong>Great news for AWS customers!</strong> Keploy is now listed on the <strong>AWS Marketplace</strong>, making it easier than ever for organizations to purchase and deploy our automated testing platform. <strong>Familiar Platform:</strong> Access Keploy through the AWS Marketplace interface you already use. <strong>Enterprise Validation:</strong> Being on AWS Marketplace means we meet AWS's security and compliance requirements.
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END CARD 4 -->
+
+<!-- ARTICLE CARD 5 - CUSTOM JS IN VARIABLES -->
+<tr>
+<td style="padding-bottom:28px;" class="feature-card">
+<!-- Header with Icon -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 16px;">
+<tr>
+<td>
+<span style="font-size:24px; line-height:1;">🚀</span>
+<h4 style="display:inline; margin:0 0 0 8px; font-family:'DM Sans',Arial,sans-serif; font-size:24px; font-weight:600; color:#0f172a; vertical-align:middle;">
+5. Custom JavaScript in Variables
+</h4>
+</td>
+</tr>
+</table>
+
+<!-- Problem Statement -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+<tr>
+<td>
+<p style="margin:0 0 12px 0; font-family:'DM Sans',Arial,sans-serif; font-size:20px; color:#000409; line-height:1.6;">
+<strong>Tired of static test data that doesn't reflect real-world scenarios?</strong>
+</p>
+</td>
+</tr>
+</table>
+
+<!-- Feature Image -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+<tr>
+<td align="center">
+<img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Variables.png" 
+     width="100%" 
+     border="0" 
+     alt="JavaScript code with dynamic variables example"
+     style="max-width:500px; width:100%; height:auto; display:block; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+</td>
+</tr>
+</table>
+
+<!-- Explanation -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<p style="margin:0 0 16px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#0f172a; line-height:1.6;">
+<strong>Introducing Custom JavaScript in Keploy Variables!</strong> Our latest feature lets you generate dynamic, realistic test data using familiar JavaScript syntax. <strong>Dynamic Values:</strong> Use JavaScript expressions like <code>${Date.now()}</code>, <code>${Math.random()}</code> directly in your test configurations. <strong>Perfect for:</strong> API testing with unique identifiers, load testing with varied data, E2E testing with realistic user scenarios, and any situation where static test data falls short.
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END CARD 5  -->
+
+<!-- CTA BANNER -->
+<tr>
+<td style="padding-bottom:28px;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius:12px;">
+<tr>
+<td align="center" style="padding:32px 24px;">
+<h3 style="margin:0 0 8px 0; font-family:'DM Sans',Arial,sans-serif; font-size:20px; font-weight:700; color:#ffffff;">
+Ready to Transform Your Testing?
+</h3>
+<p style="margin:0 0 20px 0; font-family:'DM Sans',Arial,sans-serif; font-size:14px; color:#94a3b8; line-height:1.5;">
+Start generating tests automatically with Keploy today.
+</p> 
+<a href="https://keploy.io" target="_blank" style="display:inline-block; background-color:#FE7E3C; color:#ffffff; font-family:'DM Sans',sans-serif; font-size:15px; font-weight:600; text-decoration:none; padding:14px 32px; border-radius:8px;">
+Try Keploy Now →
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<!-- END CTA BANNER -->
+
+<!-- Closing Message -->
+<tr>
+<td align="center" style="padding-bottom:8px;">
+<p style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#0f172a; line-height:1.6;">
+Thanks for being part of the Keploy community! 🧡
+</p>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+<!-- END MAIN CONTENT -->
+
+<!-- FOOTER - Keploy Version -->
+<tr>
+  <td width="100%" style="background-color:#0f172a; color:#ffffff; padding:40px 24px 24px 24px;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" style="padding-bottom: 24px;">
+          
+          <!-- Keploy Logo -->
+          <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px; margin-top: -20px;">
+            <tr>
+              <td align="center">
+                <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                     width="120" 
+                     height="32" 
+                     alt="Keploy" 
+                     style="display:block; width:120px; height:auto; margin:0 auto;">
+              </td>
+            </tr>
+          </table>
+
+          <!-- Tagline -->
+          <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 12px;">
+            <tr>
+              <td align="center">
+                <p style="margin:0; font-family:'Roboto',Arial,sans-serif; font-size:16px; font-weight:500; color:#94a3b8; line-height:1.5;">
+                  THE AI-POWERED TESTING PLATFORM
                 </p>
-                <a href="https://keploy.io/" class="cta-button">
-                    <i class="fas fa-rocket"></i> Get Started Free
-                </a>
-            </section>
-        </div>
+              </td>
+            </tr>
+          </table>
 
-        <!-- Footer -->
-        <footer class="page-footer">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy Logo">
-                </div>
-                
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Resources</h4>
-                        <ul>
-                            <li><a href="https://docs.keploy.io">Documentation</a></li>
-                            <li><a href="https://blog.keploy.io">Blog</a></li>
-                            <li><a href="https://github.com/keploy">GitHub</a></li>
-                            <li><a href="https://keploy.io/case-studies">Case Studies</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Solutions</h4>
-                        <ul>
-                            <li><a href="https://keploy.io/unit-test-generator">Unit Testing</a></li>
-                            <li><a href="https://keploy.io/integration-testing">Integration Testing</a></li>
-                            <li><a href="https://keploy.io/api-testing">API Testing</a></li>
-                            <li><a href="https://marketplace.visualstudio.com/items?itemName=Keploy.keployio">VS Code Extension</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://twitter.com/keployio" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="https://github.com/keploy" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/company/keploy/" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://discord.gg/keploy" class="social-link"><i class="fab fa-discord"></i></a>
-                <a href="https://www.youtube.com/@keploy" class="social-link"><i class="fab fa-youtube"></i></a>
-            </div>
-            
-            <div class="copyright">
-                <p>© 2024 Keploy Inc. All rights reserved. | Built on Open-Source | Trusted by Global Networks</p>
-                <p style="margin-top: 10px;">San Francisco, California 19006, US</p>
-            </div>
-        </footer>
-    </div>
-</body>
-</html>
+          <!-- Description -->
+          <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 24px; max-width:400px;">
+            <tr>
+              <td align="center">
+                <p style="margin:0; font-family:'Roboto',Arial,sans-serif; font-size:14px; color:#cbd5e1; line-height:1.2; text-align:center;">
+                  Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
+                </p>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+      
+      <!-- Centered Social Icons -->
+      <tr>
+        <td align="center">
+          <table class="social-icons" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: 0 auto; margin-top: -30px; margin-bottom: -10px;">
+            <tr>
+              <td style="padding-right: 20px;">
+                <a href="https://x.com/keployio" style="text-decoration: none; display: inline-block;">
+                  <img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx--v1.png" width="24" height="24" alt="Twitter" border="0" style="display: block;" />
+                </a>
+              </td>
+              <td style="padding-right: 20px;">
+                <a href="https://linkedin.com/company/keploy/" style="text-decoration: none; display: inline-block;">
+                  <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" width="24" height="24" alt="LinkedIn" border="0" style="display: block;" />
+                </a>
+              </td>
+              <td style="padding-right: 20px;">
+                <a href="https://github.com/keploy" style="text-decoration: none; display: inline-block;">
+                  <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" width="24" height="24" alt="GitHub" border="0" style="display: block;" />
+                </a>
+              </td>
+              <td>
+                <a href="https://www.youtube.com/@keploy" style="text-decoration: none; display: inline-block;">
+                  <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" width="24" height="24" alt="YouTube" border="0" style="display: block;" />
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <!-- Address & Legal -->
+      <tr>
+        <td align="center">
+          <table cellpadding="0" cellspacing="0" border="0" style="max-width:400px; margin-top: -14px;">
+            <tr>
+              <td align="center">
+                <p style="margin:0 0 8px 0; font-family:'Roboto',Arial,sans-serif; font-size:12px; color:#94a3b8; line-height:1.2; margin-top: 24px; margin-bottom: 4px;">
+                  New Burton Rd Central, Delaware, US 19904
+                </p>
+                <p style="margin:0; font-family:'Roboto',Arial,sans-serif; font-size:12px; color:#94a3b8; line-height:1.2;">
+                  © 2026 Keploy, Inc. All rights reserved.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      
+    </table>
+  </td>
+</tr>
+<!-- END FOOTER -->
