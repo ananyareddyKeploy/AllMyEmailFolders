@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Test Suite is Ready | Keploy</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: Arial, Helvetica, sans-serif; line-height: 1.6;">
+    <!-- email  -->
+    <div style="display: none; font-size: 0; line-height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; visibility: hidden;">
+        Your automated test suite is ready to execute. All tests have been generated from your API traffic and are pre-configured for immediate use.
+    </div>
+
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 600px; margin: 0 auto;">
+        
+        <!-- Simple Header -->
+        <tr>
+            <td style="padding: 32px 40px 40px; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="padding-bottom: 24px;">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="vertical-align: middle;">
+                                        <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Mask+group.png" alt="Keploy" width="108" style="display: inline-block; vertical-align: middle; border: 0;">
+                                    </td>
+                                    <td align="right" style="vertical-align: middle;">
+                                        <span style="display: inline-block; background: rgba(255,255,255,0.2); color: white; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; vertical-align: middle; letter-spacing: 0.3px;">
+                                            CI/CD Ready
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 16px;">
+                            <h1 style="font-size: 32px; font-weight: 800; color: #ffffff; margin: 0; line-height: 1.3;">
+                                Run {{event.appName}} Tests in Your CI Pipeline
+                            </h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+  <p style="font-size: 18px; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5;">
+          Add AI-powered API test automation to GitHub Actions in under 5 minutes. Simple, powerful, and ready to go.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+        <!-- Main Card -->
+        <tr>
+            <td style="background: #ffffff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+             
+
+                <!-- Content -->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="padding: 40px 40px 40px;">
+                            <!-- Intro Text -->
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 32px;">
+                                <tr>
+                                    <td style="padding: 0;">
+                                        <p style="font-size: 16px; color: #4b5563; margin: 0 0 16px 0; line-height: 1.6;">
+                                            Hi there! 👋<br><br>
+                                            Your test suite for <strong style="color: #111827;">{{event.appName}}</strong> is ready. Now let's automate it so every commit gets tested automatically. Here's your ready-to-use GitHub Actions workflow:
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Section Header -->
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 0;">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="32" style="padding: 0 12px 0 0; vertical-align: top;">
+                                                    <div style="width: 32px; height: 32px; background: #f0f9ff; border-radius: 6px; text-align: center; line-height: 32px; font-size: 18px;">
+                                                        📄
+                                                    </div>
+                                                </td>
+                                                <td style="padding: 0; vertical-align: middle;">
+                                                    <h2 style="font-size: 20px; font-weight: 700; color: #111827; margin: 0; line-height: 1.3;">
+                                                        Your Existing GitHub Actions Workflow
+                                                    </h2>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Code Block -->
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 32px; background: #1e293b; border-radius: 8px; overflow: hidden;">
+                                <tr>
+                                    <td style="padding: 0;">
+                                        <!-- Code Header -->
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background: #0f172a; padding: 12px 16px;">
+                                            <tr>
+                                                <td style="padding: 0;">
+                                                    <span style="color: #cbd5e1; font-size: 13px; font-weight: 500; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;">
+                                                        .github/workflows/ci.yml
+                                                    </span>
+                                                </td>
+                                                <td align="right" style="padding: 0;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <!-- Code Content -->
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding: 16px;">
+                                            <tr>
+                                                <td style="padding: 0;">
+                                                    <pre style="color: #e2e8f0; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace; font-size: 12px; line-height: 1.5; margin: 0; white-space: pre-wrap; word-wrap: break-word;">
+  - name: Install Keploy CLI
+    run: |
+      curl --silent -L https://keploy.io/ent/install.sh | bash
+      
+  - name: Run Keploy Test Suite
+    run: |
+      {{event.codeSnippet.snippet}}</pre>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Note Box -->
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 32px; background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 16px;">
+                                <tr>
+                                    <td style="padding: 0;">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="32" style="padding: 0 12px 0 0; vertical-align: top;">
+                                                    <div style="width: 32px; height: 32px; background: #fef3c7; border-radius: 6px; text-align: center; line-height: 32px; font-size: 18px; color: #92400e;">
+                                                        🔐
+                                                    </div>
+                                                </td>
+                                                <td style="padding: 0; vertical-align: middle;">
+                                                    <p style="font-size: 14px; color: #92400e; font-weight: 600; margin: 0 0 4px 0;">
+                                                        Important
+                                                    </p>
+                                                    <p style="font-size: 14px; color: #92400e; margin: 0; line-height: 1.5;">
+                                                        Add your <strong>KEPLOY_API_KEY</strong> as a GitHub secret before running the workflow.<br>
+                                                        Go to: <strong>Your Repo → Settings → Secrets and variables → Actions → New repository secret</strong>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Section Header -->
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 0;">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="32" style="padding: 0 12px 0 0; vertical-align: top;">
+                                                    <div style="width: 32px; height: 32px; background: #f0fdf4; border-radius: 6px; text-align: center; line-height: 32px; font-size: 18px; color: #059669;">
+                                                    ✓
+                                                    </div>
+                                                </td>
+                                                <td style="padding: 0; vertical-align: middle;">
+                                                    <h2 style="font-size: 20px; font-weight: 700; color: #111827; margin: 0; line-height: 1.3;">
+                                                        Setup Checklist
+                                                    </h2>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Checklist -->
+                            <div class="checklist" style="background: #f8fafc; border-radius: 8px; padding: 20px; margin-bottom: 32px;">
+     <div class="checklist-title" style="color: #1E293B; font-size: 17px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+<div style="content: '✓'; width: 28px; height: 28px;  color: lightgreen; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px;">✓</div>
+             Complete these steps to get started
+                                </div>
+                                
+         <div class="checklist-item" style="display: flex; gap: 14px; margin-bottom: 16px; padding: 16px; background: white; border-radius: 10px; border: 1px solid #E2E8F0;">
+         
+                  <div class="checklist-text" style="flex: 1; color: #475569; font-size: 14px; line-height: 1.7;">
+                                        <strong style="color: #1E293B; font-weight: 600; display: block; margin-bottom: 4px;"> ▢ Create the workflow file</strong>
+                                        Add the code above to <code style="background: #e5e7eb; padding: 2px 6px; border-radius: 4px; font-family: monospace; font-size: 13px;">.github/workflows/keploy.yml</code> in your repository
+                                    </div>
+                                </div>
+                                
+          <div class="checklist-item" style="display: flex; gap: 14px; margin-bottom: 16px; padding: 16px; background: white; border-radius: 10px; border: 1px solid #E2E8F0;">
+         
+      <div class="checklist-text" style="flex: 1; color: #475569; font-size: 14px; line-height: 1.7;">
+                                        <strong style="color: #1E293B; font-weight: 600; display: block; margin-bottom: 4px;">▢ Add your API key as a secret</strong>
+                                        Store KEPLOY_API_KEY in your GitHub repository secrets (never commit it to code)
+                                    </div>
+                                </div>
+                                         <div class="checklist-item" style="display: flex; gap: 14px; margin-bottom: 16px; padding: 16px; background: white; border-radius: 10px; border: 1px solid #E2E8F0;">
+         
+              <div class="checklist-text" style="flex: 1; color: #475569; font-size: 14px; line-height: 1.7;">
+                                        <strong style="color: #1E293B; font-weight: 600; display: block; margin-bottom: 4px;">▢ Update the base-path if needed</strong>
+                                        Replace with your actual API endpoint URL for testing
+                                    </div>
+                                </div>
+                                
+            <div class="checklist-item" style="display: flex; gap: 14px; padding: 16px; background: white; border-radius: 10px; border: 1px solid #E2E8F0;">
+      
+                 <div class="checklist-text" style="flex: 1; color: #475569; font-size: 14px; line-height: 1.7;">
+                                        <strong style="color: #1E293B; font-weight: 600; display: block; margin-bottom: 4px;">▢ Commit and push</strong>
+                                        Your tests will run automatically on the next commit
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- CTA Section -->
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="center" style="padding: 0;">
+                                        <p style="font-size: 15px; color: #4b5563; margin: 0 0 16px 0; line-height: 1.5;">
+                                            Need help or have questions?
+                                        </p>
+                                        <a href="https://keploy.io/docs/running-keploy/api-testing-cicd/" style="display: inline-block; background: #f97316; color: white; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px;">
+                                            View Full Documentation
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+            <td style="background:#1a202c; color:#cbd5e0; padding: 30px 28px; text-align: center; border-radius: 0 0 12px 12px;">
+                <!-- Footer Logo -->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 15px;">
+                    <tr>
+                        <td align="center" class="footer-logo">
+                            <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                                width="100" 
+                                alt="Keploy" 
+                                style="width:100px; height:auto; margin:0 auto;">
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Tagline -->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 8px;">
+                    <tr>
+                        <td align="center">
+                            <p style="margin:0; font-family:'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:600; color:#94a3b8; line-height:1.4; letter-spacing:0.5px;">
+                                THE AI-POWERED TESTING PLATFORM
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Description -->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+                    <tr>
+                        <td align="center">
+                            <p style="margin:0; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; color:#cbd5e1; line-height:1.5; text-align:center; padding:0 15px;" class="footer-description">
+                                Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- Social Icons  -->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 15px 0 20px 0;">
+                    <tr>
+                        <td align="center" style="padding: 0;">
+                            <div style="display: inline-block; margin: 0 auto;">
+                                <a href="https://x.com/keployio" style="text-decoration: none; display: inline-block; margin: 0 12px;">
+                                    <img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx--v1.png" 
+                                        width="20" 
+                                        height="20" 
+                                        alt="Twitter" 
+                                        border="0" 
+                                        style="display: block;" />
+                                </a>
+                                <a href="https://linkedin.com/company/keploy/" style="text-decoration: none; display: inline-block; margin: 0 12px;">
+                                    <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" 
+                                        width="20" 
+                                        height="20" 
+                                        alt="LinkedIn" 
+                                        border="0" 
+                                        style="display: block;" />
+                                </a>
+                                <a href="https://github.com/keploy" style="text-decoration: none; display: inline-block; margin: 0 12px;">
+                                    <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" 
+                                        width="20" 
+                                        height="20" 
+                                        alt="GitHub" 
+                                        border="0" 
+                                        style="display: block;" />
+                                </a>
+                                <a href="https://www.youtube.com/@keploy" style="text-decoration: none; display: inline-block; margin: 0 12px;">
+                                    <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" 
+                                        width="20" 
+                                        height="20" 
+                                        alt="YouTube" 
+                                        border="0" 
+                                        style="display: block;" />
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Address & Legal -->
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td align="center">
+                            <p style="margin:0 0 5px 0; font-family:'Segoe UI',Arial,sans-serif; font-size:11px; color:#94a3b8; line-height:1.4;">
+                                New Burton Rd Central, Delaware, US 19904
+                            </p>
+                            <p style="margin:0; font-family:'Segoe UI',Arial,sans-serif; font-size:11px; color:#94a3b8; line-height:1.4;">
+                                © 2026 Keploy, Inc. All rights reserved.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
