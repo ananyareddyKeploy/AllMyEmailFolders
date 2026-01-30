@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weekly Test Summary - Keploy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 40px 20px;
+      color: #1f2937;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .header {
+      background: #fffbeb;
+      padding: 40px;
+      text-align: left;
+      border-bottom: 2px solid #f97316;
+    }
+    .logo {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #ea580c;
+      margin: 0 0 8px 0;
+      text-align: left;
+    }
+    .subtitle {
+      font-size: 17px;
+      color: #6b7280;
+      margin: 0;
+      text-align: left;
+      font-weight: 500;
+    }
+    .content {
+      padding: 40px;
+      text-align: left;
+    }
+    .intro {
+      font-size: 16px;
+      color: #4b5563;
+      line-height: 1.7;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #111827;
+      margin: 32px 0 24px 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f3f4f6;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 24px 0 40px 0;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1;
+    }
+    .stat-number.total { color: #1f2937; }
+    .stat-number.passed { color: #059669; }
+    .stat-number.failed { color: #dc2626; }
+    .stat-number.buggy { color: #d97706; }
+    .stat-label {
+      font-size: 13px;
+      color: #6b7280;
+      margin: 12px 0 0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .insights {
+      margin: 40px 0 32px 0;
+    }
+    .insight-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #4b5563;
+    }
+    .insight-icon {
+      margin-right: 12px;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .insight-text strong {
+      color: #111827;
+    }
+    .tip {
+      background: #f0f9ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 32px 0;
+      font-size: 14px;
+      color: #0369a1;
+      line-height: 1.6;
+      border-left: 4px solid #0ea5e9;
+    }
+    .tip strong {
+      color: #075985;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .cta-section {
+      text-align: center;
+      margin: 48px 0 32px 0;
+      padding-top: 32px;
+      border-top: 2px solid #f3f4f6;
+    }
+    .cta-button {
+      display: inline-block;
+      background: #f97316;
+      color: white;
+      text-align: center;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      margin: 0 0 12px 0;
+    }
+    .cta-note {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .footer {
+      background: #1f2937;
+      color: #e5e7eb;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .footer-logo {
+      width: 80px;
+      margin-bottom: 20px;
+      filter: brightness(0) invert(1);
+    }
+    .footer-tagline {
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      margin: 0 0 16px;
+      text-transform: uppercase;
+    }
+    .footer-desc {
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+    .social-icons {
+      margin: 24px 0 32px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+    .social-icons img {
+      width: 22px;
+      height: 22px;
+      background: white;
+      border-radius: 5px;
+      padding: 4px;
+    }
+    .legal {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-top: 24px;
+    }
+    @media (max-width: 640px) {
+      .header, .content, .footer {
+        padding: 32px 24px;
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      .stat-number {
+        font-size: 28px;
+      }
+      .cta-button {
+        width: 100%;
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy" class="logo">
+      <h1 class="title">Weekly Test Summary</h1>
+      <p class="subtitle">{{event.appName}}</p>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <p class="intro">
+        Here's your weekly test summary for <strong>{{event.appName}}</strong>. 
+        Review your test performance and insights below.
+      </p>
+
+      <h3 class="section-title">Test Performance</h3>
+      
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-item">
+          <p class="stat-number total">{{event.testSuiteCount}}</p>
+          <p class="stat-label">Total Tests</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number passed">{{event.passedCount}}</p>
+          <p class="stat-label">Passed</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number failed">{{event.failedCount}}</p>
+          <p class="stat-label">Failed</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-number buggy">{{event.buggyCount}}</p>
+          <p class="stat-label">Buggy</p>
+        </div>
+      </div>
+
+      <h3 class="section-title">Key Insights</h3>
+      
+      <div class="insights">
+        <div class="insight-item">
+          <div class="insight-icon">✅</div>
+          <div class="insight-text">
+            <strong>{{event.passedCount}} tests passed</strong> successfully this week.
+          </div>
+        </div>
+        
+        <div class="insight-item">
+          <div class="insight-icon">⚠️</div>
+          <div class="insight-text">
+            <strong>{{event.failedCount}} tests failed</strong> and require immediate attention.
+          </div>
+        </div>
+        
+        <div class="insight-item">
+          <div class="insight-icon">🐛</div>
+          <div class="insight-text">
+            <strong>{{event.buggyCount}} tests have bugs</strong> that should be addressed.
+          </div>
+        </div>
+      </div>
+
+      <div class="tip">
+        <strong>Pro Tip</strong>
+        Prioritize fixing failed tests first, then address buggy ones to improve overall test reliability and coverage.
+      </div>
+
+      <!-- CTA Section -->
+      <div class="cta-section">
+        <a href="https://app.keploy.io/api-testing/tr" class="cta-button">
+          View Detailed Report
+        </a>
+        <p class="cta-note">
+          Includes comprehensive failure details, interactive coverage maps,<br>and historical trend analysis
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy" class="footer-logo">
+      
+      <p class="footer-tagline">THE AI-POWERED TESTING PLATFORM</p>
+      
+      <p class="footer-desc">
+        Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
+      </p>
+      
+      <div class="social-icons">
+        <a href="https://x.com/keployio">
+          <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" alt="Twitter">
+        </a>
+        <a href="https://linkedin.com/company/keploy/">
+          <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/keploy">
+          <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub">
+        </a>
+        <a href="https://www.youtube.com/@keploy">
+          <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" alt="YouTube">
+        </a>
+      </div>
+      
+      <div class="legal">
+        <p>New Burton Rd Central, Delaware, US 19904</p>
+        <p>© 2026 Keploy, Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
