@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weekly Test Summary Report - Keploy</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .mobile-padding {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      
+      .mobile-stack {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      
+      .mobile-text-center {
+        text-align: center !important;
+      }
+      
+      .mobile-spacer {
+        height: 16px !important;
+      }
+      
+      .mobile-font-large {
+        font-size: 24px !important;
+      }
+      
+      .mobile-font-medium {
+        font-size: 18px !important;
+      }
+    }
+    
+    .preheader {
+      display: none !important;
+      visibility: hidden;
+      opacity: 0;
+      color: transparent;
+      height: 0;
+      width: 0;
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc;">
+  <div class="preheader" style="display: none; font-size: 1px; color: #f8fafc; line-height: 1px; max-height: 0; max-width: 0; opacity: 0; overflow: hidden;">
+    Weekly Test Report for {{event.appName}} - {{event.testSuiteCount}} tests executed
+  </div>
+  
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #f8fafc;">
+    <tr>
+      <td align="center" style="padding: 20px 0;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 600px; margin: 0 auto;">
+          
+          <tr>
+            <td style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 12px 12px 0 0; padding: 32px 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td style="padding-bottom: 20px;">
+                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                         alt="Keploy" 
+                         width="100" 
+                         style="display: block; max-width: 100px; height: auto;">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h1 style="margin: 0 0 8px 0; font-size: 24px; font-weight: 700; color: #ffffff; line-height: 1.3;" class="mobile-font-large">
+                      Weekly Test Summary Report
+                    </h1>
+                    <p style="margin: 0; font-size: 14px; color: #94a3b8; font-weight: 500;">
+                      Test Analysis Ready • Review Required
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="background: #ffffff; padding: 20px 24px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td>
+                    <p style="margin: 0; font-size: 13px; color: #64748b; font-weight: 500;">
+                      Application Under Test
+                    </p>
+                    <p style="margin: 4px 0 0 0; font-size: 18px; font-weight: 700; color: #1e293b;" class="mobile-font-medium">
+                      {{event.appName}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="background: #ffffff; padding: 0 24px 32px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;" class="mobile-padding">
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 24px 0;">
+                <tr>
+                  <td style="border-left: 4px solid #ff6b35; padding-left: 16px;">
+                    <h2 style="margin: 0 0 4px 0; font-size: 18px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
+                      Executive Summary
+                    </h2>
+                    <p style="margin: 0; font-size: 13px; color: #64748b; font-style: italic;">
+                      Overview of test execution performance
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: #f8fafc; border-radius: 8px; padding: 20px; margin-bottom: 24px;">
+                <tr>
+                  <td>
+                    <p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; color: #475569;">
+                      Test results are in for <strong style="color: #1e293b;">{{event.appName}}</strong>! 
+                      We executed <strong style="color: #1e293b;">{{event.testSuiteCount}} test suites</strong> and hit 
+                      <strong style="color: #059669;">{{event.passedCount}} green lights</strong> with 
+                      <strong style="color: #dc2626;">{{event.failedCount}} red flags</strong> to investigate.
+                    </p>
+                    <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #475569;">
+                      The test stability index indicates <strong style="color: #1e293b;">{{event.buggyCount}} tests</strong> 
+                      exhibiting unstable behavior or containing identified bugs.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 24px 0 16px 0;">
+                <tr>
+                  <td style="border-left: 4px solid #ff6b35; padding-left: 16px;">
+                    <h2 style="margin: 0 0 4px 0; font-size: 18px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
+                      Key Performance Metrics
+                    </h2>
+                    <p style="margin: 0; font-size: 13px; color: #64748b; font-style: italic;">
+                      Detailed breakdown of test execution results
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 24px;">
+                <tr>
+                  <td style="padding-bottom: 16px;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: #f8fafc; border: 2px solid #e2e8f0; border-radius: 8px;">
+                      <tr>
+                        <td style="padding: 20px;">
+                          <p style="margin: 0 0 8px 0; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Total Test Suites
+                          </p>
+                          <p style="margin: 0 0 8px 0; font-size: 32px; font-weight: 800; color: #1e293b;">
+                            {{event.testSuiteCount}}
+                          </p>
+                          <p style="margin: 0; font-size: 13px; color: #64748b; line-height: 1.4;">
+                            Complete test cases executed
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                 
+                <tr>
+                  <td style="padding-bottom: 16px;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 2px solid #10b981; border-radius: 8px;">
+                      <tr>
+                        <td style="padding: 20px;">
+                          <p style="margin: 0 0 8px 0; font-size: 12px; font-weight: 600; color: #065f46; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Passed Tests
+                          </p>
+                          <p style="margin: 0 0 8px 0; font-size: 32px; font-weight: 800; color: #059669;">
+                            {{event.passedCount}}
+                          </p>
+                          <p style="margin: 0; font-size: 13px; color: #065f46; line-height: 1.4;">
+                            Tests executed successfully
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); border: 2px solid #ef4444; border-radius: 8px;">
+                      <tr>
+                        <td style="padding: 20px;">
+                          <p style="margin: 0 0 8px 0; font-size: 12px; font-weight: 600; color: #991b1b; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Failed Tests
+                          </p>
+                          <p style="margin: 0 0 8px 0; font-size: 32px; font-weight: 800; color: #dc2626;">
+                            {{event.failedCount}}
+                          </p>
+                          <p style="margin: 0; font-size: 13px; color: #991b1b; line-height: 1.4;">
+                            Tests requiring investigation
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 32px 0 16px 0;">
+                <tr>
+                  <td style="border-left: 4px solid #ff6b35; padding-left: 16px;">
+                    <h2 style="margin: 0 0 4px 0; font-size: 18px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
+                      Recommendations & Next Steps
+                    </h2>
+                    <p style="margin: 0; font-size: 13px; color: #64748b; font-style: italic;">
+                      Action items based on test results
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 8px; margin-bottom: 24px;">
+                <tr>
+                  <td style="padding: 20px;">
+                    <p style="margin: 0 0 16px 0; font-size: 15px; font-weight: 700; color: #92400e;">
+                      🎯 Priority Actions Required
+                    </p>
+                    
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                      <tr>
+                        <td style="padding: 8px 0;">
+                          <p style="margin: 0 0 4px 0; font-size: 14px; font-weight: 600; color: #78350f;">
+                            1. Investigate Failed Tests
+                          </p>
+                          <p style="margin: 0; font-size: 13px; color: #92400e; line-height: 1.5;">
+                            Review and resolve {{event.failedCount}} failed test cases
+                          </p>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td style="padding: 8px 0;">
+                          <p style="margin: 0 0 4px 0; font-size: 14px; font-weight: 600; color: #78350f;">
+                            2. Address Unstable Tests
+                          </p>
+                          <p style="margin: 0; font-size: 13px; color: #92400e; line-height: 1.5;">
+                            Stabilize {{event.buggyCount}} buggy tests
+                          </p>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td style="padding: 8px 0;">
+                          <p style="margin: 0 0 4px 0; font-size: 14px; font-weight: 600; color: #78350f;">
+                            3. Monitor Trends
+                          </p>
+                          <p style="margin: 0; font-size: 13px; color: #92400e; line-height: 1.5;">
+                            Compare results with previous weeks
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: linear-gradient(135deg, #fef3e7 0%, #fffbeb 100%); border-radius: 8px; padding: 24px; text-align: center; margin-bottom: 24px;">
+                <tr>
+                  <td>
+                    <p style="margin: 0 0 16px 0; font-size: 15px; font-weight: 600; color: #1e293b; line-height: 1.5;">
+                      Access the full interactive report
+                    </p>
+                    <a href="https://app.keploy.io/api-testing/tr" 
+                       style="display: inline-block; padding: 14px 32px; background: linear-gradient(90deg, #ff6b35 0%, #f7931e 100%); color: #ffffff; font-weight: 700; text-decoration: none; border-radius: 8px; font-size: 15px; mso-padding-alt: 0;">
+                      <span style="mso-text-raise: 10pt;">View Full Report →</span>
+                    </a>
+                    <p style="margin: 12px 0 0 0; font-size: 13px; color: #64748b;">
+                      Includes failure details and performance metrics
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="background:#1a202c; color:#cbd5e0; border-radius: 0 0 12px 12px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td style="padding: 30px 24px; text-align: center;">
+                    
+                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                         alt="Keploy" 
+                         width="80" 
+                         style="display: block; width: 80px; height: auto; margin: 0 auto 16px;">
+                    
+                    <p style="margin: 0 0 8px 0; font-size: 11px; font-weight: 600; color: #94a3b8; line-height: 1.4; letter-spacing: 0.5px;">
+                      THE AI-POWERED TESTING PLATFORM
+                    </p>
+                    
+                    <p style="margin: 0 0 20px 0; font-size: 13px; color: #cbd5e1; line-height: 1.5; max-width: 400px; margin: 0 auto 20px;">
+                      Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
+                    </p>
+                    
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 0 auto 20px; max-width: 200px;">
+                      <tr>
+                        <td align="center" style="padding: 0 8px;">
+                          <a href="https://x.com/keployio" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" 
+                                 alt="X" 
+                                 width="20" 
+                                 height="20" 
+                                 style="display: block; width: 20px; height: 20px; background-color: #ffffff; border-radius: 4px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 8px;">
+                          <a href="https://linkedin.com/company/keploy/" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" 
+                                 alt="LinkedIn" 
+                                 width="20" 
+                                 height="20" 
+                                 style="display: block; width: 20px; height: 20px; background-color: #ffffff; border-radius: 4px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 8px;">
+                          <a href="https://github.com/keploy" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/github.png" 
+                                 alt="GitHub" 
+                                 width="20" 
+                                 height="20" 
+                                 style="display: block; width: 20px; height: 20px; background-color: #ffffff; border-radius: 4px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 8px;">
+                          <a href="https://www.youtube.com/@keploy" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" 
+                                 alt="YouTube" 
+                                 width="20" 
+                                 height="20" 
+                                 style="display: block; width: 20px; height: 20px; background-color: #ffffff; border-radius: 4px; padding: 2px;">
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <p style="margin: 0 0 5px 0; font-size: 11px; color: #94a3b8; line-height: 1.4;">
+                      New Burton Rd Central, Delaware, US 19904
+                    </p>
+                    <p style="margin: 0; font-size: 11px; color: #94a3b8; line-height: 1.4;">
+                      © 2026 Keploy, Inc. All rights reserved.
+                    </p>
+                    
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
