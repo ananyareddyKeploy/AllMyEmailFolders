@@ -72,7 +72,7 @@
       <td align="center" style="padding: 20px 0;">
         <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 600px; margin: 0 auto;">
           
-          <!-- Header -->
+          <!-- Your Original Header -->
           <tr>
             <td style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 12px 12px 0 0; padding: 32px 24px;">
               <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
@@ -98,149 +98,170 @@
             </td>
           </tr>
           
-          <!-- Main Content -->
+          <!-- Main Content - Clean, No Boxes -->
           <tr>
-            <td style="background: #ffffff; padding: 32px 24px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;" class="mobile-padding">
+            <td style="background: #ffffff; padding: 40px 24px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;" class="mobile-padding">
               
               <!-- Welcome Message -->
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 40px;">
                 <tr>
                   <td>
-                      <p style="margin: 0; font-size: 16px; color: #475569; line-height: 1.6; text-align: left;">
-                      Hi, {{customer.name || defaultname'there'}}! Welcome to Keploy, your AI-powered testing companion. We're excited to help you automate test generation and boost your development workflow.
+                    <p style="margin: 0; font-size: 16px; color: #475569; line-height: 1.6; text-align: left;">
+                      Hi, {{customer.name || 'there'}}! Welcome to Keploy, your AI-powered testing companion. We're excited to help you automate test generation and boost your development workflow.
                     </p>
                   </td>
                 </tr>
               </table>
               
-              <!-- New Section: Resources - Simplified -->
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 24px;">
+              <!-- Accelerate Section -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 40px;">
                 <tr>
-                  <td>
-                    <h3 style="margin: 0 0 12px 0; font-size: 18px; font-weight: 600; color: #1e293b; text-align: left;">
+                  <td align="center">
+                    <h3 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; color: #1e293b;">
                       🚀 Accelerate with Existing Resources
                     </h3>
                     
-                    <p style="margin: 0 0 16px 0; font-size: 15px; color: #475569; line-height: 1.6; text-align: left;">
+                    <p style="margin: 0 0 24px 0; font-size: 15px; color: #475569; line-height: 1.6; text-align: center;">
                       Import your existing API definitions and documentation to generate tests instantly
                     </p>
                     
                     <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Inputs.png" 
                          alt="Import Resources" 
                          width="100%" 
-                         style="display: block; max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 16px; border: 1px solid #e2e8f0;">
+                         style="display: block; max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 24px; border: 1px solid #e2e8f0;">
                     
-                    <p style="margin: 0 0 12px 0; font-size: 15px; color: #475569; line-height: 1.6; text-align: left;">
-                      Use your <strong style="color: #1e293b;">Postman Collections</strong>, <strong style="color: #1e293b;">schemas</strong>, 
-                      <strong style="color: #1e293b;">cURL Commands</strong>, <strong style="color: #1e293b;">Code Snippets</strong>, 
-                      <strong style="color: #1e293b;">API Documentation</strong>, and <strong style="color: #1e293b;">GraphQL Schemas</strong> 
-                      to jumpstart your test generation.
+                    <!-- Resource List - Clean Format -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 16px;">
+                      <tr>
+                        <td align="center">
+                          <p style="margin: 0 0 12px 0; font-size: 15px; color: #475569; line-height: 1.6;">
+                            <strong style="color: #1e293b;">Postman Collections</strong> • 
+                            <strong style="color: #1e293b;">OpenAPI/Swagger</strong> • 
+                            <strong style="color: #1e293b;">cURL Commands</strong>
+                          </p>
+                          <p style="margin: 0 0 12px 0; font-size: 15px; color: #475569; line-height: 1.6;">
+                            <strong style="color: #1e293b;">Code Snippets</strong> • 
+                            <strong style="color: #1e293b;">API Documentation</strong> • 
+                            <strong style="color: #1e293b;">GraphQL Schemas</strong>
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <p style="margin: 0; font-size: 14px; color: #64748b; font-style: italic;">
+                      Plus PRDs, BRDs, and other development resources — leverage what you already have!
                     </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- 3 Steps Section - Clean, Minimal -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 40px;">
+                <tr>
+                  <td>
+                    <h3 style="margin: 0 0 20px 0; font-size: 20px; font-weight: 600; color: #1e293b; text-align: left; padding-bottom: 16px; border-bottom: 1px solid #e2e8f0;">
+                      Get Started in 3 Steps
+                    </h3>
                     
-                    <p style="margin: 0 0 16px 0; font-size: 14px; color: #64748b; font-style: italic; text-align: left;">
-                      Plus PRDs, BRDs, and other development resources - leverage what you already have!
-                    </p>
-                    
-                    <p style="margin: 0 0 12px 0; font-size: 18px; font-weight: 500; color: #1e293b; text-align: left;">
-                      Get Started in 3 Steps:
-
-                    </p>
-                    
-                    <p style="margin: 0 0 20px 0; font-size: 16px; color: #475569; line-height: 1.6; text-align: left;">
+                    <p style="margin: 0 0 32px 0; font-size: 16px; color: #475569; line-height: 1.6; text-align: left;">
                       You're moments away from automatically generating tests and catching bugs before they reach production.
                     </p>
+                    
+                    <!-- Step 1 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 32px;">
+                      <tr>
+                        <td>
+                          <div style="display: flex; align-items: flex-start;">
+                            <div style="flex-shrink: 0; margin-right: 16px;">
+                              <div style="width: 36px; height: 36px; background-color: #f0f9ff; border-radius: 6px; text-align: center; line-height: 36px; font-size: 16px; color: #0ea5e9; font-weight: 600;">
+                                1
+                              </div>
+                            </div>
+                            <div>
+                              <h4 style="margin: 0 0 8px 0; font-size: 17px; font-weight: 600; color: #1e293b; text-align: left;">
+                                Drag & Drop or Upload from URL
+                              </h4>
+                              <p style="margin: 0; font-size: 15px; color: #64748b; line-height: 1.5; text-align: left;">
+                                Simply add your resources via drag & drop or by uploading from a URL
+                              </p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <!-- Step 2 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 32px;">
+                      <tr>
+                        <td>
+                          <div style="display: flex; align-items: flex-start;">
+                            <div style="flex-shrink: 0; margin-right: 16px;">
+                              <div style="width: 36px; height: 36px; background-color: #f0fdf4; border-radius: 6px; text-align: center; line-height: 36px; font-size: 16px; color: #22c55e; font-weight: 600;">
+                                2
+                              </div>
+                            </div>
+                            <div>
+                              <h4 style="margin: 0 0 8px 0; font-size: 17px; font-weight: 600; color: #1e293b; text-align: left;">
+                                Hit "Generate API tests"
+                              </h4>
+                              <p style="margin: 0; font-size: 15px; color: #64748b; line-height: 1.5; text-align: left;">
+                                Click to automatically generate comprehensive tests from your inputs
+                              </p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <!-- Step 3 -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 8px;">
+                      <tr>
+                        <td>
+                          <div style="display: flex; align-items: flex-start;">
+                            <div style="flex-shrink: 0; margin-right: 16px;">
+                              <div style="width: 36px; height: 36px; background-color: #fef7ed; border-radius: 6px; text-align: center; line-height: 36px; font-size: 16px; color: #f97316; font-weight: 600;">
+                                3
+                              </div>
+                            </div>
+                            <div>
+                              <h4 style="margin: 0 0 8px 0; font-size: 17px; font-weight: 600; color: #1e293b; text-align: left;">
+                                Run Tests in One Click
+                              </h4>
+                              <p style="margin: 0; font-size: 15px; color: #64748b; line-height: 1.5; text-align: left;">
+                                Execute your complete test suite with a single click
+                              </p>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
               
-              <!-- Step 1 -->
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 20px;">
-                <tr>
-                  <td>
-                    <div style="display: flex; align-items: flex-start;">
-                      <div style="flex-shrink: 0; margin-right: 16px;">
-                        <div style="width: 32px; height: 32px; background-color: #f0f9ff; border-radius: 6px; text-align: center; line-height: 32px; font-size: 16px; color: #0ea5e9; font-weight: 600;">
-                          1
-                        </div>
-                      </div>
-                      <div>
-                        <h3 style="margin: 0 0 6px 0; font-size: 16px; font-weight: 600; color: #1e293b; text-align: left;">
-                          Drag & Drop or Upload from URL
-                        </h3>
-                        <p style="margin: 0; font-size: 15px; color: #64748b; line-height: 1.5; text-align: left;">
-                          Simply add your resources via drag & drop or by uploading from a URL
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              
-              <!-- Step 2 -->
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 20px;">
-                <tr>
-                  <td>
-                    <div style="display: flex; align-items: flex-start;">
-                      <div style="flex-shrink: 0; margin-right: 16px;">
-                        <div style="width: 32px; height: 32px; background-color: #f0fdf4; border-radius: 6px; text-align: center; line-height: 32px; font-size: 16px; color: #22c55e; font-weight: 600;">
-                          2
-                        </div>
-                      </div>
-                      <div>
-                        <h3 style="margin: 0 0 6px 0; font-size: 16px; font-weight: 600; color: #1e293b; text-align: left;">
-                          Hit "Generate API tests"
-                        </h3>
-                        <p style="margin: 0; font-size: 15px; color: #64748b; line-height: 1.5; text-align: left;">
-                          Click to automatically generate comprehensive tests from your inputs
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              <!-- Step 3 -->
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 28px;">
-                <tr>
-                  <td>
-                    <div style="display: flex; align-items: flex-start;">
-                      <div style="flex-shrink: 0; margin-right: 16px;">
-                        <div style="width: 32px; height: 32px; background-color: #fef7ed; border-radius: 6px; text-align: center; line-height: 32px; font-size: 16px; color: #f97316; font-weight: 600;">
-                          3 
-                        </div>
-                      </div>
-                      <div>
-                        <h3 style="margin: 0 0 6px 0; font-size: 16px; font-weight: 600; color: #1e293b; text-align: left;">
-                          Run Tests in One Click
-                        </h3>
-                        <p style="margin: 0; font-size: 15px; color: #64748b; line-height: 1.5; text-align: left;">
-                          Execute your complete test suite with a single click
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              
-              <!-- Primary CTA -->
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 28px;">
+              <!-- Primary CTA - Clean -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 40px;">
                 <tr>
                   <td align="center">
-                    <p style="margin: 0 0 12px 0; font-size: 16px; font-weight: 600; color: #1e293b;">
+                    <p style="margin: 0 0 16px 0; font-size: 18px; font-weight: 600; color: #1e293b;">
                       Ready to begin?
                     </p>
                     <a href="https://app.keploy.io/api-testing" 
                        style="display: inline-block; padding: 14px 32px; background-color: #ef7d20; color: #ffffff; font-weight: 600; text-decoration: none; border-radius: 8px; font-size: 16px;">
                       Start Generating Tests 
                     </a>
+                    <p style="margin: 12px 0 0 0; font-size: 14px; color: #64748b;">
+                      Takes just 5 minutes
+                    </p>
                   </td>
                 </tr>
               </table>
               
-              <!-- Help Section -->
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top: 1px solid #e2e8f0; padding-top: 24px;">
+              <!-- Help Section - Clean -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="border-top: 1px solid #e2e8f0; padding-top: 32px;">
                 <tr>
                   <td align="center">
-                    <p style="margin: 0 0 16px 0; font-size: 15px; color: #64748b; font-weight: 500;">
+                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #64748b; font-weight: 500;">
                       Need help getting started?
                     </p>
                     
@@ -273,7 +294,7 @@
             </td>
           </tr>
           
-          <!-- Footer -->
+          <!-- Your Original Footer -->
           <tr>
             <td style="background:#1a202c; color:#cbd5e0; border-radius: 0 0 12px 12px;">
               <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
@@ -333,17 +354,20 @@
                         </td>
                       </tr>
                     </table>
+                    
                     <p style="margin: 0 0 5px 0; font-size: 11px; color: #94a3b8; line-height: 1.4;">
                       New Burton Rd Central, Delaware, US 19904
                     </p>
                     <p style="margin: 0; font-size: 11px; color: #94a3b8; line-height: 1.4;">
                       © 2026 Keploy, Inc. All rights reserved.
                     </p>
+                    
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
+          
         </table>
       </td>
     </tr>
