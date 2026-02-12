@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keploy • {{event.appName}} • Tests Ready</title>
+</head>
+<body style="margin:0;padding:0;background-color:#ffffff;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#334155;line-height:1.6;">
+<center>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff;">
+<tr>
+<td style="padding:0;">
+
+<!-- ============ HEADER: EXACT SAME ============ -->
+<div style="background:#f97316; padding:32px 40px 32px 40px; border-radius:12px 12px 0 0;">
+  <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+       alt="Keploy" 
+       width="110" 
+       style="width:110px;height:auto;display:block;filter:brightness(0) invert(1); margin-bottom:24px;">
+  <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.9);letter-spacing:0.3px;margin-bottom:8px;">
+    ✅ Test Suite Generated
+  </div>
+  <h1 style="font-size:28px;font-weight:700;color:#ffffff;margin:0;line-height:1.2;letter-spacing:-0.3px;">
+    Tests Ready to Run
+  </h1>
+</div>
+
+<!-- ============ GREETING ============ -->
+<div style="padding:28px 40px 12px 40px;">
+  <p style="font-size:16px;color:#0f172a;margin:0 0 4px 0;font-weight:500;">Hi there,</p>
+  <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+    <span style="font-size:24px;font-weight:700;color:#f97316;">{{event.appName}}</span>
+    <span style="font-size:16px;color:#475569;">test suite is ready</span>
+  </div>
+</div>
+
+<!-- ============ 3-POINT - ATTRACTIVE, SPACIOUS, NO BOXES ============ -->
+<div style="padding:20px 40px 16px 40px;">
+  
+  <!-- Point 1 -->
+  <div style="display:flex;margin-bottom:24px;">
+    <div style="width:32px;height:32px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:16px;flex-shrink:0;">
+      <span style="font-size:16px;color:#0b6b4a;">✓</span>
+    </div>
+    <div>
+      <div style="font-size:17px;font-weight:700;color:#0f172a;margin-bottom:4px;">Test suite generated</div>
+      <div style="font-size:15px;color:#475569;">{{event.appName}} · <span style="font-weight:600;">{{event.testCount}} tests</span></div>
+    </div>
+  </div>
+  
+  <!-- Point 2 -->
+  <div style="display:flex;margin-bottom:24px;">
+    <div style="width:32px;height:32px;background:#fff4e5;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:16px;flex-shrink:0;">
+      <span style="font-size:16px;color:#c2410c;">🐞</span>
+    </div>
+    <div>
+      <div style="font-size:17px;font-weight:700;color:#0f172a;margin-bottom:4px;">Flaky tests detected</div>
+      <div style="font-size:15px;color:#475569;"><span style="font-weight:600;color:#f97316;">{{event.buggySuites}} unstable</span> · AI fixes ready</div>
+    </div>
+  </div>
+  
+  <!-- Point 3 - Highlighted -->
+  <div style="display:flex;">
+    <div style="width:32px;height:32px;background:#e0f2fe;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-right:16px;flex-shrink:0;">
+      <span style="font-size:16px;color:#0369a1;">🖱️</span>
+    </div>
+    <div>
+      <div style="font-size:17px;font-weight:700;color:#0f172a;margin-bottom:4px;">One click to approve</div>
+      <div style="font-size:15px;color:#475569;">Review, run, ship — in <span style="font-weight:600;">8 seconds</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ ONE-LINER - BOLD, CENTERED ============ -->
+<div style="padding:16px 40px 16px 40px;">
+  <p style="font-size:22px;font-weight:800;color:#f97316;margin:0;text-align:center;letter-spacing:-0.3px;">
+    AI did the work. You just click "Run."
+  </p>
+</div>
+
+<!-- ============ BUGGY LINK - PLAIN ORANGE ============ -->
+<div style="padding:8px 40px 16px 40px;">
+  <div style="display:flex;align-items:center;gap:8px;">
+    <span style="font-size:15px;color:#9a3412;font-weight:500;">{{event.buggySuites}} unstable tests -</span>
+    <a href="{{event.buggyAppUrl}}" style="font-size:15px;font-weight:600;color:#f97316;text-decoration:underline;text-underline-offset:4px;">
+    review →
+    </a>
+  </div>
+</div>
+
+<!-- ============ TEST SUITES IMAGE ============ -->
+<div style="padding:16px 40px 24px 40px;">
+  <div style="font-size:15px;font-weight:600;color:#0f172a;margin-bottom:12px;">📋 Test Suites: {{event.appName}}</div>
+  <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Test+suites.png" 
+       alt="{{event.appName}} Test Suites" 
+       width="100%" 
+       style="width:100%;height:auto;display:block;border:1px solid #e2e8f0;border-radius:8px;">
+
+</div>
+
+<!-- ============ METRICS  ============ -->
+<div style="padding:8px 40px 24px 40px;">
+  <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
+   
+    <div style="display:flex;align-items:center;gap:6px;">
+      <span style="width:10px;height:10px;background:#ef4444;border-radius:10px;"></span>
+      <span style="font-size:14px;color:#475569;"><span style="font-weight:600;">{{event.suitedetails}}</span> detail</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <span style="width:10px;height:10px;background:#f97316;border-radius:10px;"></span>
+      <span style="font-size:14px;color:#475569;"><span style="font-weight:600;">{{event.buggySuites}}</span> unstable</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CTA - ONLY ORANGE, NO DARK ============ -->
+<div style="padding:16px 40px 40px 40px;text-align:center;border-top:1px solid #fed7aa;">
+  <div style="font-size:18px;font-weight:700;color:#0f172a;margin-bottom:12px;">
+    Run your Ai generated tests on {{event.appName}}
+  </div>
+
+  <a href="https://app.keploy.io/" 
+     style="display:inline-block;padding:14px 36px;background:#f97316;color:#ffffff;font-size:16px;font-weight:600;text-decoration:none;border-radius:8px;text-align:center;box-shadow:0 4px 0 #b45a1c;">
+    Run Test Suite Now →
+  </a>
+ 
+</div>
+
+<!-- ============ FOOTER: EXACT SAME ============ -->
+</td>
+</tr>
+<tr>
+  <td style="background:#1a202c; color:#cbd5e0; padding: 30px 24px; text-align: center; border-radius: 0 0 12px 12px;">
+    
+    <!-- Footer Logo -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+      <tr>
+        <td align="center">
+          <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+               width="100" 
+               alt="Keploy" 
+               style="width:100px; height:auto; display:block; margin:0 auto;">
+        </td>
+      </tr>
+    </table>
+
+    <!-- Tagline -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 12px;">
+      <tr>
+        <td align="center">
+          <p style="margin:0; font-size:12px; font-weight:600; color:#94a3b8; letter-spacing:1px;">
+            THE AI-POWERED TESTING PLATFORM
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Description -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
+      <tr>
+        <td align="center">
+          <p style="margin:0 auto; font-size:13px; color:#cbd5e1; line-height:1.6; max-width:420px;">
+            Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
+          </p>
+        </td>
+      </tr>
+    </table>
+      
+    <!-- Social Icons -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
+      <tr>
+        <td align="center">
+          <table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto;">
+            <tr>
+              <td style="padding:0 10px;">
+                <a href="https://x.com/keployio" style="text-decoration: none;">
+                  <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" 
+                       width="24" 
+                       height="24" 
+                       alt="Twitter" 
+                       style="display: block; width: 24px; height: 24px; background-color: #ffffff; border-radius: 6px; padding: 4px;">
+                </a>
+              </td>
+              <td style="padding:0 10px;">
+                <a href="https://linkedin.com/company/keploy/" style="text-decoration: none;">
+                  <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" 
+                       width="24" 
+                       height="24" 
+                       alt="LinkedIn" 
+                       style="display: block; width: 24px; height: 24px; background-color: #ffffff; border-radius: 6px; padding: 4px;">
+                </a>
+              </td>
+              <td style="padding:0 10px;">
+                <a href="https://github.com/keploy" style="text-decoration: none;">
+                  <img src="https://img.icons8.com/ios-filled/50/000000/github.png" 
+                       width="24" 
+                       height="24" 
+                       alt="GitHub" 
+                       style="display: block; width: 24px; height: 24px; background-color: #ffffff; border-radius: 6px; padding: 4px;">
+                </a>
+              </td>
+              <td style="padding:0 10px;">
+                <a href="https://www.youtube.com/@keploy" style="text-decoration: none;">
+                  <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" 
+                       width="24" 
+                       height="24" 
+                       alt="YouTube" 
+                       style="display: block; width: 24px; height: 24px; background-color: #ffffff; border-radius: 6px; padding: 4px;">
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <!-- Address & Legal -->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center">
+          <p style="margin:0 0 5px 0; font-size:11px; color:#94a3b8; line-height:1.4;">
+            New Burton Rd Central, Delaware, US 19904
+          </p>
+          <p style="margin:0; font-size:11px; color:#94a3b8; line-height:1.4;">
+            © 2026 Keploy, Inc. All rights reserved.
+          </p>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- END FOOTER -->
+
+</table>
+</center>
+</body>
+</html>

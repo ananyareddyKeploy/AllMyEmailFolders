@@ -1,266 +1,357 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Tests Are Ready to Run!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>⚡ Tests Generated & Ready - Keploy</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .mobile-padding {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      
+      .mobile-stack {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      
+      .mobile-text-center {
+        text-align: center !important;
+      }
+      
+      .mobile-spacer {
+        height: 16px !important;
+      }
+      
+      .mobile-font-large {
+        font-size: 24px !important;
+      }
+      
+      .mobile-font-medium {
+        font-size: 18px !important;
+      }
+    }
+    
+    .preheader {
+      display: none !important;
+      visibility: hidden;
+      opacity: 0;
+      color: transparent;
+      height: 0;
+      width: 0;
+    }
+  </style>
 </head>
-<body style="margin: 0; padding: 20px; background-color: #f9fafb; font-family: Arial, Helvetica, sans-serif;">
-    <center>
-        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-            <!-- Header -->
-            <tr>
-                <td style="padding: 40px 40px 0 40px;">
-                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" alt="Keploy" width="120" style="display: block; margin-bottom: 24px;">
+<body style="margin: 0; padding: 0; background-color: #f8fafc;">
+  <div class="preheader" style="display: none; font-size: 1px; color: #f8fafc; line-height: 1px; max-height: 0; max-width: 0; opacity: 0; overflow: hidden;">
+    ⚡ {{event.testCount}} AI-generated tests ready for {{event.appName}} - Run them in 1-click
+  </div>
+  
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #f8fafc;">
+    <tr>
+      <td align="center" style="padding: 20px 0;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 600px; margin: 0 auto;">
+          
+          <!-- HEADER with urgent badge -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px 12px 0 0; padding: 32px 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td style="padding-bottom: 20px;">
+                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                         alt="Keploy" 
+                         width="100" 
+                         style="display: block; max-width: 100px; height: auto;">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span style="display: inline-block; background: rgba(255, 107, 53, 0.2); color: #ff9f7c; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px; margin-bottom: 12px; border: 1px solid #ff6b35;">
+                      ⚡ READY TO RUN
+                    </span>
+                    <h1 style="margin: 0 0 8px 0; font-size: 28px; font-weight: 800; color: #ffffff; line-height: 1.2;" class="mobile-font-large">
+                      Your tests are generated
+                    </h1>
+                    <p style="margin: 0; font-size: 16px; color: #94a3b8; font-weight: 400;">
+                      Zero config • One-click execution • AI-powered
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- APP CONTEXT -->
+          <tr>
+            <td style="background: #ffffff; padding: 24px 24px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 2px dashed #ff6b35;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td width="60" style="vertical-align: middle;">
+                    <span style="display: inline-block; width: 48px; height: 48px; background: #f1f5f9; border-radius: 12px; font-size: 24px; line-height: 48px; text-align: center; color: #ff6b35;">🚀</span>
+                  </td>
+                  <td style="vertical-align: middle; padding-left: 16px;">
+                    <p style="margin: 0; font-size: 13px; color: #64748b; font-weight: 500;">
+                      Application
+                    </p>
+                    <p style="margin: 4px 0 0 0; font-size: 20px; font-weight: 800; color: #1e293b;" class="mobile-font-medium">
+                      {{event.appName}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- MAIN CONTENT -->
+          <tr>
+            <td style="background: #ffffff; padding: 0 24px 32px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;" class="mobile-padding">
+              
+              <!-- VALUE PROP - HIGH IMPACT -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 24px 0 16px; background: linear-gradient(105deg, #fef9e7 0%, #fff8e7 100%); border-radius: 16px; border: 1px solid #fed7aa;">
+                <tr>
+                  <td style="padding: 24px;">
+                    <p style="margin: 0 0 8px 0; font-size: 14px; color: #92400e; font-weight: 600; letter-spacing: 0.5px;">
+                      ⏱️ TEST INSIGHT
+                    </p>
+                    <p style="margin: 0 0 16px 0; font-size: 20px; font-weight: 800; color: #7b341e; line-height: 1.3;">
+                      {{event.appName}}'s test suites ready to validate your APIs
+                    </p>
+                    <p style="margin: 0; font-size: 15px; color: #78350f; line-height: 1.5;">
+                      Generated from your API traffic
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- IMPACT METRICS - WHAT THEY'RE MISSING -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 24px 0 16px 0;">
+                <tr>
+                  <td style="border-left: 4px solid #ff6b35; padding-left: 16px;">
+                    <h2 style="margin: 0 0 4px 0; font-size: 18px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px;">
+                      What's inside
+                    </h2>
+                    <p style="margin: 0; font-size: 13px; color: #64748b;">
+                      AI-generated test suite ready for execution
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- ============ 3-POINT STRUCTURE - CLEAN ============ -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 24px;">
+                <!-- Point 1: Test suite generated -->
+                <tr>
+                  <td style="padding-bottom: 12px;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 4px 6px -2px rgba(0,0,0,0.03);">
+                      <tr>
+                        <td style="padding: 18px 20px;">
+                          <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                              <td style="vertical-align: middle; width: 32px;">
+                                <span style="display: inline-block; width: 32px; height: 32px; background: #e6f7e6; border-radius: 8px; font-size: 16px; line-height: 32px; text-align: center; color: #0a7143;">✓</span>
+                              </td>
+                              <td style="padding-left: 14px; vertical-align: middle;">
+                                <p style="margin: 0; font-size: 15px; font-weight: 700; color: #1e293b;">
+                                  Test suite generated - {{event.appName}}
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Point 2: Flaky tests detected -->
+                <tr>
+                  <td style="padding-bottom: 12px;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 4px 6px -2px rgba(0,0,0,0.03);">
+                      <tr>
+                        <td style="padding: 18px 20px;">
+                          <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                              <td style="vertical-align: middle; width: 32px;">
+                                <span style="display: inline-block; width: 32px; height: 32px; background: #fff4e5; border-radius: 8px; font-size: 16px; line-height: 32px; text-align: center; color: #c2410c;">🐞</span>
+                              </td>
+                              <td style="padding-left: 14px; vertical-align: middle;">
+                                <p style="margin: 0; font-size: 15px; font-weight: 700; color: #1e293b;">
+                                  Flaky tests detected - {{event.buggySuites}}
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Point 3: One click to approve -->
+                <tr>
+                  <td style="padding-bottom: 12px;">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 4px 6px -2px rgba(0,0,0,0.03); border-bottom: 3px solid #ff6b35;">
+                      <tr>
+                        <td style="padding: 18px 20px;">
+                          <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                            <tr>
+                              <td style="vertical-align: middle; width: 32px;">
+                                <span style="display: inline-block; width: 32px; height: 32px; background: #e0f2fe; border-radius: 8px; font-size: 16px; line-height: 32px; text-align: center; color: #0369a1;">🖱️</span>
+                              </td>
+                              <td style="padding-left: 14px; vertical-align: middle;">
+                                <p style="margin: 0; font-size: 15px; font-weight: 700; color: #1e293b;">
+                                  One click to approve - Review, run, ship
+                                </p>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- ONE-LINER - CLEAN, BOLD -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 16px;">
+                <tr>
+                  <td style="text-align: center; padding: 8px 0;">
+                    <p style="margin: 0; font-size: 18px; font-weight: 800; color: #0f172a; letter-spacing: -0.3px;">
+                      AI did the work. You just click "Run."
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              
+              <!-- TRIGGER -->
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 24px; text-align: center;">
+                <tr>
+                  <td style="padding: 24px;">
+                    <p style="margin: 0 0 12px 0; font-size: 14px; font-weight: 600; color: #fcd34d;">
+                      ⏳ SINCE YOU'RE HERE
+                    </p>
+                    <p style="margin: 0 0 8px 0; font-size: 22px; font-weight: 800; color: #3d3636; line-height: 1.3;">
+                      Run your {{event.appName}} tests in 1 click
+                    </p>
+                    <p style="margin: 0 0 20px 0; font-size: 15px; color: #676a6e; line-height: 1.5;">
+                      Takes 2 minutes. Zero setup required.
+                    </p>
                     
-                    <!-- Status Indicator - Updated Style -->
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
-                        <tr>
-                            <td>
-                                <div style="display: inline-block; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); color: #059669; padding: 10px 20px; border-radius: 12px; font-size: 14px; font-weight: bold; border: 2px solid #bbf7d0; box-shadow: 0 2px 4px rgba(5, 150, 105, 0.1);">
-                                    ✅ Test Suite Generated Successfully
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-
-            <!-- Divider - Updated Style -->
-            <tr>
-                <td style="padding: 0 40px;">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td style="height: 2px; background: linear-gradient(90deg, #e5e7eb 0%, #f97316 50%, #e5e7eb 100%);"></td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-
-            <!-- Main Content -->
-            <tr>
-                <td style="padding: 32px 40px 0 40px;">
-                    <h1 style="font-size: 26px; font-weight: 800; color: #111827; margin: 0 0 16px 0; letter-spacing: -0.5px;">Your Tests Are Ready to Run! 🚀</h1>
-                    <p style="color: #6b7280; line-height: 1.6; margin: 0 0 36px 0; font-size: 16px;">Your automated test suite is prepared and waiting. Just a few clicks away from comprehensive insights.</p>
-
-                    <!-- Testing Journey -->
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 36px;">
-                        <tr>
-                            <td>
-                                <h2 style="font-size: 13px; font-weight: bold; color: #f97316; text-transform: uppercase; letter-spacing: 1.2px; margin: 0 0 24px 0; padding-bottom: 12px; border-bottom: 2px solid #fed7aa;">YOUR TESTING JOURNEY</h2>
-                                
-                                <!-- Progress Steps - Updated Style -->
-                                <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                                    <tr>
-                                        <td width="33%" align="center" valign="top" style="padding: 0 10px;">
-                                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; border-radius: 50%; line-height: 40px; font-weight: bold; margin: 0 auto 12px auto; box-shadow: 0 4px 8px rgba(5, 150, 105, 0.2); font-size: 18px;">✓</div>
-                                            <div style="font-weight: bold; color: #059669; font-size: 15px; margin-bottom: 4px;">Generated</div>
-                                            <div style="font-size: 12px; color: #6b7280; background: #f0fdf4; padding: 4px 8px; border-radius: 12px;">Step 1</div>
-                                        </td>
-                                        <td width="33%" align="center" valign="top" style="padding: 0 10px;">
-                                            <div style="width: 40px; height: 40px; border: 3px solid #f97316; color: #f97316; background: white; border-radius: 50%; line-height: 36px; font-weight: bold; margin: 0 auto 12px auto; box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2); font-size: 18px;">▶</div>
-                                            <div style="font-weight: bold; color: #f97316; font-size: 15px; margin-bottom: 4px;">Run Tests</div>
-                                            <div style="font-size: 12px; color: white; background: #f97316; padding: 4px 8px; border-radius: 12px;">Current</div>
-                                        </td>
-                                        <td width="33%" align="center" valign="top" style="padding: 0 10px;">
-                                            <div style="width: 40px; height: 40px; border: 3px solid #e5e7eb; color: #9ca3af; background: white; border-radius: 50%; line-height: 36px; font-weight: bold; margin: 0 auto 12px auto; font-size: 18px;">📊</div>
-                                            <div style="font-weight: 600; color: #9ca3af; font-size: 15px; margin-bottom: 4px;">See Results</div>
-                                            <div style="font-size: 12px; color: #6b7280; background: #f3f4f6; padding: 4px 8px; border-radius: 12px;">Step 3</div>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-
-            <!-- Benefits Section with Bullet Points - Updated Style -->
-            <tr>
-                <td style="padding: 0 40px 8px 40px;">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top: 0; margin-bottom: 0;">
-                        <tr>
-                            <td>
-                                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background: #f8fafc; border-radius: 12px; padding: 24px;">
-                                    <tr>
-                                        <td style="padding-bottom: 20px;">
-                                            <div style="font-size: 18px; font-weight: 700; color: #111827; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid #e5e7eb;">Key Benefits</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20" valign="top" style="padding-right: 12px;">
-                                            <div style="width: 8px; height: 8px; background-color: #f97316; border-radius: 50%; margin-top: 10px;"></div>
-                                        </td>
-                                        <td>
-                                            <p style="color: #111827; line-height: 1.6; margin: 0 0 20px 0; font-size: 15px; font-weight: 600;">Get detailed performance insights</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20" valign="top" style="padding-right: 12px;">
-                                            <div style="width: 8px; height: 8px; background-color: #f97316; border-radius: 50%; margin-top: 10px;"></div>
-                                        </td>
-                                        <td>
-                                            <p style="color: #111827; line-height: 1.6; margin: 0 0 20px 0; font-size: 15px; font-weight: 600;">Identify potential issues before they reach users</p>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="20" valign="top" style="padding-right: 12px;">
-                                            <div style="width: 8px; height: 8px; background-color: #f97316; border-radius: 50%; margin-top: 10px;"></div>
-                                        </td>
-                                        <td>
-                                            <p style="color: #111827; line-height: 1.6; margin: 0 0 20px 0; font-size: 15px; font-weight: 600;">Instant execution with comprehensive reporting</p>
-                                        </td>
-                                    </tr>
-                                    
-                                    <!-- Schema Coverage - Updated Style -->
-                                    <tr>
-                                        <td width="20" valign="top" style="padding-right: 12px;">
-                                            <div style="width: 8px; height: 8px; background-color: #f97316; border-radius: 50%; margin-top: 10px;"></div>
-                                        </td>
-                                        <td>
-                                            <p style="color: #111827; line-height: 1.6; margin: 0; font-size: 15px; font-weight: 600;">
-                                                Spot test gaps instantly with Schema Coverage Dashboard 
-                                                <a href="{{event.schemaCoverageUrl}}" style="color: #f97316; text-decoration: none; font-weight: bold; border-bottom: 2px solid #f97316; padding-bottom: 2px;">
-                                                    → Explore Schema
-                                                </a>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-
-            <!-- CTA Section -->
-            <tr>
-                <td style="padding: 32px 40px 40px 40px;">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td align="center">
-                                <div style="background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%); border-radius: 12px; padding: 24px; margin-bottom: 24px; border: 2px solid #fed7aa;">
-                                    <p style="font-size: 16px; font-weight: 600; color: #c2410c; margin: 0 0 12px 0;">Ready to execute your tests?</p>
-                                    <p style="font-size: 14px; color: #92400e; margin: 0;">Click the button below to run your test suite now</p>
-                                </div>
-                                <a href="https://app.keploy.io/api-testing/tr" 
-                                   style="display: inline-block; background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); color: white; padding: 16px 40px; text-decoration: none; border-radius: 10px; font-weight: bold; font-size: 16px; box-shadow: 0 6px 16px rgba(249, 115, 22, 0.3);">
-                                    🚀 Run Test Suite Now
-                                </a>
-                                <p style="font-size: 14px; color: #6b7280; margin: 16px 0 0 0;">
-                                    Takes only 2-3 minutes to complete
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-
-            <!-- YOUR EXACT FOOTER -->
-            <tr>
-                <td style="background:#1a202c; color:#cbd5e0; padding: 30px 28px; text-align: center; border-radius: 0 0 12px 12px;">
-                    <!-- Footer Logo -->
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 15px;">
-                        <tr>
-                            <td align="center" class="footer-logo">
-                                <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
-                                     width="100" 
-                                     alt="Keploy" 
-                                     style="width:100px; height:auto; margin:0 auto;">
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- Tagline -->
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 8px;">
-                        <tr>
-                            <td align="center">
-                                <p style="margin:0; font-family:'Segoe UI',Arial,sans-serif; font-size:11px; font-weight:600; color:#94a3b8; line-height:1.4; letter-spacing:0.5px;">
-                                    THE AI-POWERED TESTING PLATFORM
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- Description -->
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
-                        <tr>
-                            <td align="center">
-                                <p style="margin:0; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; color:#cbd5e1; line-height:1.5; text-align:center; padding:0 15px;" class="footer-description">
-                                    Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
-                                </p>
-                            </td>
-                        </tr>
+                    <a href="https://app.keploy.io/api-testing/run-tests" 
+                       style="display: inline-block; padding: 16px 36px; background: linear-gradient(90deg, #ff6b35 0%, #f97316 100%); color: #ffffff; font-weight: 800; text-decoration: none; border-radius: 40px; font-size: 16px; letter-spacing: 0.5px; box-shadow: 0 8px 16px -4px rgba(255, 107, 53, 0.3); mso-padding-alt: 0; margin-bottom: -30px;">
+                      <span style="mso-text-raise: 10pt;">🚀 RUN TEST SUITE NOW →</span>
+                    </a>
+                  </td>
+                </tr>
+              </table>   
+            </td>
+          </tr>
+          
+          <!-- FOOTER -->
+          <tr>
+            <td style="background:#1a202c; color:#cbd5e0; border-radius: 0 0 12px 12px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding: 30px 24px; text-align: center;">
+                    
+                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                         alt="Keploy" 
+                         width="80" 
+                         style="display: block; width: 80px; height: auto; margin: 0 auto 16px;">
+                    
+                    <p style="margin: 0 0 8px 0; font-size: 11px; font-weight: 600; color: #94a3b8; line-height: 1.4; letter-spacing: 0.5px;">
+                      THE AI-POWERED TESTING PLATFORM
+                    </p>
+                    
+                    <p style="margin: 0 0 20px 0; font-size: 13px; color: #cbd5e1; line-height: 1.5; max-width: 400px; margin: 0 auto 20px;">
+                      Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
+                    </p>
+                    
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto 20px; max-width: 200px;">
+                      <tr>
+                        <td align="center" style="padding: 0 8px;">
+                          <a href="https://x.com/keployio" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" 
+                                 alt="X" 
+                                 width="20" 
+                                 height="20" 
+                                 style="display: block; width: 20px; height: 20px; background-color: #ffffff; border-radius: 4px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 8px;">
+                          <a href="https://linkedin.com/company/keploy/" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" 
+                                 alt="LinkedIn" 
+                                 width="20" 
+                                 height="20" 
+                                 style="display: block; width: 20px; height: 20px; background-color: #ffffff; border-radius: 4px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 8px;">
+                          <a href="https://github.com/keploy" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/github.png" 
+                                 alt="GitHub" 
+                                 width="20" 
+                                 height="20" 
+                                 style="display: block; width: 20px; height: 20px; background-color: #ffffff; border-radius: 4px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 8px;">
+                          <a href="https://www.youtube.com/@keploy" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" 
+                                 alt="YouTube" 
+                                 width="20" 
+                                 height="20" 
+                                 style="display: block; width: 20px; height: 20px; background-color: #ffffff; border-radius: 4px; padding: 2px;">
+                          </a>
+                        </td>
+                      </tr>
                     </table>
                     
-                    <!-- Social Icons -->
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 15px 0 20px 0;">
-                        <tr>
-                            <td align="center">
-                                <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
-                                    <tr>
-                                        <td style="padding: 0 12px;">
-                                            <a href="https://x.com/keployio" style="text-decoration: none;">
-                                                <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" 
-                                                     width="22" 
-                                                     height="22" 
-                                                     alt="Twitter" 
-                                                     border="0" 
-                                                     style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 4px; padding: 2px;" />
-                                            </a>
-                                        </td>
-                                        <td style="padding: 0 12px;">
-                                            <a href="https://linkedin.com/company/keploy/" style="text-decoration: none;">
-                                                <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" 
-                                                     width="22" 
-                                                     height="22" 
-                                                     alt="LinkedIn" 
-                                                     border="0" 
-                                                     style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 4px; padding: 2px;" />
-                                            </a>
-                                        </td>
-                                        <td style="padding: 0 12px;">
-                                            <a href="https://github.com/keploy" style="text-decoration: none;">
-                                                <img src="https://img.icons8.com/ios-filled/50/000000/github.png" 
-                                                     width="22" 
-                                                     height="22" 
-                                                     alt="GitHub" 
-                                                     border="0" 
-                                                     style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 4px; padding: 2px;" />
-                                            </a>
-                                        </td>
-                                        <td style="padding: 0 12px;">
-                                            <a href="https://www.youtube.com/@keploy" style="text-decoration: none;">
-                                                <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" 
-                                                     width="22" 
-                                                     height="22" 
-                                                     alt="YouTube" 
-                                                     border="0" 
-                                                     style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 4px; padding: 2px;" />
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <!-- Address & Legal -->
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                        <tr>
-                            <td align="center">
-                                <p style="margin:0 0 5px 0; font-family:'Segoe UI',Arial,sans-serif; font-size:11px; color:#94a3b8; line-height:1.4;">
-                                    New Burton Rd Central, Delaware, US 19904
-                                </p>
-                                <p style="margin:0; font-family:'Segoe UI',Arial,sans-serif; font-size:11px; color:#94a3b8; line-height:1.4; margin-bottom: -30px;">
-                                    © 2026 Keploy, Inc. All rights reserved.
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
+                    <p style="margin: 0 0 5px 0; font-size: 11px; color: #94a3b8; line-height: 1.4;">
+                      New Burton Rd Central, Delaware, US 19904
+                    </p>
+                    <p style="margin: 0; font-size: 11px; color: #94a3b8; line-height: 1.4;">
+                      © 2026 Keploy, Inc. All rights reserved.
+                    </p>
+                    
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
         </table>
-    </center>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
