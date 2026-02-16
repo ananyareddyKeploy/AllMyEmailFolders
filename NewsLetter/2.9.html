@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+  <title>Keploy monthly – dev edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    
+    html, body { margin:0; padding:0; width:100%; background:#faf7f2; }  
+    * { -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; box-sizing:border-box; }
+    table { border-spacing:0; mso-table-lspace:0; mso-table-rspace:0; }
+    td { vertical-align:top; }
+    img { border:0; -ms-interpolation-mode:bicubic; }
+    a { text-decoration:none; color:#d95c1e; }  
+    .orange-link { color:#d95c1e; font-weight:500; border-bottom:1px solid rgba(217,92,30,0.2); }
+    .orange-link:hover { border-bottom-color:#d95c1e; }
+    code, .mono { font-family:'JetBrains Mono',monospace; font-size:0.9em; background:#f3eee9; padding:0 4px; border-radius:4px; color:#2c2c2c; }
+
+    .email-container { max-width:580px; width:100%; margin:0 auto; background:#ffffff; }
+    .content-padding { padding:32px 32px 20px 32px; }
+    h1, h2, h3, h4 { margin:0; font-weight:500; font-family:'Inter',sans-serif; color:#1e1e1e; }
+    h2 { font-size:22px; font-weight:600; letter-spacing:-0.2px; margin-bottom:16px; }
+    h3 { font-size:18px; font-weight:600; margin-bottom:8px; color:#1e1e1e; }
+    p { margin:0 0 16px 0; font-family:'Inter',sans-serif; font-size:16px; line-height:1.6; color:#2a2a2a; }
+    hr { border:none; border-top:1px solid #eae2da; margin:28px 0; width:100%; }
+    .feature-img { width:100%; max-width:520px; height:auto; display:block; margin:16px 0 12px 0; border-radius:0; background:#f8f4f0; }
+    .tag { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:13px; font-weight:500; color:#d95c1e; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px; }
+    .footer-text { font-size:13px; color:#5f5b57; line-height:1.5; }
+    .social-icon { display:inline-block; margin:0 8px; opacity:0.85; transition:opacity 0.1s; }
+    .social-icon:hover { opacity:1; }
+    @media (max-width:560px) {
+      .content-padding { padding:24px 20px !important; }
+      h2 { font-size:20px; }
+    }
+   
+  </style>
+</head>
+<body style="margin:0; padding:24px 0; background:#faf7f2;" width="100%">
+  <!-- preview text -->
+  <div style="display:none; font-size:1px; line-height:1px; max-height:0; opacity:0; color:#faf7f2; mso-hide:all;">
+    ⚓ K8s testing • AWS marketplace • global custom functions • load testing — fresh February release
+  </div>
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" bgcolor="#faf7f2">
+    <tr>
+      <td align="center" style="padding:0 10px;">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#ffffff" style="max-width:580px; width:100%; margin:0 auto;" class="email-container">
+          <tr>
+            <td style="background:#ffffff;">
+              <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Feb+header.png" width="580" border="0" alt="" style="max-width:580px; width:100%; height:auto; display:block; background:#faf0e8;">
+
+              <div class="content-padding">
+                <p style="font-size:18px; margin-bottom:8px; color:#1e1e1e;">Hey {{customer.name | default: "there"}}! 👋</p>
+                <p style="font-size:18px; margin-bottom:32px;">February already? The year's moving fast — hope your tests are keeping up.</p>
+
+                <h2 style="border-left:3px solid #d95c1e; padding-left:14px; margin-bottom:28px;">What's new this month</h2>
+
+                <!-- 1. K8s testing -->
+                <h3 style="display:flex; align-items:center; gap:6px;">
+                  <span style="color:#d95c1e; font-size:22px;">⚓</span> Testing in Kubernetes clusters
+                </h3>
+                <p><strong style="font-weight:600;">Testing locally, but your apps run in Kubernetes in production?</strong></p>
+                <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/K8s.png" alt="K8s proxy diagram" class="feature-img" style="max-width:480px;">
+                <p><strong>Now test where it matters — right inside your K8s clusters.</strong> Spin up a production-like setup locally with Kind, deploy via Helm, and let Keploy's k8s-proxy auto‑generate tests from real API traffic. Zero manual test writing. Just real‑world, network‑aware validation for your microservices.<br>
+                <a href="https://keploy.io/docs/quickstart/k8s-proxy/" class="orange-link" style="display:inline-block; margin-top:6px;">📚 Read the K8s testing guide →</a></p>
+
+                <hr>
+
+                <!-- 2. AWS Marketplace -->
+                <h3 style="display:flex; align-items:center; gap:6px;">
+                  <span style="color:#d95c1e; font-size:22px;">🛒</span> Now available on AWS Marketplace
+                </h3>
+
+                <p><strong>Great news!</strong> Keploy is now listed on the <strong>AWS Marketplace</strong>. Access Keploy through the AWS Marketplace interface you already use. <strong>Enterprise validation:</strong> Being on AWS Marketplace means we meet AWS's security and compliance requirements. Get started with one click, right from your AWS console.</p>
+                <p style="margin-top:-4px;"><a href="#" class="orange-link">View listing →</a></p>
+
+                <hr>
+
+                <!-- 3. Global Custom Functions -->
+                <h3 style="display:flex; align-items:center; gap:6px;">
+                  <span style="color:#d95c1e; font-size:22px;">🧮</span> Global custom functions
+                </h3>
+                <p><strong style="font-weight:600;">Write once. Use everywhere. No more copy‑paste.</strong></p>
+                <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/global+custom+function.png" alt="Global custom functions UI" class="feature-img" style="max-width:480px;">
+                <p><strong>Define custom JS functions once — call them from any test.</strong> No duplication. No debugging the same logic across 50 tests. Update once, propagate everywhere. Available globally across all test suites and projects.<br>
+                <a href="https://keploy.io/" class="orange-link">📘 Create your first GCF →</a></p>
+
+                <hr>
+
+                <!-- 4. Global Custom Variables -->
+                <h3 style="display:flex; align-items:center; gap:6px;">
+                  <span style="color:#d95c1e; font-size:22px;">📦</span> Global custom variables
+                </h3>
+                <p><strong style="font-weight:600;">Define once. Reference everywhere. Never repeat yourself.</strong></p>
+                <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/global+variables.png" alt="Global variables panel" class="feature-img" style="max-width:480px;">
+                <p><strong>Set environment variables, API keys, and test data at the organization level.</strong> Update in one place — every test, every suite, every CI run picks up the change instantly. No more searching through 100+ files to update a staging URL.<br>
+                <a href="https://keploy.io/" class="orange-link">🔧 Configure global variables →</a></p>
+
+                <hr>
+
+                <!-- 5. Load testing -->
+                <h3 style="display:flex; align-items:center; gap:6px;">
+                  <span style="color:#d95c1e; font-size:22px;">⚡</span> Load testing — now in Keploy
+                </h3>
+                <p><strong style="font-weight:600;">Wondering if your API can handle 10,000 users — without writing a single line of load test code?</strong></p>
+
+                <p>You don't need to be a performance engineer anymore. Keploy now converts your recorded API tests into <strong>production‑grade load tests</strong> — automatically. <strong>Realistic traffic patterns:</strong> We replay real user flows, not just random GET requests. <strong>Instant insights:</strong> See exactly where your system breaks, in minutes.</p>
+                <p><a href="#" class="orange-link">📊 Explore load testing →</a></p>
+
+                <hr>
+
+                <!-- CTA banner -->
+                <div style="margin:24px 0 32px 0; padding:0; border:none; background:none;">
+                  <p style="font-size:20px; font-weight:500; margin-bottom:8px; color:#1e1e1e;">Ready to transform your testing?</p>
+                  <p style="font-size:16px; margin-bottom:12px;">Start generating tests automatically with Keploy today.</p>
+                  <a href="https://app.keploy.io/api-testing/generate" style="font-family:'Inter',sans-serif; font-size:16px; font-weight:500; color:#d95c1e; border-bottom:2px solid #d95c1e; padding-bottom:2px;">Try Keploy Now →</a>
+                </div>
+
+                <!-- closing message -->
+                <p style="font-size:18px; margin:32px 0 8px 0;">Thanks for being part of the Keploy community! 🧡</p>
+                <p style="font-size:16px;">Stay tuned — more developer-first updates coming.</p>
+              </div>
+
+<!-- FOOTER -->
+<tr>
+<td>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background:#1a202c; color:#cbd5e0; text-align: center; border-radius: 0 0 24px 24px; margin-top: -30px;">
+    <tr>
+      <td style="padding: 36px 32px;">
+        <!-- Footer Logo -->
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+          <tr>
+            <td align="center" class="footer-logo">
+              <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                   width="100" 
+                   alt="Keploy" 
+                   style="width:100px; height:auto; margin:0 auto;">
+            </td>
+          </tr>
+        </table>
+
+        <!-- Tagline -->
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 12px;">
+          <tr>
+            <td align="center">
+              <p style="margin:0; font-family:'Segoe UI',Arial,sans-serif; font-size:12px; font-weight:600; color:#94a3b8; line-height:1.4; letter-spacing:1px;">
+                THE AI-POWERED TESTING PLATFORM
+              </p>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Description -->
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 24px;">
+          <tr>
+            <td align="center">
+              <p style="margin:0 auto; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; color:#cbd5e1; line-height:1.6; text-align:center; max-width: 400px; padding:0 15px;" class="footer-description">
+                Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
+              </p>
+            </td>
+          </tr>
+        </table>
+          
+        <!-- Social Icons -->
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 20px 0 24px 0;">
+          <tr>
+            <td align="center">
+              <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                <tr>
+                  <td style="padding: 0 12px;">
+                    <a href="https://x.com/keployio" style="text-decoration: none;">
+                      <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" 
+                           width="22" 
+                           height="22" 
+                           alt="Twitter" 
+                           border="0" 
+                           style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 6px; padding: 4px;" />
+                    </a>
+                  </td>
+                  <td style="padding: 0 12px;">
+                    <a href="https://linkedin.com/company/keploy/" style="text-decoration: none;">
+                      <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" 
+                           width="22" 
+                           height="22" 
+                           alt="LinkedIn" 
+                           border="0" 
+                           style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 6px; padding: 4px;" />
+                    </a>
+                  </td>
+                  <td style="padding: 0 12px;">
+                    <a href="https://github.com/keploy" style="text-decoration: none;">
+                      <img src="https://img.icons8.com/ios-filled/50/000000/github.png" 
+                           width="22" 
+                           height="22" 
+                           alt="GitHub" 
+                           border="0" 
+                           style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 6px; padding: 4px;" />
+                    </a>
+                  </td>
+                  <td style="padding: 0 12px;">
+                    <a href="https://www.youtube.com/@keploy" style="text-decoration: none;">
+                      <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" 
+                           width="22" 
+                           height="22" 
+                           alt="YouTube" 
+                           border="0" 
+                           style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 6px; padding: 4px;" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Address & Legal + User Status -->
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td align="center">
+              <p style="margin:0 0 5px 0; font-family:'Segoe UI',Arial,sans-serif; font-size:11px; color:#94a3b8; line-height:1.5;">
+                New Burton Rd Central, Delaware, US 19904
+              </p>
+              <p style="margin:0; font-family:'Segoe UI',Arial,sans-serif; font-size:11px; color:#94a3b8; line-height:1.5;">
+                © 2026 Keploy, Inc. All rights reserved.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</td>
+</tr>
+<!-- ============ END FOOTER ============ -->
+
+</table>
+</td>
+</tr>
+</table>
+<!-- END EMAIL CONTAINER -->
+
+</td>
+</tr>                  
+</table>
+</div>
+</body>
+</html>
