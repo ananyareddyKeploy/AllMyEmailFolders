@@ -99,7 +99,6 @@ img {
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
 <tr>
 <td valign="top" align="center" style="padding: 20px 10px;">
-
 <!-- MAIN CONTAINER -->
 <table bgcolor="#ffffff" style="margin:0 auto;" align="center" cellspacing="0" cellpadding="0" border="0" width="563" class="email-container">
 <tr>
@@ -116,12 +115,10 @@ img {
      style="max-width:563px; width:100%; height:auto; display:block;">
 </td>
 </tr>
-
 <!-- MAIN CONTENT PADDING  -->
 <tr>
 <td style="background-color:#ffffff; padding:32px 28px;" class="mobile-padding">
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
-
 <!-- intro line  -->
 <tr>
 <td style="padding-bottom: 24px;">
@@ -132,11 +129,11 @@ img {
 Hey {{customer.name | default: "there"}}! 👋
 </h1>
 <p style="margin: 8px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; color: #0f172a; line-height: 1.4;">
-February already? The year's moving fast - hope your tests are keeping up. Here’s what we shipped to make your testing 10x smoother.<br/>
+It's 2026 and we are already into february, Remember when we thought we'd have flying cars by now? Instead, Writing tests manually like it's 2010. 
+ Here’s what we shipped to make your testing 10x smoother.<br/>
 </p>
 </td>
 </tr>
-
 <!-- section title-->
 <tr>
 <td style="padding-bottom: 20px;">
@@ -157,8 +154,13 @@ February already? The year's moving fast - hope your tests are keeping up. Here�
      alt="Keploy K8s proxy dashboard"
      style="max-width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05); margin:12px 0 16px 0; border:1px solid #f0f0f0;">
 <p style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:17px; color:#0f172a; line-height:1.5;">
-<strong>Now GA:</strong> k8s-proxy captures real traffic inside your cluster, auto-generates tests via Helm + Kind. Zero manual mocks, just network-aware validation.  
-<a href="https://keploy.io/docs/quickstart/k8s-proxy/" target="_blank" style="color:#FE7E3C; font-weight:600; text-decoration:none; white-space:nowrap;">→ K8s guide</a>
+<strong></strong> k8s-proxy captures real traffic inside your cluster, recording. Every request. Every response.
+Then it replays those recordings to auto-generate tests using Helm + Kind.
+<strong>Record. Replay. Validate.</strong> Zero manual mocks.
+</p>
+
+<p style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:17px; color:#0f172a; line-height:1.5;">
+<a href="https://keploy.io/docs/quickstart/k8s-proxy/" target="_blank" style="color:#FE7E3C; font-weight:600; text-decoration:none; white-space:nowrap; display:inline-block; margin-top:8px;">→ K8s guide</a>
 </p>
 </td>
 </tr>
@@ -174,7 +176,7 @@ February already? The year's moving fast - hope your tests are keeping up. Here�
      alt="Keploy on AWS Marketplace"
      style="max-width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); margin:12px 0 16px 0; border:1px solid #eaeaea;">
 <p style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:17px; color:#0f172a; line-height:1.5;">
-<strong>Skip red tape.</strong> Keploy is now listed on AWS Marketplace. Purchase directly from your AWS console, meet compliance, and unify billing.  
+<strong>Great News!</strong> Keploy is now listed on AWS Marketplace. Purchase directly from your AWS console, meet compliance, and unify billing.  
 <a href="https://keploy.io/" target="_blank" style="color:#FE7E3C; font-weight:600;">→ View listing</a>
 </p>
 </td>
@@ -190,7 +192,7 @@ February already? The year's moving fast - hope your tests are keeping up. Here�
      alt="Global custom functions UI"
      style="max-width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05); margin:12px 0 16px 0;">
 <p style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:17px; color:#0f172a; line-height:1.5;">
-Write helper logic once - like generating auth tokens or masking user data - and reuse it across all your tests. Update in one place, and every test updates instantly.
+Write helper logic once and reuse it across all your tests. Update in one place, and every test updates automatically.
 
 <strong></strong> - call from any test, update everywhere instantly. No more copy-paste.  
 <a href="https://keploy.io/" target="_blank" style="color:#FE7E3C; font-weight:600;">→ Create first GCF</a>
@@ -202,41 +204,40 @@ Write helper logic once - like generating auth tokens or masking user data - and
 <tr>
 <td style="padding-bottom: 40px;" class="feature-card">
 <h4 style="margin:0 0 8px 0; font-family:'DM Sans',Arial,sans-serif; font-size:22px; font-weight:600; color:#0f172a;">📦 4. Global Custom Variables</h4>
-<p style="margin:0 0 10px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#000409; font-weight:500;">Define once. Reference everywhere</p>
+<p style="margin:0 0 10px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#000409; font-weight:500;">Create custom variables. Use them everywhere.</p>
 <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Global+variables+(2).png"
      width="100%" 
-     alt="Global variables configuration"
+     alt="Global variables configuration interface"
      style="max-width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.05); margin:12px 0 16px 0;">
 <p style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:17px; color:#0f172a; line-height:1.5;">
-Environment‑aware variables at the organization level. Change a base URL in one place → all tests, CI pipelines instantly updated. No more hunting through yamls.  
-<a href="https://keploy.io/" target="_blank" style="color:#FE7E3C; font-weight:600;">→ Configure variables</a>
+Add your own variables once — URLs, test data etc and reference them across all tests. Update in one place, every test updates instantly.  
+<a href="https://keploy.io/" target="_blank" style="color:#FE7E3C; font-weight:600; text-decoration:none;">→ Add variable</a>
 </p>
 </td>
 </tr>
 
-<!-- ========= CARD 5 – Load testing ========= -->
 <tr>
 <td style="padding-bottom: 40px;" class="feature-card">
-<h4 style="margin:0 0 8px 0; font-family:'DM Sans',Arial,sans-serif; font-size:22px; font-weight:600; color:#0f172a;">⚡ 5. Load testing (auto‑converted)</h4>
-<p style="margin:0 0 10px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#000409; font-weight:500;">From recorded API tests to production‑grade load.</p>
-<img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Load+Test.png"
+<h4 style="margin:0 0 8px 0; font-family:'DM Sans',Arial,sans-serif; font-size:22px; font-weight:600; color:#0f172a;">✏️ 5. Test editing (request, assertions, variables)</h4>
+<p style="margin:0 0 10px 0; font-family:'DM Sans',Arial,sans-serif; font-size:18px; color:#000409; font-weight:500;">Get control over test suites — edit everything now.</p>
+<img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Edit+request.png"
      width="100%" 
-     alt="Keploy load test dashboard"
+     alt="Keploy test suite editing interface"
      style="max-width:100%; height:auto; display:block; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.05); margin:12px 0 16px 0;">
 <p style="margin:0; font-family:'DM Sans',Arial,sans-serif; font-size:17px; color:#0f172a; line-height:1.5;">
-<strong>No scripting required.</strong> Keploy reuses real user flows to generate load tests with configurable RPS. See where your system breaks, in minutes.  
-<a href="https://keploy.io/docs/concepts/reference/glossary/load-testing/#heading" target="_blank" style="color:#FE7E3C; font-weight:600;">→ Load testing docs</a>
+<strong>Previously read-only, now fully editable from the test suite page.</strong> Modify requests, assertions, and manage variables — all without regenerating tests from scratch.  
+<a href="https://app.keploy.io/api-testing/generate" target="_blank" style="color:#FE7E3C; font-weight:600;">✏️ Edit test suite →</a>
 </p>
 </td>
 </tr>
 <!-- CTA banner (try now) -->
 <tr>
-<td style="padding-bottom: 32px;">
+<td style="padding-bottom: 20px;">
 <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius:14px;">
 <tr>
 <td align="center" style="padding:30px 20px;">
-<h3 style="margin:0 0 8px; font-family:'DM Sans',sans-serif; font-size:22px; font-weight:700; color:#ffffff;">One gateway for all your traffic?</h3>
-<p style="margin:0 0 20px; font-family:'DM Sans',sans-serif; font-size:16px; color:#94a3b8;">That’s the vision. Start with Keploy today.</p> 
+<h3 style="margin:0 0 8px; font-family:'DM Sans',sans-serif; font-size:22px; font-weight:700; color:#ffffff;">Ready to Transform Your Testing?</h3>
+<p style="margin:0 0 20px; font-family:'DM Sans',sans-serif; font-size:16px; color:#94a3b8;"> Start generating today.</p> 
 <a href="https://app.keploy.io/api-testing/generate" target="_blank" style="display:inline-block; background-color:#FE7E3C; color:#ffffff; font-family:'DM Sans',sans-serif; font-size:16px; font-weight:600; text-decoration:none; padding:14px 38px; border-radius:40px;">
 Try Keploy now → 
 </a>
