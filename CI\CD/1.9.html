@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <title>PetClinic · Massive Fullscreen Prompt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+    body {
+      margin: 0; 
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(145deg, #0f2632 0%, #1b485e 100%);
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      min-height: 100vh; 
+      height: 100%;
+      overflow: auto;
+      padding: 2rem;
+    }
+
+    #modalBackdrop {
+      position: fixed; 
+      inset: 0; 
+      background: rgba(5, 15, 22, 0.85);
+      backdrop-filter: blur(10px);
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      z-index: 9999;
+      padding: 2rem;
+    }
+
+    /* 🚀 MASSIVELY ENLARGED MODAL */
+    #modalCard {
+      background: #ffffff;
+      max-width: 1400px;           /* huge width for full screen */
+      width: 95%;
+      border-radius: 100px;         /* extra large rounding */
+      box-shadow: 0 70px 120px -30px rgba(0, 0, 0, 0.7), 0 40px 70px rgba(0, 50, 70, 0.5);
+      padding: 6rem 7rem 7rem 7rem;  /* enormous padding */
+      text-align: center;
+      animation: zoomIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      user-select: none;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes zoomIn {
+      from { opacity: 0; transform: scale(0.9) translateY(40px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* monumental headline */
+    #modalCard h1 {
+      font-weight: 800; 
+      font-size: 7rem;            /* absolutely gigantic */
+      margin: 0 0 3.5rem;
+      color: #0b2a36;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      max-width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 6px 6px 20px rgba(0, 100, 130, 0.2);
+      background: linear-gradient(135deg, #0d4055, #256f8f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* huge descriptive paragraph */
+    #modalCard p {
+      font-weight: 500; 
+      font-size: 3.6rem;           /* massive readability */
+      color: #114e63;
+      margin: 0 0 5rem;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+      background: #dcf0fa;
+      padding: 3.2rem 4.2rem;
+      border-radius: 120px;
+      box-shadow: inset 0 4px 24px rgba(70, 160, 210, 0.3), 0 20px 35px rgba(0, 70, 100, 0.3);
+      border: 3px solid rgba(255, 255, 255, 0.9);
+    }
+
+    #modalCard p strong {
+      font-weight: 800;
+      color: #003952;
+    }
+
+    /* button container — single button centered */
+    .btnContainer {
+      display: flex; 
+      justify-content: center; 
+      width: 100%;
+    }
+
+    /* PRIMARY BUTTON — COLOSSAL */
+    .btnPrimary {
+      background: linear-gradient(145deg, #ff8a5c 0%, #ff5722 100%);
+      border: none;
+      border-radius: 200px;          /* super pill shape */
+      color: #fff;
+      font-size: 4.2rem;             /* ENORMOUS button text */
+      font-weight: 800;
+      padding: 3.8rem 11rem;          /* gigantic clickable area */
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 40px 60px -8px #c04b1e, 0 20px 35px rgba(190, 70, 20, 0.7);
+      letter-spacing: 0.06rem;
+      border: 5px solid rgba(255, 255, 255, 0.5);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      line-height: 1.2;
+    }
+
+    .btnPrimary:hover, .btnPrimary:focus {
+      background: linear-gradient(145deg, #ff6f3a 0%, #e64510 100%);
+      box-shadow: 0 55px 70px -8px #a33f12;
+      transform: scale(1.06) translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.9);
+      outline: none;
+    }
+
+    .btnPrimary:active {
+      transform: scale(0.98);
+      box-shadow: 0 25px 40px -5px #8a2f0b;
+    }
+
+    /* big icon inside button */
+    .btnPrimary .zap {
+      font-size: 5rem;
+      filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.3));
+    }
+
+    /* no secondary button — removed completely */
+
+    /* responsive adjustments: still huge but scales down gracefully */
+    @media (max-width: 1200px) {
+      #modalCard {
+        padding: 4.5rem 4rem;
+        border-radius: 70px;
+      }
+      #modalCard h1 {
+        font-size: 5.5rem;
+      }
+      #modalCard p {
+        font-size: 3rem;
+        padding: 2.8rem 3.2rem;
+      }
+      .btnPrimary {
+        font-size: 3.6rem;
+        padding: 3rem 8rem;
+      }
+    }
+
+    @media (max-width: 800px) {
+      #modalCard {
+        padding: 3.5rem 2.5rem;
+        border-radius: 50px;
+      }
+      #modalCard h1 {
+        font-size: 4.2rem;
+      }
+      #modalCard p {
+        font-size: 2.4rem;
+        padding: 2rem 2.2rem;
+        border-radius: 60px;
+      }
+      .btnPrimary {
+        font-size: 2.8rem;
+        padding: 2.2rem 5rem;
+        border-width: 4px;
+      }
+      .btnPrimary .zap {
+        font-size: 3.5rem;
+      }
+    }
+    @media (max-width: 500px) {
+      #modalCard h1 {
+        font-size: 3.2rem;
+      }
+      #modalCard p {
+        font-size: 2rem;
+      }
+      .btnPrimary {
+        font-size: 2.2rem;
+        padding: 1.8rem 3rem;
+        white-space: nowrap;
+      }
+    }
+
+    .btnSecondary {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div id="modalCard">
+    <!-- headline -->
+    <h1 id="modalTitle">Instantly Generate API Tests with PetClinic APP</h1>
+    <p id="modalDesc">Struggling to get started? Use our live PetClinic demo app to generate real API test scenarios in seconds — <strong>no setup or API URL needed.</strong></p>
+    
+    <div class="btnContainer">
+
+      <button class="btnPrimary" onclick="window.open('https://keploy.io/docs/2.0.0/quickstart/pet-clinic/', '_blank')">
+        <span class="zap">⚡</span> Try Demo Now <span style="font-size: 4rem; margin-left: 0.8rem;">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+  setTimeout(() => {
+    document.getElementById('modalBackdrop').style.display = 'flex';
+  }, 200); 
+
+
+  document.getElementById('modalBackdrop').addEventListener('click', (event) => {
+    if(event.target === event.currentTarget) {
+      document.getElementById('modalBackdrop').style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.getElementById('modalBackdrop').style.display = 'none';
+    }
+  });
+</script>
+
+
+</body>
+</html>
