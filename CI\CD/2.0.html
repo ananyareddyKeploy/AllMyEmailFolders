@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PetClinic · Ready‑to‑use prompt (smaller)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(145deg, #0f2632 0%, #1b485e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+
+    /* backdrop — same mood, but modal is now reasonably sized */
+    #modalBackdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 15, 22, 0.75);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 1.5rem;
+    }
+
+    /* 🔹 SMALLER MODAL – clean, readable, still prominent but not overwhelming */
+    #modalCard {
+      background: #ffffff;
+      max-width: 700px;            /* standard modal width */
+      width: 100%;
+      border-radius: 48px;          /* friendly rounding */
+      box-shadow: 0 40px 70px -20px rgba(0, 30, 40, 0.6), 0 20px 40px rgba(0, 30, 40, 0.4);
+      padding: 3rem 3.5rem 3.8rem;  /* comfortable internal space */
+      text-align: center;
+      animation: fadeUp 0.5s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+      user-select: none;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* headline – bold gradient but reduced to human scale */
+    #modalCard h1 {
+      font-weight: 800;
+      font-size: 2.8rem;            /* large, not gigantic */
+      margin: 0 0 1.5rem 0;
+      color: #0b2a36;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 6px rgba(0, 80, 110, 0.15);
+      background: linear-gradient(135deg, #0d4055, #1f6383);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* descriptive paragraph – clean background, comfortable size */
+    #modalCard p {
+      font-weight: 500;
+      font-size: 1.35rem;
+      color: #10495e;
+      margin: 0 0 2.5rem 0;
+      line-height: 1.6;
+      background: #e5f2fa;
+      padding: 1.8rem 2.4rem;
+      border-radius: 48px;
+      box-shadow: inset 0 2px 10px rgba(50, 140, 190, 0.2), 0 10px 20px rgba(0, 60, 80, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+
+    #modalCard p strong {
+      font-weight: 800;
+      color: #003652;
+    }
+
+    /* button container – single CTA centered */
+    .btnContainer {
+      display: flex;
+      justify-content: center;
+    }
+
+    /* PRIMARY BUTTON – large but proportional, no excessive sizing */
+    .btnPrimary {
+      background: linear-gradient(145deg, #ff7e4a 0%, #ff4300 100%);
+      border: none;
+      border-radius: 60px;           /* pill shape, modern */
+      color: #fff;
+      font-size: 1.9rem;             /* visible but not colossal */
+      font-weight: 700;
+      padding: 1.5rem 4.2rem;         /* solid touch area */
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 18px 30px -10px #c03f10, 0 8px 16px rgba(180, 70, 10, 0.5);
+      letter-spacing: 0.02rem;
+      border: 3px solid rgba(255, 255, 255, 0.5);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      line-height: 1.2;
+    }
+
+    .btnPrimary:hover, .btnPrimary:focus {
+      background: linear-gradient(145deg, #ff6a30 0%, #e63b00 100%);
+      box-shadow: 0 26px 40px -12px #a6350c;
+      transform: scale(1.04) translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.9);
+      outline: none;
+    }
+
+    .btnPrimary:active {
+      transform: scale(0.98);
+      box-shadow: 0 12px 20px -6px #832d08;
+    }
+
+    /* icon inside button – balanced */
+    .btnPrimary .zap {
+      font-size: 2.4rem;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+    }
+
+    /* right arrow – not too huge */
+    .btnPrimary .arrow {
+      font-size: 2.3rem;
+      margin-left: 0.2rem;
+      line-height: 1;
+    }
+
+    /* responsive tweaks – still friendly */
+    @media (max-width: 600px) {
+      #modalCard {
+        padding: 2.2rem 1.8rem 2.6rem;
+        border-radius: 36px;
+      }
+      #modalCard h1 {
+        font-size: 2.2rem;
+      }
+      #modalCard p {
+        font-size: 1.15rem;
+        padding: 1.4rem 1.6rem;
+        border-radius: 36px;
+      }
+      .btnPrimary {
+        font-size: 1.6rem;
+        padding: 1.2rem 2.8rem;
+        border-width: 2px;
+        gap: 0.4rem;
+      }
+      .btnPrimary .zap {
+        font-size: 2rem;
+      }
+      .btnPrimary .arrow {
+        font-size: 1.9rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      #modalCard h1 {
+        font-size: 1.9rem;
+      }
+      #modalCard p {
+        font-size: 1rem;
+      }
+      .btnPrimary {
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div id="modalCard"> 
+    <h1 id="modalTitle"> Instantly Generate API Tests<br>with PetClinic APP</h1>
+    <p id="modalDesc"> 
+      Struggling to get started? Use our live PetClinic demo app to generate real API test scenarios in seconds — <strong>no setup or API URL needed.</strong>
+    </p>
+    <div class="btnContainer"> 
+      <button class="btnPrimary" onclick="window.open('https://keploy.io/docs/2.0.0/quickstart/pet-clinic/', '_blank')">
+        <span class="zap">⚡</span> Try Demo Now <span class="arrow">→</span>
+      </button> 
+    </div> 
+  </div> 
+</div> 
+<script>
+  setTimeout(() => {
+    document.getElementById('modalBackdrop').style.display = 'flex';
+  }, 20); 
+
+  document.getElementById('modalBackdrop').addEventListener('click', (event) => {
+    if(event.target === event.currentTarget) {
+      document.getElementById('modalBackdrop').style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.getElementById('modalBackdrop').style.display = 'none';
+    }
+  });
+</script>
+</body>
+</html>
