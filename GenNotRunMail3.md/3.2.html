@@ -1,220 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keploy • {{event.appName}} • Tests Ready</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome to Keploy – AI‑powered testing</title>
+  <style>
+    /* reset & base — no boxes, only flowing text and subtle lines */
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #eef2f6;  /* soft background */
+      color: #1e2b3a;
+    }
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+    .yshortcuts a { border-bottom: none !important; }
+    @media screen and (max-width: 600px) {
+      .responsive-pad { padding-left: 24px !important; padding-right: 24px !important; }
+      .h1-mobile { font-size: 32px !important; }
+      .stack-block { display: block !important; width: 100% !important; }
+      .social-icon { margin: 0 6px; }
+    }
+    .preheader {
+      display: none !important; visibility: hidden; opacity: 0; color: transparent;
+      height: 0; width: 0; font-size: 1px; line-height: 1px;
+    }
+    hr.divider-light {
+      border: 0;
+      height: 1px;
+      background: #dde5ed;
+      margin: 28px 0 24px;
+      width: 100%;
+    }
+    hr.divider-soft {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+      margin: 30px 0 26px;
+    }
+  </style>
 </head>
-<body style="margin:0;padding:0;background-color:#ffffff;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#334155;line-height:1.6;">
-<center>
-<table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width:600px;background-color:#ffffff;">
-<tr>
-<td style="padding:0;">
+<body style="margin:0; padding:0; background-color:#eef2f6;">
 
-<!-- ============ ORANGE HEADER — CLEANER, BETTER SPACING ============ -->
-<div style="background:#f97316; padding:36px 40px 32px 40px; border-radius:16px 16px 0 0;">
-  
-  <!-- White Logo -->
-  <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
-       alt="Keploy" 
-       width="100" 
-       style="width:100px;height:auto;display:block;filter:brightness(0) invert(1); margin-bottom:28px;">
-  
-  <!-- Status - White with subtle opacity -->
-  <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.85);letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px;">
-    ✅ Test suite generated
-  </div>
-  
-  <!-- Title - White, better hierarchy -->
-  <h1 style="font-size:32px;font-weight:800;color:#ffffff;margin:0;line-height:1.2;letter-spacing:-0.5px;">
-    Tests ready to run
-  </h1>
+<!-- preheader text -->
+<div class="preheader" style="display:none; font-size:1px; color:#eef2f6; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden;">
+  Import Postman, OpenAPI, cURL → generate tests in seconds. No credit card required.
 </div>
 
-<!-- ============ GREETING — CLEANER, WITH CATCHY COPY ============ -->
-<div style="padding:28px 40px 12px 40px;">
-  <p style="font-size:16px;color:#1e293b;margin:0 0 6px 0;font-weight:500;">Hi there,</p>
-  <div style="font-size:18px;font-weight:700;color:#0f172a;line-height:1.4;margin-bottom:4px;">
-    Your <span style="color:#f97316;">{{event.appName}}</span> test suite is ready.
-  </div>
-  <p style="font-size:16px;color:#475569;margin:0;line-height:1.5;">
-    🐞 <span style="font-weight:700;color:#b45309;">{{event.buggySuites}} unstable tests</span> detected — waiting for review.
-  </p>
-</div>
-
-<!-- ============ APP NAME & QUICK STATS ============ -->
-<div style="padding:12px 40px 16px 40px;">
-  <div style="display:flex;align-items:center;flex-wrap:wrap;gap:16px;">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <span style="font-size:28px;font-weight:800;color:#0f172a;letter-spacing:-0.02em;">{{event.appName}}</span>
-    </div>
-  </div>
-</div>
-
-<!-- ============ BUGGY SUITES — CLEANER CARD, NO BOX ============ -->
-<div style="padding:8px 40px 24px 40px;">
-  <div style="display:flex;align-items:flex-start;gap:14px;background:#fffaf0;padding:18px 22px;border-radius:16px;border-left:5px solid #f97316;">
-    <span style="font-size:22px;line-height:1;">🐞</span>
-    <div style="flex:1;">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:6px;">
-        <span style="font-size:17px;font-weight:800;color:#9a3412;">{{event.buggySuites}} unstable tests</span>
-      </div>
-      <p style="font-size:15px;color:#b45309;margin:0 0 14px 0;line-height:1.5;">
-        AI-suggested patches are waiting for your review.
-      </p>
-      <a href="{{event.buggyAppUrl}}" style="display:inline-flex;align-items:center;gap:8px;background:#f97316;color:white;font-size:15px;font-weight:700;padding:12px 28px;border-radius:40px;text-decoration:none;border:1px solid #fb923c;box-shadow:0 4px 0 #b45a1c;">
-        🔍 Review & fix unstable tests →
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- ============ TEST SUITES IMAGE — CLEANER PRESENTATION ============ -->
-<div style="padding:16px 40px 24px 40px;">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-    <div style="display:flex;align-items:center;gap:10px;">
-      <span style="font-size:18px;font-weight:700;color:#0f172a;">📋 Test suites</span>
-      <span style="font-size:13px;font-weight:600;padding:4px 14px;border-radius:40px;"></span>
-    </div>
-
-  </div>
-  <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Test+suites.png" 
-       alt="{{event.appName}} Test Suites" 
-       width="100%" 
-       style="width:100%;height:auto;display:block;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(0,0,0,0.02);">
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:14px;">
-    <span style="font-size:14px;color:#475569;">
-    
-   
-  </div>
-</div>
-
-<!-- ============ METRICS STRIP — CLEAN, SCANNABLE ============ -->
-<div style="padding:8px 40px 16px 40px;">
-  <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;border-bottom:1px solid #e2e8f0;padding-bottom:20px;"> 
-    <div style="display:flex;align-items:center;gap:8px;">
-      <div style="width:10px;height:10px;background:#f97316;border-radius:10px;"></div>
-      <span style="font-size:15px;color:#0f172a;"><span style="font-weight:700;">{{event.buggySuites}}</span> unstable</span>
-    </div>
-    
-  </div>
-</div>
-
-<!-- ============ RUN TESTS CTA — BOLDER, CLEANER ============ -->
-<div style="padding:24px 40px 40px 40px; text-align: center;">   
-    <a href="https://app.keploy.io/" 
-       style="display:inline-block;padding:16px 44px;background:#f97316;color:white;font-size:17px;font-weight:700;text-decoration:none;border-radius:60px;border:1px solid #fb923c;box-shadow:0 6px 0 #b45a1c;letter-spacing:0.5px;">
-      🚀 Run test suite now →
-    </a>
-  </div>
-</div>
-
-<!-- ============ FOOTER — YOUR ORIGINAL, EXACTLY AS REQUESTED ============ -->
-</td>
-</tr>
-<tr>
-  <td style="background:#1a202c; color:#cbd5e0; padding: 30px 24px; text-align: center; border-radius: 0 0 12px 12px;">
-    
-    <!-- Footer Logo -->
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
-      <tr>
-        <td align="center">
-          <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
-               width="100" 
-               alt="Keploy" 
-               style="width:100px; height:auto; display:block; margin:0 auto;">
-        </td>
-      </tr>
-    </table>
-
-    <!-- Tagline -->
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 12px;">
-      <tr>
-        <td align="center">
-          <p style="margin:0; font-size:12px; font-weight:600; color:#94a3b8; letter-spacing:1px;">
-            THE AI-POWERED TESTING PLATFORM
-          </p>
-        </td>
-      </tr>
-    </table>
-
-    <!-- Description -->
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
-      <tr>
-        <td align="center">
-          <p style="margin:0 auto; font-size:13px; color:#cbd5e1; line-height:1.6; max-width:420px;">
-            Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
-          </p>
-        </td>
-      </tr>
-    </table>
-      
-    <!-- Social Icons -->
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 28px;">
-      <tr>
-        <td align="center">
-          <table border="0" cellpadding="0" cellspacing="0" style="margin:0 auto;">
-            <tr>
-              <td style="padding:0 10px;">
-                <a href="https://x.com/keployio" style="text-decoration: none;">
-                  <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" 
-                       width="24" 
-                       height="24" 
-                       alt="Twitter" 
-                       style="display: block; width: 24px; height: 24px; background-color: #ffffff; border-radius: 6px; padding: 4px;">
-                </a>
-              </td>
-              <td style="padding:0 10px;">
-                <a href="https://linkedin.com/company/keploy/" style="text-decoration: none;">
-                  <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" 
-                       width="24" 
-                       height="24" 
-                       alt="LinkedIn" 
-                       style="display: block; width: 24px; height: 24px; background-color: #ffffff; border-radius: 6px; padding: 4px;">
-                </a>
-              </td>
-              <td style="padding:0 10px;">
-                <a href="https://github.com/keploy" style="text-decoration: none;">
-                  <img src="https://img.icons8.com/ios-filled/50/000000/github.png" 
-                       width="24" 
-                       height="24" 
-                       alt="GitHub" 
-                       style="display: block; width: 24px; height: 24px; background-color: #ffffff; border-radius: 6px; padding: 4px;">
-                </a>
-              </td>
-              <td style="padding:0 10px;">
-                <a href="https://www.youtube.com/@keploy" style="text-decoration: none;">
-                  <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" 
-                       width="24" 
-                       height="24" 
-                       alt="YouTube" 
-                       style="display: block; width: 24px; height: 24px; background-color: #ffffff; border-radius: 6px; padding: 4px;">
-                </a>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-
-    <!-- Address & Legal -->
-    <table width="100%" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td align="center">
-          <p style="margin:0 0 5px 0; font-size:11px; color:#94a3b8; line-height:1.4;">
-            New Burton Rd Central, Delaware, US 19904
-          </p>
-          <p style="margin:0; font-size:11px; color:#94a3b8; line-height:1.4;">
-            © 2026 Keploy, Inc. All rights reserved.
-          </p>
-        </td>
-      </tr>
-    </table>
-  </td>
-</tr>
-<!-- END FOOTER -->
-
+<!-- main email wrapper (no outer card, just flowing background) -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" bgcolor="#eef2f6">
+  <tr>
+    <td align="center" style="padding:32px 16px;">
+      <!-- inner container — simply a column, no border radius, no shadow, no box -->
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width:580px; margin:0 auto; background:#ffffff;">
+        
+        <!-- ===== HEADER : simple gradient bar, no rounded corners ===== -->
+        <tr>
+          <td bgcolor="#0a1c2c" style="background: linear-gradient(135deg, #0b2637 0%, #123d4f 100%); padding: 40px 32px 30px 32px;">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td style="padding-bottom: 22px;">
+                  <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                       alt="Keploy" width="104" style="display:block; width:104px; height:auto; border:0; filter: brightness(0) invert(1);">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h1 style="margin:0 0 6px 0; font-size:36px; font-weight:650; color:#ffffff; line-height:1.2; letter-spacing:-0.3px;" class="h1-mobile">
+                    Welcome to Keploy
+                  </h1>
+                  <p style="margin:0; font-size:17px; color:#b4d6ed; font-weight:400;">Hello {{customer.name}}, let’s turn your API assets into tests — instantly.</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        
+        <!-- ===== MAIN CONTENT: open layout, only text & images, no cards/borders ===== -->
+        <tr>
+          <td style="padding:36px 32px 18px 32px;" bgcolor="#ffffff" class="responsive-pad">
+            
+            <!-- intro + badges (inline, no containers) -->
+            <p style="margin:0 0 6px 0; font-size:17px; color:#1f3b4f; line-height:1.5;">
+              ⚡️ You’re <strong style="color:#d95c1e;">30 seconds</strong> away from AI‑generated tests. Use what you already have:
+            </p>
+            <div style="margin:16px 0 10px 0; line-height:2;">
+              <span style="display:inline-block; background:#fef2ea; color:#b8430e; border-radius:40px; padding:6px 16px; font-size:14px; font-weight:500; margin-right:6px; margin-bottom:8px;">📮 Postman</span>
+              <span style="display:inline-block; background:#fef2ea; color:#b8430e; border-radius:40px; padding:6px 16px; font-size:14px; font-weight:500; margin-right:6px; margin-bottom:8px;">📄 OpenAPI</span>
+              <span style="display:inline-block; background:#fef2ea; color:#b8430e; border-radius:40px; padding:6px 16px; font-size:14px; font-weight:500; margin-right:6px; margin-bottom:8px;">🔄 cURL</span>
+              <span style="display:inline-block; background:#fef2ea; color:#b8430e; border-radius:40px; padding:6px 16px; font-size:14px; font-weight:500; margin-right:6px; margin-bottom:8px;">📋 GraphQL</span>
+              <span style="display:inline-block; background:#fef2ea; color:#b8430e; border-radius:40px; padding:6px 16px; font-size:14px; font-weight:500; margin-right:6px; margin-bottom:8px;">🧩 Snippets</span>
+            </div>
+            
+            <!-- divider (soft) -->
+            <hr class="divider-light" style="border:0; height:1px; background:#e0e9f2; margin:28px 0 30px;">
+            
+            <!-- full width image (no border, no shadow) -->
+            <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Inputs.png" 
+                 alt="Keploy import: drag & drop Postman, OpenAPI, cURL" 
+                 width="100%" style="max-width:100%; height:auto; display:block; margin:0 0 12px 0;">
+            <p style="margin:0 0 28px 0; font-size:13px; color:#617e9c; text-align:center;">One interface to import any spec — drag, drop, or fetch from URL</p>
+            
+            <!-- headline with left border accent (still no box) -->
+            <h2 style="margin:0 0 20px 0; font-size:24px; font-weight:640; color:#153245; border-left:6px solid #f16421; padding-left:18px;">🚦 Your 3‑step launch</h2>
+            
+            <!-- step 1: pure text, no card, no background, no border -->
+            <div style="margin-bottom:28px;">
+              <span style="display:inline-block; width:36px; height:36px; background:#f16421; color:#ffffff; font-size:18px; font-weight:700; border-radius:50%; text-align:center; line-height:36px; margin-right:12px; float:left;">1</span>
+              <h3 style="margin:0 0 4px 0; font-size:20px; font-weight:600; color:#102331; line-height:1.3;">Add your base URL & resources</h3>
+              <p style="margin:0 0 0 48px; font-size:16px; color:#3b5168; clear:none;">Drop a Postman collection, OpenAPI spec, or even a curl command.</p>
+            </div>
+            <div style="clear:both;"></div>
+            
+            <!-- step 2 -->
+            <div style="margin-bottom:28px;">
+              <span style="display:inline-block; width:36px; height:36px; background:#f16421; color:#ffffff; font-size:18px; font-weight:700; border-radius:50%; text-align:center; line-height:36px; margin-right:12px; float:left;">2</span>
+              <h3 style="margin:0 0 4px 0; font-size:20px; font-weight:600; color:#102331;">Hit “Generate API tests”</h3>
+              <p style="margin:0 0 0 48px; font-size:16px; color:#3b5168;">Keploy’s AI creates exhaustive test cases with mocks and assertions.</p>
+            </div>
+            <div style="clear:both;"></div>
+            
+            <!-- step 3 -->
+            <div style="margin-bottom:32px;">
+              <span style="display:inline-block; width:36px; height:36px; background:#f16421; color:#ffffff; font-size:18px; font-weight:700; border-radius:50%; text-align:center; line-height:36px; margin-right:12px; float:left;">3</span>
+              <h3 style="margin:0 0 4px 0; font-size:20px; font-weight:600; color:#102331;">Run tests in one click</h3>
+              <p style="margin:0 0 0 48px; font-size:16px; color:#3b5168;">Execute the full suite instantly and see coverage gaps.</p>
+            </div>
+            <div style="clear:both;"></div>
+            
+            <!-- CTA section -->
+            <div style="text-align:center; margin:24px 0 20px 0;">
+              <a href="https://app.keploy.io/api-testing" style="display:inline-block; background:#f16421; color:#ffffff; font-size:18px; font-weight:600; text-decoration:none; padding:16px 42px; border-radius:50px; letter-spacing:0.3px; box-shadow:0 6px 14px rgba(241,100,33,0.25);">🚀 Start generating tests</a>
+              <p style="margin:16px 0 10px; font-size:14px; color:#6a7f99;">No credit card · free for individuals</p>
+            </div>
+         
+            <!-- help links -->
+            <div style="text-align:center; padding:8px 0 12px;">
+              <span style="font-size:16px; font-weight:450; color:#1f3f5c;">Need a hand? We’re here 👇</span>
+              <div style="margin-top:14px;">
+                <a href="https://docs.keploy.io" style="color:#f16421; text-decoration:none; font-weight:500; margin:0 14px; font-size:16px; border-bottom:1px dotted #f16421;">📘 Docs</a>
+                <span style="color:#c0d0e2;">|</span>
+                <a href="https://join.slack.com/t/keploy/shared_invite/zt-357qqm9b5-PbZRVu3Yt2rJIa6ofrwWNg" style="color:#f16421; text-decoration:none; font-weight:500; margin:0 14px; font-size:16px; border-bottom:1px dotted #f16421;">💬 Slack</a>
+                <span style="color:#c0d0e2;">|</span>
+                <a href="https://calendar.app.google/cXVaj6hbMUjvmrnt9" style="color:#f16421; text-decoration:none; font-weight:500; margin:0 14px; font-size:16px; border-bottom:1px dotted #f16421;">📅 Book a demo</a>
+              </div>
+            </div>
+            
+            <!-- one more soft divider before footer -->
+            <hr class="divider-soft" style="margin:28px 0 20px;">
+            
+          </td>
+        </tr>
+        
+        <!-- ===== FOOTER (clean, minimal, no extra containers) ===== -->
+        <tr>
+          <td bgcolor="#0b1e2b" style="background:#0b1e2b; padding:32px 32px 32px 32px;" class="responsive-pad">
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                <td align="center" style="padding-bottom:16px;">
+                  <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                       alt="Keploy" width="80" style="display:block; width:80px; height:auto; opacity:0.9; filter: brightness(0) invert(1);">
+                </td>
+              </tr>
+              <tr>
+                <td align="center" style="padding-bottom:14px;">
+                  <p style="margin:0 0 12px 0; font-size:12px; font-weight:400; color:#7c9cb8; letter-spacing:1px;">AI‑NATIVE TESTING · ENTERPRISE READY</p>
+                  <p style="margin:0 0 22px 0; font-size:14px; color:#c7ddec; max-width:360px; margin:0 auto 22px; line-height:1.5;">
+                    From schema to test suite in seconds — Keploy automates the boring parts.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <!-- social icons (inline, no background boxes) -->
+                  <div style="margin-bottom:22px;">
+                    <a href="https://x.com/keployio" style="text-decoration:none; display:inline-block; margin:0 6px;">
+                      <img src="https://img.icons8.com/ios-filled/50/ffffff/twitterx--v1.png" alt="X" width="22" height="22" style="display:inline-block; width:22px; height:22px; border-radius:6px; background:#1e405b; padding:6px;">
+                    </a>
+                    <a href="https://linkedin.com/company/keploy/" style="text-decoration:none; display:inline-block; margin:0 6px;">
+                      <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" width="22" height="22" style="display:inline-block; width:22px; height:22px; border-radius:6px; background:#1e405b; padding:6px;">
+                    </a>
+                    <a href="https://github.com/keploy" style="text-decoration:none; display:inline-block; margin:0 6px;">
+                      <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub" width="22" height="22" style="display:inline-block; width:22px; height:22px; border-radius:6px; background:#1e405b; padding:6px;">
+                    </a>
+                    <a href="https://www.youtube.com/@keploy" style="text-decoration:none; display:inline-block; margin:0 6px;">
+                      <img src="https://img.icons8.com/ios-filled/50/ffffff/youtube-play.png" alt="YouTube" width="22" height="22" style="display:inline-block; width:22px; height:22px; border-radius:6px; background:#1e405b; padding:6px;">
+                    </a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <p style="margin:0 0 2px 0; font-size:11px; color:#4b708b;">New Burton Rd Central, Delaware, US 19904</p>
+                  <p style="margin:0; font-size:11px; color:#3d6079;">© 2026 Keploy, Inc. All rights reserved.</p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        
+        <!-- tiny spacer after footer (still no box) -->
+        <tr>
+          <td bgcolor="#ffffff" style="padding:10px 32px 24px; text-align:center; font-size:12px; color:#7a94ad;" class="responsive-pad">
+            Delivered to you by Keploy · AI-powered testing
+          </td>
+        </tr>
+        
+      </table>
+    </td>
+  </tr>
 </table>
-</center>
+
 </body>
 </html>
