@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width" name="viewport" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <meta content="telephone=no,address=no,email=no,date=no,url=no" name="format-detection" />
+  <title>Keploy · {{event.appName}} tests</title>
+
+  <!-- clean, modern fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&display=swap" rel="stylesheet">
+  <style>
+    html { margin: 0 !important; padding: 0 !important; }
+    * {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    td { vertical-align: top; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; }
+    a { text-decoration: none; color: #f97316; }
+    img { -ms-interpolation-mode: bicubic; display: block; border: 0; }
+
+    .badge {
+      background: #f97316;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 6px 18px;
+      border-radius: 60px;
+      font-size: 15px;
+      display: inline-block;
+      letter-spacing: -0.2px;
+    }
+
+    .stat-pill {
+      background: #f1efec;
+      color: #2d2d2d;
+      font-weight: 500;
+      padding: 4px 16px;
+      border-radius: 40px;
+      font-size: 15px;
+      display: inline-block;
+    }
+
+    .thought-bubble {
+      background: #fbf8f5;
+      color: #1e1e1e;
+      font-family: 'Literata', Georgia, serif;
+      font-size: 20px;
+      line-height: 1.5;
+      padding: 28px 32px;
+      border-radius: 40px 40px 40px 12px;
+      margin: 0;
+      border: 1px solid #f0e7e0;
+    }
+
+    @media only screen and (max-device-width: 562px), only screen and (max-width: 562px) {
+      .email-container { width: 100% !important; }
+      .mobile-padding { padding-left: 28px !important; padding-right: 28px !important; }
+      .btn-responsive { width: 100% !important; text-align: center; box-sizing: border-box; }
+      .footer-description { padding: 0 20px !important; }
+      .greeting-name { font-size: 26px !important; }
+      h2 { font-size: 28px !important; }
+      .stat-pill { font-size: 14px !important; padding: 4px 12px !important; }
+      .thought-bubble { font-size: 18px !important; padding: 20px 24px !important; }
+    }
+  </style>
+</head>
+<body style="background: #e9e3dc; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-font-smoothing: antialiased;">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #e9e3dc;">
+  <tr>
+    <td align="center" style="padding: 40px 20px 48px 20px;">
+
+      <!-- MAIN CARD  -->
+      <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background: #ffffff; border-radius: 32px; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);" class="email-container">
+        <tr>
+          <td style="padding: 0;">
+
+            <!-- HEADER -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding: 44px 52px 20px 52px;" class="mobile-padding">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                      <td align="left" width="100" style="vertical-align: middle;">
+                        <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                             width="100" 
+                             alt="Keploy" 
+                             style="display: block; width: 100px; height: auto;">
+                      </td>        
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!--  -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding: 0px 52px 8px 52px;" class="mobile-padding">
+                  <span style="font-size: 15px; color: #f97316; font-weight: 500; letter-spacing: 0.3px;">✧ just thinking about your tests</span>
+                </td>
+              </tr>
+            </table>
+
+            <!-- GREETING + HEADLINE -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding: 0px 52px 12px 52px;" class="mobile-padding">
+                  <h1 style="margin: 0; font-family: 'Literata', Georgia, serif; font-size: 30px; font-weight: 500; color: #1e1e1e; line-height: 1.2; letter-spacing: -0.01em;" class="greeting-name">
+                    Hi, {{customer.name | default: "there"}},
+                  </h1>
+                </td>
+              </tr>
+            </table>
+
+            <!-- THOUGHT -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding: 8px 52px 28px 52px;" class="mobile-padding">
+                  <div class="thought-bubble">
+                    “Your app <strong style="color: #f97316;">{{event.appName}}</strong> has been running smoothly — 
+                    but a few test suites could use a refresh. 
+                    I already prepared AI‑generated fixes. 
+                    Whenever you have 2 minutes, they're here waiting.”
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- QUIET BENEFITS (minimal, subtle) -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding: 0px 52px 20px 52px;" class="mobile-padding">
+                  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr><td style="padding: 5px 0;"><span style="color: #f97316; font-weight: 500; margin-right: 12px;">/</span> <span style="font-size: 16px; color: #3b3b3b;">from real traffic data</span></td></tr>
+                    <tr><td style="padding: 5px 0;"><span style="color: #f97316; font-weight: 500; margin-right: 12px;">/</span> <span style="font-size: 16px; color: #3b3b3b;">catch bugs early</span></td></tr>
+                    <tr><td style="padding: 5px 0 0 0;"><span style="color: #f97316; font-weight: 500; margin-right: 12px;">/</span> <span style="font-size: 16px; color: #3b3b3b;">takes ~2 minutes, no setup</span></td></tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <!-- CTA BUTTON — gentle, clear -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding: 4px 52px 8px 52px;" class="mobile-padding" align="left">
+                  <table cellpadding="0" cellspacing="0" border="0" style="display: inline-block;">
+                    <tr>
+                      <td style="border-radius: 60px; background: #f97316; padding: 14px 42px; box-shadow: 0 6px 0 #b45a1c;" align="center">
+                        <a href="{{event.appName}}" 
+                           style="color: white; font-size: 17px; font-weight: 700; text-decoration: none; display: inline-block; letter-spacing: 0.5px;">
+                           review your tests →
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                  <p style="margin: 10px 0 0 0; font-size: 14px; color: #948e88;">Takes 2 minutes</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- VISUAL PREVIEW (same) -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="padding: 16px 52px 32px 52px;" class="mobile-padding">
+                  <div style="border-radius: 28px; overflow: hidden; border: 1px solid #ece1d9;">
+                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/Test+suites.png" 
+                         width="100%" 
+                         alt="Test suites preview" 
+                         style="display: block; width: 100%; height: auto;">
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <!-- FOOTER — EXACTLY AS YOU HAD IT, UNCHANGED -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td style="background: #1a202c; color: #cbd5e0; padding: 30px 28px; text-align: center; border-radius: 0 0 32px 32px;" align="center">
+                  <!-- Footer Logo -->
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 15px;">
+                    <tr>
+                      <td align="center" class="footer-logo">
+                        <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                             width="100" 
+                             alt="Keploy" 
+                             style="width:100px; height:auto; margin:0 auto; display: inline-block;">
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Tagline -->
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 8px;">
+                    <tr>
+                      <td align="center">
+                        <p style="margin:0; font-family:'Segoe UI', Arial, sans-serif; font-size:11px; font-weight:600; color:#94a3b8; line-height:1.4; letter-spacing:0.5px;">
+                          THE AI-POWERED TESTING PLATFORM
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Description -->
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 20px;">
+                    <tr>
+                      <td align="center">
+                        <p style="margin:0; font-family:'Segoe UI', Arial, sans-serif; font-size:13px; color:#cbd5e1; line-height:1.5; text-align:center; padding:0 15px;" class="footer-description">
+                          Automate testing faster and unleash developer productivity with the most intelligent test generation platform.
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                    
+                  <!-- Social Icons -->
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin: 15px 0 20px 0;">
+                    <tr>
+                      <td align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                          <tr>
+                            <td style="padding: 0 12px;">
+                              <a href="https://x.com/keployio" style="text-decoration: none;">
+                                <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" 
+                                     width="22" 
+                                     height="22" 
+                                     alt="Twitter" 
+                                     border="0" 
+                                     style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 4px; padding: 2px;" />
+                              </a>
+                            </td>
+                            <td style="padding: 0 12px;">
+                              <a href="https://linkedin.com/company/keploy/" style="text-decoration: none;">
+                                <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" 
+                                     width="22" 
+                                     height="22" 
+                                     alt="LinkedIn" 
+                                     border="0" 
+                                     style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 4px; padding: 2px;" />
+                              </a>
+                            </td>
+                            <td style="padding: 0 12px;">
+                              <a href="https://github.com/keploy" style="text-decoration: none;">
+                                <img src="https://img.icons8.com/ios-filled/50/000000/github.png" 
+                                     width="22" 
+                                     height="22" 
+                                     alt="GitHub" 
+                                     border="0" 
+                                     style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 4px; padding: 2px;" />
+                              </a>
+                            </td>
+                            <td style="padding: 0 12px;">
+                              <a href="https://www.youtube.com/@keploy" style="text-decoration: none;">
+                                <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" 
+                                     width="22" 
+                                     height="22" 
+                                     alt="YouTube" 
+                                     border="0" 
+                                     style="display: block; width: 22px; height: 22px; background-color: #ffffff; border-radius: 4px; padding: 2px;" />
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                  <!-- Address -->
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td align="center">
+                        <p style="margin:0 0 5px 0; font-family:'Segoe UI', Arial, sans-serif; font-size:11px; color:#94a3b8; line-height:1.4;">
+                          New Burton Rd Central, Delaware, US 19904
+                        </p>
+                        <p style="margin:0; font-family:'Segoe UI', Arial, sans-serif; font-size:11px; color:#94a3b8; line-height:1.4;">
+                          © 2026 Keploy, Inc. All rights reserved.
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table> <!-- END FOOTER  -->
+
+          </td>
+        </tr>
+      </table> <!-- end main container -->
+    </td>
+  </tr>
+</table> <!-- end background table -->
+
+</body>
+</html>
