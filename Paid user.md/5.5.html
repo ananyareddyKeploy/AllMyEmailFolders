@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keploy Teams Tier activated</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+    }
+    
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+      -ms-interpolation-mode: bicubic;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .mobile-padding {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+      
+      .details-table td {
+        display: block;
+        width: 100%;
+        text-align: left !important;
+        padding: 10px 0 !important;
+      }
+      
+      .details-table td:first-child {
+        padding-top: 12px !important;
+        font-weight: 600;
+        color: #475569;
+        border-bottom: none !important;
+      }
+      
+      .details-table td:last-child {
+        padding-bottom: 12px !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+      }
+      
+      .details-table tr:last-child td:last-child {
+        border-bottom: none !important;
+      }
+      
+      .feature-grid td {
+        display: block;
+        width: 100%;
+        padding: 8px 0 !important;
+      }
+      
+      .feature-icon {
+        width: 28px !important;
+        padding-right: 12px !important;
+      }
+      
+      .summary-flex {
+        flex-direction: column !important;
+        gap: 12px !important;
+      }
+      
+      .summary-divider {
+        display: none !important;
+      }
+    }
+    
+    .preheader {
+      display: none !important;
+      visibility: hidden;
+      opacity: 0;
+      color: transparent;
+      height: 0;
+      width: 0;
+    }
+    
+    .details-table {
+      width: 100%;
+      margin: 24px 0 20px 0;
+    }
+    
+    .details-table td {
+      padding: 12px 0;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+    }
+    
+    .details-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .field-label {
+      font-weight: 600;
+      color: #475569;
+      width: 40%;
+      padding-right: 20px;
+      font-size: 14px;
+    }
+    
+    .field-value {
+      color: #1e293b;
+      word-break: break-word;
+      font-size: 14px;
+    }
+    
+    .table-title {
+      color: #ef7d20;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #ef7d20;
+    }
+    
+    .plan-highlight {
+      color: #ef7d20;
+      font-weight: 700;
+    }
+    
+    .greeting-text {
+      margin: 0 0 20px 0;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #475569;
+    }
+    
+    /* feature list styling */
+    .feature-section {
+      margin: 28px 0 20px 0;
+      background-color: #f9fafc;
+      border-radius: 12px;
+      padding: 20px 20px 12px 20px;
+    }
+    
+    .feature-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin: 0 0 16px 0;
+      letter-spacing: 0.2px;
+    }
+    
+    .feature-grid {
+      width: 100%;
+    }
+    
+    .feature-grid td {
+      padding: 8px 0;
+      vertical-align: middle;
+      font-size: 14px;
+      color: #334155;
+      border-bottom: 1px solid #e9edf2;
+    }
+    
+    .feature-grid tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .feature-icon {
+      width: 32px;
+      font-size: 18px;
+      color: #ef7d20;
+      font-weight: 500;
+      padding-right: 8px;
+    }
+    
+    .feature-desc {
+      line-height: 1.4;
+    }
+    
+    .summary-flex {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+    
+    .summary-item {
+      flex: 1;
+    }
+    
+    .summary-label {
+      font-size: 11px;
+      color: #64748b;
+      margin-bottom: 4px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    
+    .summary-value {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e293b;
+      line-height: 1.2;
+    }
+    
+    .summary-value.plan {
+      color: #ef7d20;
+      font-weight: 700;
+      font-size: 20px;
+    }
+    
+    .summary-divider {
+      width: 1px;
+      height: 35px;
+      background: #e2e8f0;
+      align-self: center;
+    }
+    
+    .value-proposition {
+      text-align: center;
+      margin: 24px 0 12px 0;
+    }
+    
+    .value-title {
+      margin: 0 0 6px 0;
+      font-size: 18px;
+      color: #ef7d20;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    
+    .value-text {
+      margin: 0;
+      color: #64748b;
+      line-height: 1.4;
+      font-size: 13px;
+    }
+    
+    .cta-section {
+      text-align: center;
+      margin: 20px 0 0;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 12px 28px;
+      background: linear-gradient(90deg, #ef7d20 0%, #f97316 100%);
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      margin: 0 0 6px 0;
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc;">
+  <div class="preheader" style="display: none; font-size: 1px; color: #f8fafc; line-height: 1px; max-height: 0; max-width: 0; opacity: 0; overflow: hidden;">
+    Teams Tier active: advanced spend management, contract testing, team seats & more
+  </div>
+  
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #f8fafc;">
+    <tr>
+      <td align="center" style="padding: 20px 0;">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 600px; margin: 0 auto;">
+          
+          <!-- HEADER (dark gradient) -->
+          <tr>
+            <td style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 12px 12px 0 0; padding: 28px 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td style="padding-bottom: 16px;">
+                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                         alt="Keploy" 
+                         width="80" 
+                         style="display: block; max-width: 80px; height: auto;">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <h1 style="margin: 0 0 6px 0; font-size: 22px; font-weight: 700; color: #ffffff; line-height: 1.3;">
+                      Welcome to Teams Tier 
+                    </h1>
+                    <p style="margin: 0; font-size: 13px; color: #94a3b8; font-weight: 500;">
+                      {{event.company_name}}
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- MAIN CONTENT (with feature list placed exactly after intro) -->
+          <tr>
+            <td style="background: #ffffff; padding: 28px 24px; border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;" class="mobile-padding">
+              
+              <!-- greeting with your requested intro line (exact) -->
+              <p class="greeting-text">
+                Hello, <br><br>
+                Your <span class="plan-highlight">{{event.plan}}</span> subscription is now active for <strong>{{event.company_name}}</strong>. Your team is ready to accelerate testing with AI.
+              </p>
+              
+              <!-- ADDED CONTENT: feature list placed immediately after the intro, exactly as requested -->
+              <div class="feature-section">
+                <h3 class="feature-title">⚡ Your Teams Tier includes:</h3>
+                <table class="feature-grid" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                 
+                  <tr>
+                    <td class="feature-icon">✓</td>
+                    <td class="feature-desc"><strong>Team collaboration + free viewer seats</strong> – invite your team</td>
+                  </tr>
+                  <tr>
+                    <td class="feature-icon">✓</td>
+                    <td class="feature-desc"><strong>Faster generation + no queues</strong> – priority processing</td>
+                  </tr>
+                  <tr>
+                    <td class="feature-icon">✓</td>
+                    <td class="feature-desc"><strong>Contract testing + load testing</strong> – ensure reliability at scale</td>
+                  </tr>
+                  <tr>
+                    <td class="feature-icon">✓</td>
+                    <td class="feature-desc"><strong>Email & chat support</strong> – direct help from our team</td>
+                  </tr>
+                </table>
+              </div>
+              
+              <!-- SUBSCRIPTION  -->
+              <div style="margin-bottom: 16px;">
+                <h2 class="table-title">Subscription snapshot</h2>
+                <table class="details-table" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                  <tr>
+                    <td class="field-label">Company</td>
+                    <td class="field-value"><strong>{{event.company_name}}</strong></td>
+                  </tr>
+                  <tr>
+                    <td class="field-label">Plan</td>
+                    <td class="field-value"><span class="plan-highlight">{{event.plan}}</span></td>
+                  </tr>
+                </table>
+              </div>
+              
+              <!-- quick summary (minimal) -->
+              <div class="summary-section">
+                <div class="summary-flex">
+                  <div class="summary-item">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- tagline & CTA -->
+              <div class="value-proposition">
+                <h3 class="value-title">AI Codes. Keploy Tests.</h3>
+                <p class="value-text">
+                  Ship faster with intelligent test automation.<br>
+                  Focus on features while Keploy handles the rest.
+                </p>
+              </div>
+              
+              <div class="cta-section">
+                <a href="https://app.keploy.io/" class="cta-button">
+                  Go to dashboard - {{event.plan}}
+                </a>
+              </div>
+              
+            </td>
+          </tr>
+          
+          <!-- FOOTER  -->
+          <tr>
+            <td style="background:#1a202c; color:#cbd5e0; border-radius: 0 0 12px 12px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                <tr>
+                  <td style="padding: 25px 24px; text-align: center;">
+                    
+                    <img src="https://keploy-devrel.s3.us-west-2.amazonaws.com/keploy-logo+(1).png" 
+                         alt="Keploy" 
+                         width="70" 
+                         style="display: block; width: 70px; height: auto; margin: 0 auto 14px;">
+                    
+                    <p style="margin: 0 0 6px 0; font-size: 10px; font-weight: 600; color: #94a3b8; line-height: 1.4; letter-spacing: 0.5px;">
+                      THE AI-POWERED TESTING PLATFORM
+                    </p>
+                    
+                    <p style="margin: 0 0 16px 0; font-size: 12px; color: #cbd5e1; line-height: 1.5; max-width: 400px; margin: 0 auto 16px;">
+                      Automate testing faster and unleash developer productivity.
+                    </p>
+                    
+                    <!-- social icons (preserved) -->
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin: 0 auto 16px; max-width: 180px;">
+                      <tr>
+                        <td align="center" style="padding: 0 6px;">
+                          <a href="https://x.com/keployio" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/twitterx--v1.png" 
+                                 alt="X" width="18" height="18" style="display: block; width: 18px; height: 18px; background-color: #ffffff; border-radius: 3px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 6px;">
+                          <a href="https://linkedin.com/company/keploy/" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" 
+                                 alt="LinkedIn" width="18" height="18" style="display: block; width: 18px; height: 18px; background-color: #ffffff; border-radius: 3px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 6px;">
+                          <a href="https://github.com/keploy" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/github.png" 
+                                 alt="GitHub" width="18" height="18" style="display: block; width: 18px; height: 18px; background-color: #ffffff; border-radius: 3px; padding: 2px;">
+                          </a>
+                        </td>
+                        <td align="center" style="padding: 0 6px;">
+                          <a href="https://www.youtube.com/@keploy" style="text-decoration: none;">
+                            <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" 
+                                 alt="YouTube" width="18" height="18" style="display: block; width: 18px; height: 18px; background-color: #ffffff; border-radius: 3px; padding: 2px;">
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <p style="margin: 0 0 4px 0; font-size: 10px; color: #94a3b8; line-height: 1.4;">
+                      New Burton Rd Central, Delaware, US 19904
+                    </p>
+                    <p style="margin: 0; font-size: 10px; color: #94a3b8; line-height: 1.4;">
+                      © 2026 Keploy, Inc. All rights reserved.
+                    </p>
+                    
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
